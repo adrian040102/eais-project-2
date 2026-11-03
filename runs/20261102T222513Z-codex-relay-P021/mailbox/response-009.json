@@ -1,0 +1,14 @@
+{
+  "content": null,
+  "tool_calls": [
+    {
+      "function": {
+        "name": "calculate_compensation",
+        "arguments": "{\"price\":\"77\",\"percentage\":\"25\",\"minimum\":\"0\"}"
+      },
+      "id": "relay_009",
+      "type": "function"
+    }
+  ],
+  "role": "assistant"
+}

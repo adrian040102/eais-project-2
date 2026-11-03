@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_003","type":"function","function":{"name":"find_trains","arguments":"{\"origin\":\"Aix-en-Provence TGV\",\"destination\":\"Lyon Part-Dieu\",\"date\":\"2026-10-21\",\"from_time\":\"12:00\",\"to_time\":\"12:59\"}"}}]}

@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"TGV INOUI retard correspondance 40 minutes indemnisation 25% 50% minimum 4 EUR\",\"company\":\"SNCF\",\"limit\":5}"
+      },
+      "type": "function",
+      "id": "relay_005"
+    }
+  ]
+}

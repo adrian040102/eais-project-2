@@ -1,0 +1,1 @@
+{"tool_calls":[{"id":"relay_003","type":"function","function":{"name":"ask_traveler","arguments":"{\"topic\":\"travel_date\"}"}}],"content":null,"role":"assistant"}

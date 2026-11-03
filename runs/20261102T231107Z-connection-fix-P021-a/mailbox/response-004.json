@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_004",
+      "type": "function",
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"TGV INOUI nationaux retard 120 179 minutes barème compensation\",\"company\":\"SNCF\",\"limit\":5}"
+      }
+    }
+  ]
+}

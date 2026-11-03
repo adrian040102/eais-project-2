@@ -1,0 +1,2426 @@
+{
+  "schema_version": 1,
+  "split": "all",
+  "source_summary": "/workspace/runs/20261031T122615Z-1-all-system/summary.json",
+  "note": "Diagnostic report. The course runner is the scoring authority. Amount/train/provenance counts describe failed claim checks; missing claims are counted separately. Company groups may overlap. Cost includes setup when recorded in the summary.",
+  "score": {
+    "points": 0.0,
+    "max": 36,
+    "percent": 0.0,
+    "official_points": 0.0,
+    "official_max": 36,
+    "official_totals_match": true
+  },
+  "coverage": {
+    "expected": 36,
+    "rows_present": 36,
+    "attempted": 36,
+    "not_run": 0,
+    "missing_ids": [],
+    "unexpected_ids": [],
+    "complete": true
+  },
+  "totals": {
+    "correct": 0,
+    "fully_right": 0,
+    "extra_filings": 0,
+    "penalty": 0.0,
+    "questions": 0,
+    "questions_over": 0,
+    "tool_calls": 0,
+    "model_calls": 0,
+    "model_errors": 0,
+    "cost_usd": 0.0,
+    "request_seconds_sum": 5.27,
+    "request_seconds_mean": 0.146,
+    "request_seconds_p95": 0.3
+  },
+  "statuses": {
+    "ok": 36
+  },
+  "failures": {
+    "amount": 0,
+    "train": 0,
+    "provenance": 0,
+    "missing_claim": 26,
+    "missing_no_claim": 10,
+    "wrong_no_claim": 0,
+    "filed_when_nothing_owed": 0,
+    "extra_or_duplicate_claims": 0,
+    "no_claim_train_evidence": 0,
+    "missing_facts": 2,
+    "wrong_ticket_price": 0,
+    "questions_over": 0,
+    "runtime_error": 0,
+    "call_budget": 0,
+    "timeout": 0,
+    "model_access": 0,
+    "cost_cap": 0,
+    "not_run": 0,
+    "missing_output": 0
+  },
+  "groups": {
+    "case_type": {
+      "mismatch_over": {
+        "requests": 3,
+        "attempted": 3,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 3,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "mismatch_under": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "missed_separate": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "missed_through": {
+        "requests": 5,
+        "attempted": 5,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 5,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "nothing_minimum": {
+        "requests": 3,
+        "attempted": 3,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 3,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "nothing_threshold": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "ouigo": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "return_ticket": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "single_ask": {
+        "requests": 10,
+        "attempted": 10,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 10,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "single_full": {
+        "requests": 4,
+        "attempted": 4,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 4,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "trenord": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "company": {
+      "DB": {
+        "requests": 16,
+        "attempted": 16,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 16,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "OUIGO": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "SBB": {
+        "requests": 3,
+        "attempted": 3,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 3,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "SNCF": {
+        "requests": 10,
+        "attempted": 10,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 10,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "Trenitalia": {
+        "requests": 3,
+        "attempted": 3,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 3,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "Trenord": {
+        "requests": 2,
+        "attempted": 2,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 2,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "decision": {
+      "claim": {
+        "requests": 26,
+        "attempted": 26,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 26,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      },
+      "no_claim": {
+        "requests": 10,
+        "attempted": 10,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 10,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    }
+  },
+  "setup": "ok",
+  "warnings": [],
+  "cases": [
+    {
+      "id": "P001",
+      "case_type": "ouigo",
+      "companies": [
+        "OUIGO"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.09,
+      "checks": [
+        {
+          "company": "OUIGO",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P002",
+      "case_type": "single_ask",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.3,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P003",
+      "case_type": "nothing_minimum",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.19,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P004",
+      "case_type": "mismatch_over",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.16,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P005",
+      "case_type": "single_ask",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P006",
+      "case_type": "mismatch_over",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P007",
+      "case_type": "return_ticket",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.09,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P008",
+      "case_type": "single_ask",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P010",
+      "case_type": "single_ask",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P011",
+      "case_type": "nothing_minimum",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim",
+        "topics"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.24,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 1,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P012",
+      "case_type": "ouigo",
+      "companies": [
+        "OUIGO"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.16,
+      "checks": [
+        {
+          "company": "OUIGO",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P014",
+      "case_type": "missed_through",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.18,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P015",
+      "case_type": "return_ticket",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.17,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P016",
+      "case_type": "single_ask",
+      "companies": [
+        "SBB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.15,
+      "checks": [
+        {
+          "company": "SBB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P017",
+      "case_type": "single_full",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P020",
+      "case_type": "single_full",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.12,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P021",
+      "case_type": "missed_through",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P022",
+      "case_type": "nothing_threshold",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "SNCF",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P023",
+      "case_type": "nothing_threshold",
+      "companies": [
+        "SBB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "SBB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P024",
+      "case_type": "missed_separate",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.09,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P025",
+      "case_type": "single_ask",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.15,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P028",
+      "case_type": "mismatch_under",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P030",
+      "case_type": "single_ask",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.14,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P031",
+      "case_type": "single_ask",
+      "companies": [
+        "Trenitalia"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.22,
+      "checks": [
+        {
+          "company": "Trenitalia",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P032",
+      "case_type": "single_ask",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.32,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P033",
+      "case_type": "single_full",
+      "companies": [
+        "Trenitalia"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.18,
+      "checks": [
+        {
+          "company": "Trenitalia",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P034",
+      "case_type": "missed_through",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 6,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.14,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P036",
+      "case_type": "trenord",
+      "companies": [
+        "Trenord"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.09,
+      "checks": [
+        {
+          "company": "Trenord",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P037",
+      "case_type": "mismatch_under",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.09,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P038",
+      "case_type": "missed_through",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P039",
+      "case_type": "mismatch_over",
+      "companies": [
+        "Trenitalia"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.1,
+      "checks": [
+        {
+          "company": "Trenitalia",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P040",
+      "case_type": "trenord",
+      "companies": [
+        "Trenord"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim",
+        "topics"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "Trenord",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 1,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P041",
+      "case_type": "single_full",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 3,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.11,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P043",
+      "case_type": "nothing_minimum",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-no-claim"
+      ],
+      "questions": 0,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.22,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": false,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P044",
+      "case_type": "missed_through",
+      "companies": [
+        "DB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.27,
+      "checks": [
+        {
+          "company": "DB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    },
+    {
+      "id": "P045",
+      "case_type": "single_ask",
+      "companies": [
+        "SBB"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 0,
+      "question_limit": 4,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 0,
+      "model_calls": 0,
+      "usd": 0.0,
+      "seconds": 0.14,
+      "checks": [
+        {
+          "company": "SBB",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    }
+  ]
+}

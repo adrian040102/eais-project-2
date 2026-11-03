@@ -1,0 +1,1 @@
+{"tool_calls":[{"function":{"name":"search_rules","arguments":"{\"query\":\"Garantie G30 TGV INOUI retard 2 heures minimum compensation\",\"limit\":8,\"company\":\"SNCF\"}"},"type":"function","id":"relay_005"}],"role":"assistant","content":null}

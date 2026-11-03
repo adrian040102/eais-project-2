@@ -1,0 +1,1 @@
+{"content":null,"role":"assistant","tool_calls":[{"type":"function","id":"relay_006","function":{"arguments":"{\"company\":\"OUIGO\"}","name":"get_form"}}]}

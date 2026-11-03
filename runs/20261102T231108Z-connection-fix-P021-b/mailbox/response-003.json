@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_003",
+      "type": "function",
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"TGV INOUI train grandes lignes retard indemnisation 3 heures billet correspondance manquée\",\"company\":\"SNCF\",\"limit\":5}"
+      }
+    }
+  ]
+}

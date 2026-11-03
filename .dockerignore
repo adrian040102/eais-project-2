@@ -1,0 +1,6 @@
+**
+!runtime/
+!runtime/Dockerfile
+!eais-p2-kit/
+!eais-p2-kit/packages.txt
+!eais-p2-kit/requirements.txt

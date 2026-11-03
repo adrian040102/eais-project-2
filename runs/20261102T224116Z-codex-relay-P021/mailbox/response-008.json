@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_008","type":"function","function":{"name":"read_rule_document","arguments":"{\"doc_id\":\"fr-sncfv-retard-tgv-ic-fr\"}"}}]}

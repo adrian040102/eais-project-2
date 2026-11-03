@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_004","type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"Entschädigung ICE Verspätung 60 Minuten 25 Euro; Mindestbetrag Auszahlung\",\"company\":\"DB\",\"limit\":5}"}}]}

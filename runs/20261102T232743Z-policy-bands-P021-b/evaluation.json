@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "split": "supervised-relay-development",
+  "source_summary": "C:\\Users\\adria\\Documents\\Uni\\Master\\Uni Mannheim\\5. sem\\EAIS\\Projekt 2\\runs\\20261102T232743Z-policy-bands-P021-b\\summary.json",
+  "note": "Diagnostic report. The course runner is the scoring authority. Amount/train/provenance counts describe failed claim checks; missing claims are counted separately. Company groups may overlap. Cost includes setup when recorded in the summary.",
+  "score": {
+    "points": 0.0,
+    "max": 1,
+    "percent": 0.0,
+    "official_points": 0.0,
+    "official_max": 1,
+    "official_totals_match": true
+  },
+  "coverage": {
+    "expected": 1,
+    "rows_present": 1,
+    "attempted": 1,
+    "not_run": 0,
+    "missing_ids": [],
+    "unexpected_ids": [],
+    "complete": true
+  },
+  "totals": {
+    "correct": 0,
+    "fully_right": 0,
+    "extra_filings": 0,
+    "penalty": 0.0,
+    "questions": 1,
+    "questions_over": 0,
+    "tool_calls": 1,
+    "model_calls": 2,
+    "model_errors": 1,
+    "cost_usd": 0.0,
+    "request_seconds_sum": 71.41,
+    "request_seconds_mean": 71.41,
+    "request_seconds_p95": 71.41
+  },
+  "statuses": {
+    "ok": 1
+  },
+  "failures": {
+    "amount": 0,
+    "train": 0,
+    "provenance": 0,
+    "missing_claim": 1,
+    "missing_no_claim": 0,
+    "wrong_no_claim": 0,
+    "filed_when_nothing_owed": 0,
+    "extra_or_duplicate_claims": 0,
+    "no_claim_train_evidence": 0,
+    "missing_facts": 0,
+    "wrong_ticket_price": 0,
+    "questions_over": 0,
+    "runtime_error": 0,
+    "call_budget": 0,
+    "timeout": 0,
+    "model_access": 0,
+    "cost_cap": 0,
+    "not_run": 0,
+    "missing_output": 0
+  },
+  "groups": {
+    "case_type": {
+      "missed_through": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "company": {
+      "SNCF": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "decision": {
+      "claim": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": 0.0,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    }
+  },
+  "setup": "ok",
+  "warnings": [],
+  "cases": [
+    {
+      "id": "P021",
+      "case_type": "missed_through",
+      "companies": [
+        "SNCF"
+      ],
+      "decision": "claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.0,
+      "net_points": 0.0,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "missing-claim"
+      ],
+      "questions": 1,
+      "question_limit": 5,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 1,
+      "model_calls": 2,
+      "usd": 0.0,
+      "seconds": 71.41,
+      "checks": [
+        {
+          "company": "SNCF",
+          "filed": false,
+          "amount": false,
+          "train": false,
+          "provenance": false,
+          "ok": false
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 1,
+        "missing_no_claim": 0,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 0,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    }
+  ],
+  "relay": {
+    "kind": "supervised-codex-relay-smoke",
+    "created_utc": "2026-11-02T23:27:44.544645+00:00",
+    "ids": [
+      "P021"
+    ],
+    "model": "gpt-6-luna",
+    "reasoning_effort": "low",
+    "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+    "relay_sha256": "d98eb654dc6acd4eceaaa786a0544acf5e4ed3b886780d558f33f8a40ba52899",
+    "api_cost_usd": 0,
+    "subscription_usage": "not measured; this test consumes Codex usage",
+    "token_counts": "not measured",
+    "course_api_tested": false,
+    "limitations": "A Codex agent answers exported messages as JSON. Its surrounding instructions, tool-call serialization, latency, and token limits differ from raw course API calls. This is a supervised diagnostic, not an official model-performance measurement."
+  },
+  "validation_note": "Invalid relay response {}. The driver rejected the missing assistant role and recorded a protocol error."
+}

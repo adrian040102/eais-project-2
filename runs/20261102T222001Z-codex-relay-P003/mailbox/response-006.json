@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"function":{"name":"get_form","arguments":"{\"company\":\"DB\"}"},"type":"function","id":"relay_006"}],"content":null}

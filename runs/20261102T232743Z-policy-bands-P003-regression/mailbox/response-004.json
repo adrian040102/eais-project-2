@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_004","type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"ICE Fernverkehr Produktklasse A B Entschädigungsbeträge weniger 4 Euro\",\"company\":\"DB\",\"limit\":8}"}}]}

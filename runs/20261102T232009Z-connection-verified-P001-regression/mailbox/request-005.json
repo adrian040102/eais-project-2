@@ -1,0 +1,463 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Help the traveler complete every compensation decision through the tools.\nWork through missing facts, train identification, rule retrieval, then the form.\nUse ask_traveler for missing facts; plain questions in your answer do not reach the traveler.\nAsk only necessary topics, once each. Never invent prices, dates, sellers, or delay causes.\nDo not ask for facts already stated or unambiguously derived, including explicit dates.\nResolve relative dates and weekdays from the date at the start of the request. All times are local.\nUse recorded train data, not approximate delays reported by the traveler. Search each leg\nof a connection separately. Use canonical station names and windows of at most four hours;\nfrom_time and to_time must differ. Pick the intended run by date, route, and planned time.\nFor missed connections, establish ticket_structure and the actual onward journey through\ntrain_after_missed_connection or arrival_time, unless already stated. For a through ticket\nwhose onward train is unknown, use resolve_connection with the route and both scheduled\ndeparture times from the request. It resolves the incoming, missed and replacement trains\nand final delay. Copy its exact arrival times and minutes; do not guess or round them.\nFor a known onward train, identify it and calculate_delay from the original planned final\narrival to that train's recorded arrival. Separate tickets are assessed separately.\nSearch the rules before deciding. Use keywords in the documents' language; search_rules\ndoes not translate. Omit its company filter for EU/cross-border rules. Confirm that the\npassage applies to this ticket, train category, and journey. Operator and claim recipient\nmay differ: use the seller, ticket structure, rules, and list_forms to choose the recipient.\nInclude the observed train category in rule queries. A company's regional, domestic,\nand international policies can differ. Use the table column for the actual train category\nand the row for the final delay, rather than the first percentage in the search results.\nRead get_form before filing, including help, required_if, allowed values, and price basis.\nForms may be unfamiliar. Use their exact field names and exact observed train_id values.\nCalculate compensation with calculate_compensation using the rate and minimum from the\napplicable rules. Always supply minimum explicitly; use 0 only after checking that no\nminimum applies. If all payouts are zero, record no_claim without a form or payment question.\nUse calculate_delay for planned/actual timestamps from different trains; otherwise\nuse the relevant train tool's delay. Return tickets may require the affected direction's\nprice. Check exclusions and ask the reported delay_reason if the rule depends on it.\nWhen a payable claim offers a payment choice, ask payment_preference unless already known.\nDo not choose a voucher or transfer for the traveler. Check whether the choice changes the rate.\nThe form's train is the first late/cancelled train causing the disruption, including the\nincoming late train for a missed connection. File one claim per company and ticket;\naccepted filings are final, while rejected ones can be corrected. Still file when the\nrules describe automatic payments. Deadlines, waiting periods, and proof are satisfied.\nIf any claim is owed, file the owed claims and leave the unowed tickets without no_claim.\nUse no_claim only when nothing is owed for the entire request, for the responsible company.\nBefore no_claim, identify the relevant run with train_stops or complete find_trains with\nat most five results. Obtain all necessary missing facts before either decision.\nReserve calls for form retrieval, filing, and possible correction. Call finish only after\nall tickets are handled. A tool error is information to correct, never a no-claim decision.\n\nRule companies: Cross-border, DB, EU, OUIGO, SBB, SNCF, TGV Lyria, TILO, Trenitalia, Trenord\nAvailable traveler topics: {\"travel_date\": \"the day of the trip\", \"departure_time\": \"the planned departure time of the first train, or of the train the traveler means\", \"route\": \"where the trip started, where the traveler changed trains and where it ended\", \"ticket_structure\": \"one through ticket for the whole trip, or separate tickets, and for which parts\", \"ticket_seller\": \"where each ticket was bought (company, app, website or ticket office)\", \"ticket_price\": \"the price paid for each ticket\", \"travel_class\": \"first or second class\", \"travelcard\": \"travelcards or passes, e.g. GA, Half Fare, BahnCard, Deutschland-Ticket, or none\", \"reservation\": \"whether the traveler had a seat reservation, with its reference\", \"booking_date\": \"when the tickets were bought\", \"train_after_missed_connection\": \"which train the traveler took after missing a connection or after a train stopped short\", \"arrival_time\": \"when the traveler actually arrived at the destination, as the traveler remembers it\", \"delay_reason\": \"the reason for the delay that staff announced, as the traveler remembers it\", \"payment_preference\": \"how the traveler would like to be paid, e.g. bank transfer or voucher\"}"
+    },
+    {
+      "role": "user",
+      "content": "Date: Thursday, 22 October 2026\n\nGood evening,\n\nThe day before yesterday I travelled from Toulon to Nice on the OUIGO at 20:15. It got to Nice more than two hours late. I bought the ticket in the OUIGO app. I'd like my compensation, please.\n\nLuca"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"topic\":\"ticket_price\"}",
+            "name": "ask_traveler"
+          },
+          "id": "relay_001",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_001",
+      "content": "\"25 euros.\""
+    },
+    {
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "arguments": "{\"origin\":\"Toulon\",\"to_time\":\"21:00\",\"from_time\":\"20:00\",\"destination\":\"Nice Ville\",\"date\":\"2026-10-20\"}",
+            "name": "find_trains"
+          },
+          "id": "relay_002"
+        }
+      ],
+      "role": "assistant",
+      "content": null
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_002",
+      "content": "{\"origin\": \"Toulon\", \"destination\": \"Nice-Ville\", \"from\": \"2026-10-20 20:00\", \"to\": \"2026-10-20 21:00\", \"trains\": [{\"train\": \"OUIGO 7853\", \"train_id\": \"tr-1795cac1732e\", \"line\": \"633B\", \"operator\": \"OUIGO\", \"dep_planned\": \"2026-10-20 20:15\", \"dep_recorded\": \"2026-10-20 21:45:00\", \"dep_delay_min\": 90, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-20 22:13\", \"arr_recorded\": \"2026-10-21 00:23:00\", \"arr_delay_min\": 130, \"arr_kind\": \"announced\", \"arr_cancelled\": false}, {\"train\": \"TGV 12177\", \"train_id\": \"tr-15e434f37607\", \"line\": \"TGV\", \"operator\": \"SNCF\", \"dep_planned\": \"2026-10-20 20:48\", \"dep_recorded\": \"2026-10-20 21:58:00\", \"dep_delay_min\": 70, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-20 22:43\", \"arr_recorded\": \"2026-10-20 23:53:00\", \"arr_delay_min\": 70, \"arr_kind\": \"announced\", \"arr_cancelled\": false}, {\"train\": \"TGV 5537\", \"train_id\": \"tr-673af9bb4f3a\", \"line\": \"TGV\", \"operator\": \"SNCF\", \"dep_planned\": \"2026-10-20 20:48\", \"dep_recorded\": \"2026-10-20 21:58:00\", \"dep_delay_min\": 70, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-20 22:43\", \"arr_recorded\": \"2026-10-20 23:53:00\", \"arr_delay_min\": 70, \"arr_kind\": \"announced\", \"arr_cancelled\": false}], \"note_direct_only\": \"direct trains only; for a change, search each leg\"}"
+    },
+    {
+      "tool_calls": [
+        {
+          "type": "function",
+          "id": "relay_003",
+          "function": {
+            "arguments": "{\"company\":\"OUIGO\",\"query\":\"OUIGO train à grande vitesse retard 2 heures indemnisation\",\"limit\":5}",
+            "name": "search_rules"
+          }
+        }
+      ],
+      "content": null,
+      "role": "assistant"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_003",
+      "content": "{\"passages\": [{\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"section\": \"4 OFFRES OUIGO ET OPTIONS > 4.2 Ouigo Train Classique > 4.2.2 Options, Services Et Animaux Sur Ouigo Train Classique > 4.2.2.3 Option Choix de la place > 4.2.2.3.4 Modification du Choix de la place\", \"text\": \"Le Voyageur a la possibilité de modifier la Place qu’il a choisi dans la limite des places disponibles.\\n\\nLa modification d'une Place est sans surcoût sur un autre OUIGO Train Classique\\n\\nLa modification d'une Place est sans surcoût si la nouvelle Place choisie est au même prix ou à un prix inférieur :\\n\\n-Place Standard sur OUIGO Train Classique à Place Standard sur OUIGO Train Classique\\n\\n-Place Standard sur OUIGO Train Classique à Place avec Prise sur OUIGO Grande Vitesse\\n\\nLa modification d'une place est avec un surcoût de quatre euros (4€) si la nouvelle Place choisie n’est pas au même prix :\\n\\n-Place Standard sur OUIGO Train Classique à Place Solo sur OUIGO Grande Vitesse\\n\\nS'il y a modification d’une Place Solo sur OUIGO Grande Vitesse pour une Place standard sur OUIGO Train Classique, alors la différence de quatre euros (4€) ne sera pas remboursée.\\n\\n-Place Solo sur OUIGO Grande Vitesse à Place Standard sur OUIGO Train Classique\", \"score\": 28.077}, {\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"section\": \"5 TITRE DE TRANSPORT > 5.2 Modification de la Réservation-Echange du Billet OUIGO-Annulation et Remboursement du Billet > 5.2.1 Modification de la Réservation ou Echange du Billet OUIGO > 5.2.1.1 Cas généraux de modification de Réservation ou d’Echange\", \"text\": \"de type de Place sur OUIGO Grande Vitesse : Les Voyageurs ayant souscrit à l’offre OUIGO PLUS ou OUIGO FULL sur OUIGO Grande Vitesse ont la possibilité de changer de type de place sans surcoût. Pour les autres Voyageurs qui souhaitent changer de type de Place sur OUIGO Grande Vitesse, il est possible d’effectuer des changements, sous réserve du paiement d’un éventuel écart de prix entre l’ancienne et la nouvelle Place.\\n\\n(viii) modifier l’offre OUIGO ESSENTIEL pour l’offre OUIGO PLUS sur OUIGO Grande Vitesse : Cet échange est possible sur le Site, l’Application OUIGO et certains Sites Distributeurs jusqu’à 30 minutes avant le départ du train et est subordonné au paiement du prix de l’option (9€ pour le billet Adulte et gratuit pour le billet Enfant). À noter que l’offre OUIGO PLUS doit être souscrite pour l’ensemble des Voyageurs.\\n\\n(ix) modifier l’offre OUIGO ESSENTIEL pour l’offre OUIGO FULL sur OUIGO Grande Vitesse : Cette modification n’est pas possible\\n\\n(x) modifier l’offre OUIGO PLUS ou OUIGO FULL pour l’offre OUIGO ESSENTIEL sur OUIGO Grande Vitesse : Cette modification n’est pas possible\\n\\n(xi) modifier l’offre OUIGO PLUS ou OUIGO FULL sur OUIGO Grande Vitesse pour l’offre OUIGO ESSENTIEL sur OUIGO Train Classique : Cette modification n’est pas possible\\n\\n(xii) modifier l’offre OUIGO ESSENTIEL sur OUIGO Train Classique pour l’offre OUIGO ESSENTIEL sur OUIGO Grande Vitesse : Cet échange est possible jusqu’à 30 minutes avant le départ du train et est subordonné au paiement de frais dont le montant s’élève, par Billet OUIGO modifié, à dix-neuf euros (19€). Toutefois, lorsque le prix du billet modifié est inférieur à dix-neuf euros (19€), les frais déchange n’excèderont pas son prix.\\n\\n(xiii) modifier l’offre OUIGO Train Classique ou OUIGO Grande Vitesse vers/depuis l’offre Paris Bruxelles en OUIGO Train Classique : Cette modification n’est pas possible\\n\\n(xiv)\", \"score\": 26.871}, {\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"section\": \"2 DEFINITIONS\", \"text\": \"Classique** : offre OUIGO correspondant aux services de transport ferroviaire de Voyageurs et services associés opérés par SNCF Voyageurs SA avec des voitures circulant sur les lignes à vitesse classique sur les dessertes Paris-Nantes, Paris-Rennes, et Paris- Bordeaux et commercialisés sous la marque « OUIGO Train Classique ». L’Offre OUIGO Train Classique est notamment décrite à l’article 4.2.\\n\\n**Offre Paris-Bruxelles en OUIGO Train Classique :** offre OUIGO correspondant aux services de transport ferroviaire de Voyageurs et services associés opérés en coopération entre SNCF Voyageurs SA et SNCB SA avec des voitures, circulant sur les lignes à vitesse classique entre Paris-Bruxelles et commercialisés sous la marque « OUIGO Train Classique ». L’Offre Paris-Bruxelles en OUIGO Train Classique est notamment décrite à l’article 4.3.\\n\\n**Offre(s) OUIGO** : désigne indifféremment l’Offre OUIGO Grande Vitesse, l’Offre OUIGO Train Classique et l’Offre Paris-Bruxelles en OUIGO Train Classique.\\n\\n**Personnel** : personnel de SNCF Voyageurs SA pour l’offre OUIGO Grande Vitesse, personnel d’OSLO SAS pour l’offre OUIGO Train Classique et personnel de SNCF Voyageurs SA ou SNCB SA pour l’Offre Paris-Bruxelles en OUIGO Train Classique.\\n\\n**Personnel de Bord** : Dans les présentes conditions, le terme \\\"\\\"Personnel de bord\\\" désigne indifféremment les chefs et cheffes de bord, les chefs et cheffes de train et les train managers.\\n\\n**Places** : Ensemble des Places existantes dans une Rame OUIGO.\\n\\n**Places Standard** : Ensemble des Places situées dans les Rames OUIGO Train Classique, Paris-Bruxelles en OUIGO Train Classique et Places situées dans les Rames OUIGO Grande Vitesse qui ne sont pas dotées de prise électrique.\\n\\n**Places avec Prise** : Places situées en voiture haute dans les Rames OUIGO Grande Vitesse, dotées de prise électrique.\\n\\n**Places Solo** : Places isolées situées en voiture basse dans les Rames OUIGO Grande Vitesse. Places isolées situées en voiture « Siège XL » dans les Rames\", \"score\": 26.003}, {\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"section\": \"2 DEFINITIONS\", \"text\": \"dotées de prise électrique.\\n\\n**Places avec Prise** : Places situées en voiture haute dans les Rames OUIGO Grande Vitesse, dotées de prise électrique.\\n\\n**Places Solo** : Places isolées situées en voiture basse dans les Rames OUIGO Grande Vitesse. Places isolées situées en voiture « Siège XL » dans les Rames de l’Offre Paris-Bruxelles en OUIGO Train Classique.\\n\\n**Place Duo :** Places situés en voiture « Siège XL » dans les Rames de l’Offre Paris-Bruxelles en OUIGO Train Classique.\\n\\n**Places Surréservation confort limité :** Places situées sur les plateformes hautes entre les différentes voitures composant la Rame OUIGO Grande Vitesse, proposées à la vente sur les trains OUIGO Grande Vitesse lorsque les Places Standard, avec Prise et Solo sont toutes vendues. Ces Places ne sont accessibles ni au tarif Enfant ni aux Voyageurs avec des animaux.\\n\\n**Places UFR** : Places réservées aux Voyageurs Utilisateurs de Fauteuil Roulant et à leurs Accompagnateurs. Dans chaque Rame OUIGO Grande Vitesse, deux Places sont réservées aux Utilisateurs de Fauteuil Roulant et deux le sont pour leurs Accompagnateurs. Dans chaque Rame de l’Offre Paris-Bruxelles en OUIGO Train Classique, une Place est réservée aux Utilisateurs de Fauteuil Roulant et une pour leurs Accompagnateurs.\\n\\n**Rame OUIGO Grande Vitesse** : Ensemble de huit (8) voitures OUIGO, dont le transport est assuré par SNCF Voyageurs SA et qui permet à un Voyageur d’effectuer un Trajet.\\n\\n**Rame OUIGO Train Classique :** Ensemble de huit (8) voitures OUIGO pouvant aller jusqu’à 10 voitures, dont l’exécution du transport a été confiée par SNCF Voyageurs SA à la société OSLO SAS en tant que Transporteur substitué et qui permet à un Voyageur d’effectuer un Trajet.\\n\\n**Rame Paris-Bruxelles en OUIGO Train Classique** : ensemble de voitures dont l’exécution du transport est assurée sous la responsabilité de SNCF Voyageurs SA sur le territoire français et sous\", \"score\": 24.962}, {\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"section\": \"Conditions de transport et de vente OUIGO\", \"text\": \"Version n° 74 applicable à compter du 06 octobre 2026\\n\\n1 DISPOSITIONS GENERALES....................................................................................................................................... 6 2 DEFINITIONS.................................................................................................................................................................... 6 3 CONTRAT DE TRANSPORT.......................................................................................................................................11 3.1 Définition du contrat de transport....................................................................................................................................11 3.1.1 Billet à imprimer ou à télécharger sur l’Application....................................................................................11 3.1.2 Convention de preuve................................................................................................................................................12 3.1.3 Responsabilité pour les Bagages...........................................................................................................................12 3.1.4 Billet direct......................................................................................................................................................................12 3.2 Responsabilité à l’égard des personnes et des biens................................................................................................13 3.2.1 Responsabilité en cas de mort et de blessures de Voyageur....................................................................13 3.3 Responsabilité et compensation en cas d’inobservation des horaires..............................................................14 3.3.1 Remboursement en cas de retard ou d’annulation du train.....................................................................14 3.3.2 Compensation en cas de retard à l’arrivée........................................................................................................14 3.3.3 Droits à indemnisation en cas de retard en correspondance avec un billet direct.........................15 3.3.4 Assistance en cas de retard ou d’annulation....................................................................................................16 3.3.5 Exonération de responsabilité en cas d’inobservation des horaires....................................................16 3.4 Accessibilité et Assistance aux personnes handicapées et à mobilité réduite...............................................16 3.4.1 Communication d’informations.............................................................................................................................16 3.4.2 Accessibilité et besoin d’accompagnement......................................................................................................17 3.4.2.1 Voyageurs Utilisateurs de Fauteuil Roulant (UFR)........................................................................17 3.4.2.2 Voyageurs en Situation de Handicap (PSH).......................................................................................17 3.4.2.3 Réservations spécifiques pour les Voyageurs en Situation de Handicap..............................18 3.4.3 Assistance dans les gares..........................................................................................................................................18 3.5 Obligations du Voyageur en gare et à bord des trains OUIGO...............................................................................18 3.5.1 Dispositions Particulières – Règles de vie à bord..........................................................................................18 3.5.2 Accès à la zone d’embarquement..........................................................................................................................20 3.5.3 Transport des Bagages..............................................................................................................................................20 4 OFFRES OUIGO ET OPTIONS....................................................................................................................................20 4.1 Ouigo Grande Vitesse..............................................................................................................................................................21 4.1.1 OUIGO ESSENTIEL.......................................................................................................................................................21 4.1.1.1 Objet...................................................................................................................................................................21 4.1.1.2 Prix......................................................................................................................................................................21 4.1.2 OUIGO PLUS....................................................................................................................................................................21 4.1.2.1 Objet...................................................................................................................................................................21 4.1.2.2 Prix......................................................................................................................................................................22 4.1.3 OUIGO FULL....................................................................................................................................................................22 4.1.3.1 Objet...................................................................................................................................................................22 4.1.3.2 Souscription à l’Offre...................................................................................................................................23 4.1.3.3 Prix......................................................................................................................................................................23\\n\\n4.1.4 Options, Services Et Animaux Sur Ouigo Grande Vitesse...........................................................................23 4.1.4.1 Option Bagage supplémentaire ou volumineux...............................................................................23 4.1.4.1.1 Objet.............................................................................................................................................................................23 4.1.4.1.2 Souscription à l’Option.........................................................................................................................................25 4.1.4.1.3 Prix...............................................................................................................................................................................25 4.1.4.2 Option Vélo/trottinette plié(e) ou vélo démonté sous housse..................................................25 4.1.4.2.1 Objet.............................................................................................................................................................................25 4.1.4.2.2 Souscription à l’Option.........................................................................................................................................26 4.1.4.2.3 Prix...............................................................................................................................................................................26 4.1.4.3 Option Choix de la place............................................................................................................................26 4.1.4.3.1 Objet.............................................................................................................................................................................26 4.1.4.3.2 Souscription à l’Option.........................................................................................................................................27 4.1.4.3.3 Prix...............................................................................................................................................................................28 4.1.4.3.4 Modification du Choix de la place....................................................................................................................28\", \"score\": 24.933}]}"
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "list_rule_documents",
+            "arguments": "{\"company\":\"OUIGO\"}"
+          },
+          "id": "relay_004"
+        }
+      ],
+      "content": null
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_004",
+      "content": "{\"documents\": [{\"doc_id\": \"fr-ouigo-faq-retard-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : tout savoir sur l'indemnisation en cas de retard\", \"language\": \"fr\", \"chars\": 967}, {\"doc_id\": \"fr-ouigo-cgtv-fr\", \"company\": \"OUIGO\", \"title\": \"OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026\", \"language\": \"fr\", \"chars\": 234405}]}"
+    }
+  ],
+  "options": {
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "ask_traveler",
+          "description": "Ask one necessary topic from the supplied topic list.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "topic"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "departures",
+          "description": "Departures at one station; maximum four-hour window, 40 rows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "station": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "station",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_trains",
+          "description": "Direct trains only; search each connecting leg separately. Use narrow windows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "destination",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "train_stops",
+          "description": "All stops of a train. Date is its service day; train numbers can be ambiguous.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "train": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "train",
+              "date"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_forms",
+          "description": "Discover available claim recipients, including unfamiliar companies.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_form",
+          "description": "Read a company's fields, formats, instructions, and allowed values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "file_claim",
+          "description": "File one claim per ticket using exact form fields and observed train_id values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              },
+              "fields": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "company",
+              "fields"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "no_claim",
+          "description": "Declare nothing owed for the entire request, after rules and relevant train evidence.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_rules",
+          "description": "Search cached passages with keywords in the document language. Company is optional.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_rule_documents",
+          "description": "List rule metadata; omit company to discover all operators and laws.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_rule_document",
+          "description": "Read a short document by ID; use search_rules for large documents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "doc_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "doc_id"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_compensation",
+          "description": "Apply the retrieved rate and minimum payout. Percentage: 25 means 25%, not 0.25 or '25%'. Minimum: amount in ticket currency; 0 only if no minimum applies.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "string"
+              },
+              "minimum": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "price",
+              "percentage",
+              "minimum"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_delay",
+          "description": "Difference between full ISO planned/recorded timestamps, floored to minutes.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "planned": {
+                "type": "string"
+              },
+              "recorded": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "planned",
+              "recorded"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "resolve_connection",
+          "description": "Through ticket, unknown onward train: look up incoming and missed departures, choose the first feasible noncancelled replacement and return exact final delay. Uses counted train calls. Departure and connection are scheduled HH:MM times from the request.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "via": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "departure": {
+                "type": "string"
+              },
+              "connection": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "via",
+              "destination",
+              "date",
+              "departure",
+              "connection"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "budget",
+          "description": "Remaining counted tool calls and model calls.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "finish",
+          "description": "Finish only after all required claims or the no-claim decision are recorded.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "parallel_tool_calls": false,
+    "max_tokens": 1800
+  }
+}

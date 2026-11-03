@@ -1,0 +1,14 @@
+{
+  "content": null,
+  "role": "assistant",
+  "tool_calls": [
+    {
+      "type": "function",
+      "function": {
+        "arguments": "{}",
+        "name": "list_forms"
+      },
+      "id": "relay_006"
+    }
+  ]
+}

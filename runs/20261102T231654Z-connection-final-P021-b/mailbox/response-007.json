@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"id":"relay_007","function":{"arguments":"{\"topic\":\"ticket_price\"}","name":"ask_traveler"},"type":"function"}],"content":null}

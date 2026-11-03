@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_004",
+      "type": "function",
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"Garantie G30 TGV INOUI retard 2 heures 3 heures 50% 25 euros minimum barème\",\"company\":\"SNCF\",\"limit\":6}"
+      }
+    }
+  ]
+}

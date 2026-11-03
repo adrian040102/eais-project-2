@@ -1,0 +1,14 @@
+{
+  "content": null,
+  "role": "assistant",
+  "tool_calls": [
+    {
+      "id": "relay_008",
+      "type": "function",
+      "function": {
+        "arguments": "{\"company\":\"SNCF\"}",
+        "name": "get_form"
+      }
+    }
+  ]
+}

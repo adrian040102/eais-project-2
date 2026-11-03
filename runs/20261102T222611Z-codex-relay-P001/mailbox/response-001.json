@@ -1,0 +1,1 @@
+{"content":null,"role":"assistant","tool_calls":[{"id":"relay_001","type":"function","function":{"name":"find_trains","arguments":"{\"to_time\":\"20:30\",\"date\":\"2026-10-20\",\"from_time\":\"20:00\",\"destination\":\"Nice\",\"origin\":\"Toulon\"}"}}]}

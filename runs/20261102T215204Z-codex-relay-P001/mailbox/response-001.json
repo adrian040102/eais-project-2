@@ -1,0 +1,14 @@
+{
+  "content": null,
+  "role": "assistant",
+  "tool_calls": [
+    {
+      "type": "function",
+      "function": {
+        "arguments": "{\"topic\":\"ticket_price\"}",
+        "name": "ask_traveler"
+      },
+      "id": "relay_001"
+    }
+  ]
+}

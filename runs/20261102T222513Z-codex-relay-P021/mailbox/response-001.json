@@ -1,0 +1,14 @@
+{
+  "tool_calls": [
+    {
+      "id": "relay_001",
+      "function": {
+        "arguments": "{\"topic\":\"ticket_structure\"}",
+        "name": "ask_traveler"
+      },
+      "type": "function"
+    }
+  ],
+  "content": null,
+  "role": "assistant"
+}

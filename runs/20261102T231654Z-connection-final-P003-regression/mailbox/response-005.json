@@ -1,0 +1,1 @@
+{"tool_calls":[{"type":"function","function":{"name":"no_claim","arguments":"{\"company\":\"DB\"}"},"id":"relay_005"}],"role":"assistant","content":null}

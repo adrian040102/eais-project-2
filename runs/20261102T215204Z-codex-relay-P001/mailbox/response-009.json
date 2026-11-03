@@ -1,0 +1,14 @@
+{
+  "tool_calls": [
+    {
+      "type": "function",
+      "id": "relay_009",
+      "function": {
+        "arguments": "{\"company\":\"OUIGO\",\"fields\":{\"gare_depart\":\"Toulon\",\"retard_minutes\":130,\"heure_arrivee_prevue\":\"22:13\",\"mode_indemnisation\":\"bon d'achat\",\"gare_arrivee\":\"Nice-Ville\",\"date_voyage\":\"20/10/2026\",\"numero_train\":\"tr-1795cac1732e\",\"prix_trajet_eur\":\"25.00\",\"heure_arrivee_reelle\":\"00:23\",\"montant_demande_eur\":\"12.50\"}}",
+        "name": "file_claim"
+      }
+    }
+  ],
+  "role": "assistant",
+  "content": null
+}

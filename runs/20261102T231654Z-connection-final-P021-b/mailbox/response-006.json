@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_006","function":{"arguments":"{\"company\":\"SNCF\"}","name":"get_form"},"type":"function"}]}

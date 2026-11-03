@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"function":{"name":"search_rules","arguments":"{\"query\":\"retard OUIGO indemnisation 120 minutes billet train grande vitesse\",\"company\":\"OUIGO\",\"limit\":8}"},"id":"relay_004","type":"function"}]}

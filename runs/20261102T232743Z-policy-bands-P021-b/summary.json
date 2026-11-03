@@ -1,0 +1,69 @@
+{
+ "set": "supervised-relay-smoke",
+ "system": "/workspace/runs/20261102T232743Z-policy-bands-P021-b/source/system.py",
+ "rows": [
+  {
+   "id": "P021",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 1,
+   "limit": 5,
+   "over": 0,
+   "tools": 1,
+   "model": 2,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 71.41
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 1,
+  "correct": 0,
+  "extra": 0,
+  "questions": 1,
+  "over": 0,
+  "tools": 1,
+  "model": 2,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 43.79
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "error": "Relay response must be an assistant message object.",
+   "seconds": 27.2
+  }
+ ],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 6832128,
+ "sandbox": false
+}

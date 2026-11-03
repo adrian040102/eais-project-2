@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "split": "supervised-relay-development",
+  "source_summary": "C:\\Users\\adria\\Documents\\Uni\\Master\\Uni Mannheim\\5. sem\\EAIS\\Projekt 2\\runs\\20261102T222513Z-codex-relay-P003\\summary.json",
+  "note": "Diagnostic report. The course runner is the scoring authority. Amount/train/provenance counts describe failed claim checks; missing claims are counted separately. Company groups may overlap. Cost includes setup when recorded in the summary.",
+  "score": {
+    "points": 0.0,
+    "max": 1,
+    "percent": 0.0,
+    "official_points": 0.0,
+    "official_max": 1,
+    "official_totals_match": true
+  },
+  "coverage": {
+    "expected": 1,
+    "rows_present": 1,
+    "attempted": 1,
+    "not_run": 0,
+    "missing_ids": [],
+    "unexpected_ids": [],
+    "complete": true
+  },
+  "totals": {
+    "correct": 0,
+    "fully_right": 0,
+    "extra_filings": 0,
+    "penalty": 0.5,
+    "questions": 1,
+    "questions_over": 0,
+    "tool_calls": 6,
+    "model_calls": 10,
+    "model_errors": 0,
+    "cost_usd": 0.0,
+    "request_seconds_sum": 151.34,
+    "request_seconds_mean": 151.34,
+    "request_seconds_p95": 151.34
+  },
+  "statuses": {
+    "ok": 1
+  },
+  "failures": {
+    "amount": 0,
+    "train": 0,
+    "provenance": 0,
+    "missing_claim": 0,
+    "missing_no_claim": 1,
+    "wrong_no_claim": 0,
+    "filed_when_nothing_owed": 1,
+    "extra_or_duplicate_claims": 0,
+    "no_claim_train_evidence": 0,
+    "missing_facts": 0,
+    "wrong_ticket_price": 0,
+    "questions_over": 0,
+    "runtime_error": 0,
+    "call_budget": 0,
+    "timeout": 0,
+    "model_access": 0,
+    "cost_cap": 0,
+    "not_run": 0,
+    "missing_output": 0
+  },
+  "groups": {
+    "case_type": {
+      "nothing_minimum": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": -0.5,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "company": {
+      "DB": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": -0.5,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    },
+    "decision": {
+      "no_claim": {
+        "requests": 1,
+        "attempted": 1,
+        "net_points": -0.5,
+        "points": 0.0,
+        "max": 1,
+        "percent": 0.0,
+        "fully_right": 0,
+        "cost_usd": 0.0
+      }
+    }
+  },
+  "setup": "ok",
+  "warnings": [],
+  "cases": [
+    {
+      "id": "P003",
+      "case_type": "nothing_minimum",
+      "companies": [
+        "DB"
+      ],
+      "decision": "no_claim",
+      "present": true,
+      "attempted": true,
+      "points": 0.0,
+      "penalty": 0.5,
+      "net_points": -0.5,
+      "max": 1,
+      "correct": 0,
+      "fully_right": false,
+      "status": "ok",
+      "issues": [
+        "filed-when-nothing-owed",
+        "missing-no-claim"
+      ],
+      "questions": 1,
+      "question_limit": 2,
+      "questions_over": 0,
+      "extra": 0,
+      "tool_calls": 6,
+      "model_calls": 10,
+      "usd": 0.0,
+      "seconds": 151.34,
+      "checks": [
+        {
+          "company": "DB",
+          "no_claim": true,
+          "ok": false,
+          "declared": false,
+          "filed_anything": true,
+          "topics_ok": true
+        }
+      ],
+      "provenance_issues": [],
+      "failures": {
+        "amount": 0,
+        "train": 0,
+        "provenance": 0,
+        "missing_claim": 0,
+        "missing_no_claim": 1,
+        "wrong_no_claim": 0,
+        "filed_when_nothing_owed": 1,
+        "extra_or_duplicate_claims": 0,
+        "no_claim_train_evidence": 0,
+        "missing_facts": 0,
+        "wrong_ticket_price": 0,
+        "questions_over": 0,
+        "runtime_error": 0,
+        "call_budget": 0,
+        "timeout": 0,
+        "model_access": 0,
+        "cost_cap": 0,
+        "not_run": 0,
+        "missing_output": 0
+      }
+    }
+  ],
+  "relay": {
+    "kind": "supervised-codex-relay-smoke",
+    "created_utc": "2026-11-02T22:25:13.999265+00:00",
+    "ids": [
+      "P003"
+    ],
+    "model": "gpt-6-luna",
+    "reasoning_effort": "low",
+    "source_sha256": "d8528b8e419ec7b6130b2cfdf8be6ba4b71dd9a66823720dbb9fecea5c02299c",
+    "relay_sha256": "a8931e0badda4cfd23cb485a3939b7c150cb9f7d92f4ff6e3eee6f045106e55e",
+    "api_cost_usd": 0,
+    "subscription_usage": "not measured; this test consumes Codex usage",
+    "token_counts": "not measured",
+    "course_api_tested": false,
+    "limitations": "A Codex agent answers exported messages as JSON. Its surrounding instructions, tool-call serialization, latency, and token limits differ from raw course API calls. This is a supervised diagnostic, not an official model-performance measurement."
+  }
+}

@@ -1,0 +1,185 @@
+{
+ "set": "supervised-relay-smoke",
+ "system": "/workspace/runs/20261102T231654Z-connection-final-P021-a/source/system.py",
+ "rows": [
+  {
+   "id": "P021",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 1,
+   "limit": 5,
+   "over": 0,
+   "tools": 1,
+   "model": 15,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 46.57
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 1,
+  "correct": 0,
+  "extra": 0,
+  "questions": 1,
+  "over": 0,
+  "tools": 1,
+  "model": 15,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 22.32
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 10.36
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 0.89
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.06
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.06
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.05
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.05
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.07
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.05
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.07
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 0.87
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.08
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.07
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 1.07
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 0.88
+  }
+ ],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 6832128,
+ "sandbox": false
+}

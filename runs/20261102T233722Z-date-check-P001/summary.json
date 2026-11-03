@@ -1,0 +1,123 @@
+{
+ "set": "supervised-relay-smoke",
+ "system": "/workspace/runs/20261102T233722Z-date-check-P001/source/system.py",
+ "rows": [
+  {
+   "id": "P001",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 1,
+   "limit": 3,
+   "over": 0,
+   "tools": 3,
+   "model": 8,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 398.76
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 1,
+  "correct": 0,
+  "extra": 0,
+  "questions": 1,
+  "over": 0,
+  "tools": 3,
+  "model": 8,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 35.98
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 8.45
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 8.27
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 8.89
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 9.49
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 17.79
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 9.28
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "error": "No supervised model response within 300 seconds.",
+   "seconds": 300.0
+  }
+ ],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 6832128,
+ "sandbox": false
+}

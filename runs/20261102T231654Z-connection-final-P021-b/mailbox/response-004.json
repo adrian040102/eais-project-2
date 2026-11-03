@@ -1,0 +1,1 @@
+{"content":null,"tool_calls":[{"function":{"name":"search_rules","arguments":"{\"limit\":8,\"query\":\"TGV INOUI indemnisation retard 223 minutes trajet intérieur\"}"},"type":"function","id":"relay_004"}],"role":"assistant"}

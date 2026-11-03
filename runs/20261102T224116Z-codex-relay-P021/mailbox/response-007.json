@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_007","type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"retard TGV INOUI correspondance manquée indemnisation SNCF\",\"company\":\"SNCF\",\"limit\":5}"}}]}

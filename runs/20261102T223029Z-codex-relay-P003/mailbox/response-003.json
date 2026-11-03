@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"type":"function","function":{"arguments":"{\"query\":\"ICE Verspätung 60 Minuten Entschädigung 25 Prozent Mindestbetrag\",\"company\":\"DB\",\"limit\":5}","name":"search_rules"},"id":"relay_003"}],"content":null}

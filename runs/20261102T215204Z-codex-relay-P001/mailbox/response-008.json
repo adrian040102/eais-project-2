@@ -1,0 +1,14 @@
+{
+  "tool_calls": [
+    {
+      "type": "function",
+      "function": {
+        "name": "file_claim",
+        "arguments": "{\"fields\":{\"heure_arrivee_reelle\":\"00:23\",\"montant_demande_eur\":\"12.50\",\"heure_arrivee_prevue\":\"22:13\",\"gare_arrivee\":\"Nice-Ville\",\"mode_indemnisation\":\"bon d'achat\",\"retard_minutes\":130,\"prix_trajet_eur\":\"25.00\",\"gare_depart\":\"Toulon\",\"date_voyage\":\"20/10/2026\",\"numero_train\":\"OUIGO 7853\"},\"company\":\"OUIGO\"}"
+      },
+      "id": "relay_008"
+    }
+  ],
+  "content": null,
+  "role": "assistant"
+}

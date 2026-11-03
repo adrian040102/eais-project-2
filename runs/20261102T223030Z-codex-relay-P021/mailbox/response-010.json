@@ -1,0 +1,1 @@
+{"tool_calls":[{"type":"function","id":"relay_010","function":{"arguments":"{}","name":"list_forms"}}],"role":"assistant","content":null}

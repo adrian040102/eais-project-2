@@ -1,0 +1,1 @@
+{"tool_calls":[{"id":"relay_003","function":{"name":"search_rules","arguments":"{\"query\":\"OUIGO TGV 120 minutes delay compensation\",\"company\":\"OUIGO\",\"limit\":5}"},"type":"function"}],"role":"assistant","content":null}

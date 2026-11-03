@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_002",
+      "type": "function",
+      "function": {
+        "name": "resolve_connection",
+        "arguments": "{\"origin\":\"Aix-en-Provence TGV\",\"via\":\"Lyon Part-Dieu\",\"destination\":\"Montpellier Sud de France\",\"date\":\"2026-10-21\",\"departure\":\"12:26\",\"connection\":\"14:10\"}"
+      }
+    }
+  ]
+}

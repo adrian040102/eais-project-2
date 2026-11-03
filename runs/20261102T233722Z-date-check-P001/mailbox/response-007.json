@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_007","type":"function","function":{"arguments":"{\"price\":\"25\",\"percentage\":\"50\",\"minimum\":\"0\"}","name":"calculate_compensation"}}]}

@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_005",
+      "type": "function",
+      "function": {
+        "name": "find_trains",
+        "arguments": "{\"origin\":\"Lyon Part-Dieu\",\"destination\":\"Montpellier Sud de France\",\"date\":\"2026-10-21\",\"from_time\":\"14:10\",\"to_time\":\"18:30\"}"
+      }
+    }
+  ]
+}

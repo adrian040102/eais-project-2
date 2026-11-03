@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"type":"function","id":"relay_003","function":{"arguments":"{\"query\":\"TGV grande vitesse retard indemnisation 60 minutes deux heures\",\"company\":\"OUIGO\",\"limit\":8}","name":"search_rules"}}]}

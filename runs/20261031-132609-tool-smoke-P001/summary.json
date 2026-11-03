@@ -1,0 +1,49 @@
+{
+ "set": "practice",
+ "system": "eais-p2-kit/examples/example_system.py",
+ "rows": [
+  {
+   "id": "P001",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 1,
+   "limit": 3,
+   "over": 0,
+   "tools": 6,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.52
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 1,
+  "correct": 0,
+  "extra": 0,
+  "questions": 1,
+  "over": 0,
+  "tools": 6,
+  "model": 0,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 12288,
+ "sandbox": false
+}

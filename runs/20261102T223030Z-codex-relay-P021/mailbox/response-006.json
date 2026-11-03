@@ -1,0 +1,1 @@
+{"tool_calls":[{"type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"TGV INOUI retard final supérieur à 180 minutes remboursement indemnisation billet unique\",\"company\":\"SNCF\",\"limit\":8}"},"id":"relay_006"}],"content":null,"role":"assistant"}

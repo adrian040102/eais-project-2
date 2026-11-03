@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_007","type":"function","function":{"arguments":"{\"rate_bands\":[{\"percentage\":\"0\",\"from_minutes\":0},{\"percentage\":\"25\",\"from_minutes\":30},{\"percentage\":\"50\",\"from_minutes\":120},{\"percentage\":\"75\",\"from_minutes\":180}],\"minimum\":\"0\",\"price\":\"77\"}","name":"calculate_compensation"}}]}

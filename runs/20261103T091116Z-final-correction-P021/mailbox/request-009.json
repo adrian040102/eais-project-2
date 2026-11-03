@@ -1,0 +1,559 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Help the traveler complete every compensation decision through the tools.\nWork through missing facts, train identification, rule retrieval, then the form.\nUse ask_traveler for missing facts; plain questions in your answer do not reach the traveler.\nAsk only necessary topics, once each. Never invent prices, dates, sellers, or delay causes.\nDo not ask for facts already stated or unambiguously derived, including explicit dates.\nResolve relative dates and weekdays from the date at the start of the request. All times are local.\nThe header is the writing date, not the travel date. Subtract relative offsets before any train lookup.\nIf train data contradicts the reported journey, recheck the travel date before deciding no_claim.\nUse recorded train data, not approximate delays reported by the traveler. Search each leg\nof a connection separately. Use canonical station names and windows of at most four hours;\nfrom_time and to_time must differ. Pick the intended run by date, route, and planned time.\nFor missed connections, establish ticket_structure and the actual onward journey through\ntrain_after_missed_connection or arrival_time, unless already stated. For a through ticket\nwhose onward train is unknown, use resolve_connection with the route and both scheduled\ndeparture times from the request. It resolves the incoming, missed and replacement trains\nand final delay. Copy its exact arrival times and minutes; do not guess or round them.\nFor a known onward train, identify it and calculate_delay from the original planned final\narrival to that train's recorded arrival. Separate tickets are assessed separately.\nSearch the rules before deciding. Use keywords in the documents' language; search_rules\ndoes not translate. Omit its company filter for EU/cross-border rules. Confirm that the\npassage applies to this ticket, train category, and journey. Operator and claim recipient\nmay differ: use the seller, ticket structure, rules, and list_forms to choose the recipient.\nInclude the observed train category in rule queries. A company's regional, domestic,\nand international policies can differ. Use the table column for the actual train category\nand the row for the final delay, rather than the first percentage in the search results.\nRead get_form before filing, including help, required_if, allowed values, and price basis.\nForms may be unfamiliar. Use their exact field names and exact observed train_id values.\nCalculate compensation with calculate_compensation using the rate and minimum from the\napplicable rules. Always supply minimum explicitly; use 0 only after checking that no\nminimum applies. If all payouts are zero, record no_claim without a form or payment question.\nAfter resolve_connection, supply ALL rate_bands from the applicable policy instead of\nselecting a percentage yourself; Python selects the band using the final journey delay.\nUse calculate_delay for planned/actual timestamps from different trains; otherwise\nuse the relevant train tool's delay. Return tickets may require the affected direction's\nprice. Check exclusions and ask the reported delay_reason if the rule depends on it.\nWhen a payable claim offers a payment choice, ask payment_preference unless already known.\nDo not choose a voucher or transfer for the traveler. Check whether the choice changes the rate.\nThe form's train is the first late/cancelled train causing the disruption, including the\nincoming late train for a missed connection. File one claim per company and ticket;\naccepted filings are final, while rejected ones can be corrected. Still file when the\nrules describe automatic payments. Deadlines, waiting periods, and proof are satisfied.\nIf any claim is owed, file the owed claims and leave the unowed tickets without no_claim.\nUse no_claim only when nothing is owed for the entire request, for the responsible company.\nBefore no_claim, identify the relevant run with train_stops or complete find_trains with\nat most five results. Obtain all necessary missing facts before either decision.\nReserve calls for form retrieval, filing, and possible correction. Call finish only after\nall tickets are handled. A tool error is information to correct, never a no-claim decision.\n\nRule companies: Cross-border, DB, EU, OUIGO, SBB, SNCF, TGV Lyria, TILO, Trenitalia, Trenord\nAvailable traveler topics: {\"travel_date\": \"the day of the trip\", \"departure_time\": \"the planned departure time of the first train, or of the train the traveler means\", \"route\": \"where the trip started, where the traveler changed trains and where it ended\", \"ticket_structure\": \"one through ticket for the whole trip, or separate tickets, and for which parts\", \"ticket_seller\": \"where each ticket was bought (company, app, website or ticket office)\", \"ticket_price\": \"the price paid for each ticket\", \"travel_class\": \"first or second class\", \"travelcard\": \"travelcards or passes, e.g. GA, Half Fare, BahnCard, Deutschland-Ticket, or none\", \"reservation\": \"whether the traveler had a seat reservation, with its reference\", \"booking_date\": \"when the tickets were bought\", \"train_after_missed_connection\": \"which train the traveler took after missing a connection or after a train stopped short\", \"arrival_time\": \"when the traveler actually arrived at the destination, as the traveler remembers it\", \"delay_reason\": \"the reason for the delay that staff announced, as the traveler remembers it\", \"payment_preference\": \"how the traveler would like to be paid, e.g. bank transfer or voucher\"}"
+    },
+    {
+      "role": "user",
+      "content": "Date : vendredi 23 octobre 2026\n\nBonjour à vous,\n\nLe 21 octobre, j'ai pris le TGV de 12h26 d'Aix-en-Provence TGV à Lyon Part-Dieu, où j'avais une correspondance à 14h10 pour Montpellier Sud de France. Le TGV est arrivé à Lyon Part-Dieu avec à peu près 130 minutes de retard et j'ai raté la correspondance. Merci de faire la réclamation pour moi.\n\nBonne journée, Noah"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "arguments": "{\"topic\":\"ticket_structure\"}",
+            "name": "ask_traveler"
+          },
+          "id": "relay_001"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_001",
+      "content": "\"One ticket for the whole trip, bought on SNCF Connect.\""
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "relay_002",
+          "function": {
+            "name": "ask_traveler",
+            "arguments": "{\"topic\":\"train_after_missed_connection\"}"
+          },
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_002",
+      "content": "\"I don't remember which one. We just took the next train to Montpellier Sud de France.\""
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "arguments": "{\"destination\":\"Montpellier Sud de France\",\"origin\":\"Aix-en-Provence TGV\",\"connection\":\"14:10\",\"via\":\"Lyon Part-Dieu\",\"date\":\"2026-10-21\",\"departure\":\"12:26\"}",
+            "name": "resolve_connection"
+          },
+          "id": "relay_003"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_003",
+      "content": "{\"minutes\": 223, \"final_delay\": \"3 hours 43 minutes\", \"planned_arrival\": \"2026-10-21 15:50\", \"recorded_arrival\": \"2026-10-21 19:33:00\", \"incoming\": {\"train\": \"TGV INOUI 9866\", \"train_id\": \"tr-9c7cb6e9b64c\", \"line\": \"001B\", \"operator\": \"SNCF\", \"dep_planned\": \"2026-10-21 12:26\", \"dep_recorded\": \"2026-10-21 14:36:00\", \"dep_delay_min\": 130, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 13:53\", \"arr_recorded\": \"2026-10-21 16:03:00\", \"arr_delay_min\": 130, \"arr_kind\": \"announced\", \"arr_cancelled\": false}, \"planned_connection\": {\"train\": \"TGV INOUI 9826\", \"train_id\": \"tr-7c91f06df9ef\", \"line\": \"001B\", \"operator\": \"SNCF\", \"dep_planned\": \"2026-10-21 14:10\", \"dep_recorded\": \"2026-10-21 14:30:00\", \"dep_delay_min\": 20, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 15:50\", \"arr_recorded\": \"2026-10-21 16:30:00\", \"arr_delay_min\": 40, \"arr_kind\": \"announced\", \"arr_cancelled\": false}, \"replacement\": {\"train\": \"TGV INOUI 9879\", \"train_id\": \"tr-7076b8f0cad9\", \"line\": \"071B\", \"operator\": \"SNCF\", \"dep_planned\": \"2026-10-21 17:10\", \"dep_recorded\": \"2026-10-21 17:35:00\", \"dep_delay_min\": 25, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 19:08\", \"arr_recorded\": \"2026-10-21 19:33:00\", \"arr_delay_min\": 25, \"arr_kind\": \"announced\", \"arr_cancelled\": false}, \"change_minutes\": 10}"
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "search_rules",
+            "arguments": "{\"company\":\"SNCF\",\"limit\":8,\"query\":\"retard TGV INOUI correspondance retard final indemnisation minimum\"}"
+          },
+          "id": "relay_004"
+        }
+      ],
+      "content": null
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_004",
+      "content": "{\"passages\": [{\"doc_id\": \"fr-sncfv-retard-tgv-ic-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Voyageurs : en cas de retard, TGV INOUI et INTERCITÉS\", \"language\": \"fr\", \"section\": \"TGV INOUI - INTERCITÉS > Demandez votre compensation en ligne\", \"text\": \"- Vous avez effectué un voyage en France avec TGV INOUI / INTERCITÉS ou à bord des trains internationaux opérés par SNCF Voyageurs ou en partenariat1\\n\\nou\\n\\n- Vous avez effectué un trajet en correspondance éligible au Billet Direct comportant au moins un trajet TGV INOUI ou INTERCITÉS\\n\\nVous êtes arrivé avec plus de 30 minutes de retard à votre destination par rapport à l'heure indiquée sur votre billet ou Billet Direct, quel que soit le motif de retard.\\n\\nVous pouvez demander une compensation2 et disposez de 90 jours à compter de la date de votre voyage pour la formuler.\\n\\nAccédez à TOUTOUI\\\")\", \"score\": 28.044}, {\"doc_id\": \"fr-sncf-connect-aide-retard-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Connect : retard de votre train et remboursement\", \"language\": \"fr\", \"section\": \"Retard d'un train et remboursement SNCF > Les Compensations en cas de retard d'un train TGV INOUI, TGV International ou INTERCITÉS > Bon à savoir\", \"text\": \"En cas de conditions de circulation dégradées sur les lignes de jour Paris - Clermont-Ferrand et Paris - Limoges – Toulouse, la Garantie Ponctualité INTERCITÉS s’applique.\\n\\nVous avez un forfait actif pour le mois et la ligne concernés, bénéficiez ainsi d’une indemnisation de 20% du prix de votre coupon mensuel. Si vous êtes éligible, vous recevrez un e-mail des équipes de la Relation Clients SNCF Voyageurs. En savoir plus sur la Garantie Ponctualité INTERCITÉS.\", \"score\": 25.982}, {\"doc_id\": \"fr-sncfv-retard-tgv-ic-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Voyageurs : en cas de retard, TGV INOUI et INTERCITÉS\", \"language\": \"fr\", \"section\": \"TGV INOUI - INTERCITÉS > Faites votre demande par courrier > Conditions et mentions légales\", \"text\": \"1 TGV Lyria, TGV France-Italie, TGV INOUI France-Espagne, DB-SNCF en coopération, TGV Bruxelles/Province en coopération avec SNCB, TGV France-Luxembourg, TGV Paris-Fribourg en Brisgau.\\n\\n2 En dessous de 1h de retard, bénéficiez d’un bon d’achat digital. Remboursement sous forme de bon d'achat digital non monétisable en cas de retard inférieur à 60 min. Au-delà, vous pouvez aussi faire le choix d’un virement bancaire.\", \"score\": 24.659}, {\"doc_id\": \"fr-sncf-connect-aide-retard-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Connect : retard de votre train et remboursement\", \"language\": \"fr\", \"section\": \"Retard d'un train et remboursement SNCF > Les Compensations en cas de retard d'un train TGV INOUI, TGV International ou INTERCITÉS\", \"text\": \"Bénéficiez d’un bon d’achat en ligne si votre train a plus de 30 minutes de retard à l'arrivée à votre destination finale, quel que soit le motif dans le cadre de la garantie G30. Au-delà d'une heure de retard, vous pouvez demander une compensation sous la forme d'un virement bancaire.\\n\\nLes trains concernés sont :\\n\\n• TGV INOUI nationaux. Si vous êtes détenteur d'un forfait MAX JEUNE et que votre train a plus de 30 minutes de retard, MAX JEUNE vous offre un bon d’achat non nominatif de 5€.\\n\\n• TGV INOUI internationaux (TGV Lyria, TGV France-Italie, TGV INOUI France-Espagne, DB-SNCF en coopération, TGV Bruxelles/Province en coopération avec SNCB, TGV France-Luxembourg, TGV Paris-Fribourg en Brisgau\\n\\n• INTERCITÉS avec ou sans réservation obligatoire.\\n\\n- ### Barème de compensation TGV INOUI nationaux et INTERCITES\\n\\n| Durée de retard | Montant compensé |\\n\\n| Moins de 30 minutes | Pas de compensation |\\n\\n| Entre 30 min et 2h | 25% |\\n\\n| Entre 2 et 3h | 50% |\\n\\n| Plus de 3h | 75% |\\n\\nEntre 30 min et 1h de retard de votre train, vous recevez un bon d'achat.\\n\\nEntre 1h et plus de 3h, une indemnité vous sera versée en numéraire. Il pourra également vous être proposé un remboursement sous forme de bons voyages, à condition que les conditions applicables à ces bons de voyages soient suffisamment souples, notamment en ce qui concerne leur période de validité et la destination. En l’absence d’acceptation expresse de votre part de ces bons voyages, l’indemnité sera versée en numéraire. Les principales caractéristiques des bons de voyages proposés seront portées à votre connaissance préalablement à votre choix.\\n\\n- ### Barème compensation TGV INOUI Internationaux\\n\\n| Durée de retard | Montant compensé |\\n\\n| Moins de 30 minutes | Pas de compensation |\\n\\n|\", \"score\": 24.493}, {\"doc_id\": \"fr-sncfv-retard-tgv-ic-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Voyageurs : en cas de retard, TGV INOUI et INTERCITÉS\", \"language\": \"fr\", \"section\": \"TGV INOUI - INTERCITÉS > Le calcul de votre compensation\", \"text\": \"Le montant de votre compensation2 est calculé sur le prix du billet (hors prestations annexes), quel que soit le motif de votre retard.\\n\\nLes modalités de remboursement2 sont les suivantes :\\n\\n- entre 30 min et 2h de retard : 25% du prix du billet.\\n\\n- entre 2h et 3h de retard : 50% du prix du billet.\\n\\n- au-delà de 3h de retard : 75% du prix du billet.\\n\\nEn savoir plus\", \"score\": 24.384}, {\"doc_id\": \"fr-sncfv-retard-tgv-ic-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Voyageurs : en cas de retard, TGV INOUI et INTERCITÉS\", \"language\": \"fr\", \"section\": \"TGV INOUI - INTERCITÉS\", \"text\": \"Votre voyage incluant un trajet TGV INOUI ou INTERCITÉS a eu plus de 30 minutes de retard à destination finale ? Bénéficiez de la garantie G30 et demandez votre compensation en ligne ou par courrier.\\n\\nMis à jour le 17 juin 2026 Lecture 3 min\", \"score\": 24.065}, {\"doc_id\": \"fr-sncf-tarifs-voyageurs-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Voyageurs : Tarifs Voyageurs\", \"language\": \"fr\", \"section\": \"VOLUME 1 - DISPOSITIONS GENERALES > 13. Compensation des retards > 13.3. Compensation en cas de retard pour un voyage en correspondance avec un billet direct\", \"text\": \"Dans le cas où le voyageur achète un voyage incluant un ou plusieurs trajets en correspondance qui remplit les conditions telles que précisées au 4.2 du Volume 1 des présents Tarifs Voyageurs, alors son voyage sera considéré comme un billet direct de son point de départ à son point d’arrivée finale.\\n\\nEn cas de retard à sa destination finale constatée sur un billet direct, SNCF Voyageurs compense le voyageur dans les conditions précisées ci-dessous, quel que soit le motif du retard.\\n\\nLe taux de compensation de chaque transporteur est appliqué pour le trajet qui le concerne en fonction du retard final à l’arrivée, selon le barème suivant :\\n\\n| Retard à votre destination finale | Valeur du bon d'achat (1) (% calculé sur le prix du billet payé sur chacun des trajets) |\\n| TGV INOUI, INTERCITÉS | OUIGO | TER |\\n| Moins de 30 min | - | - | 60 à 119 min = 25% A partir de 120 min = 50% |\\n| Entre 30 et 59 minutes | 25% | - |\\n| Entre 60 et 119 minutes | 25% | 25% |\\n| Entre 120 et 179 minutes | 50% | 50% |\\n| Plus de 180 minutes | 75% (2) | 50% |\\n\\nLes voyageurs ayant acheté leur billet sur le réseau de distribution SNCF Voyageurs, peuvent faire leur demande de compensation selon les mêmes démarches que pour la Garantie G30 cf. volume 1 des présents Tarifs voyageurs : en ligne sur https://tout-oui.sncf.com/ ou https://www.sncf-voyageurs.com/contactez-nous/reclamation-voyage/. Les clients ayant acheté leur billet en dehors du réseau SNCF Voyageurs doivent se rapprocher de leur distributeur.\\n\\nToute demande doit être envoyée au plus tard 90 jours après le voyage.\\n\\nLes abonnements sont exclus des garanties du billet direct.\\n\\n(1)Bon d’achat ou virement en numéraire à partir\", \"score\": 23.969}, {\"doc_id\": \"fr-sncf-connect-aide-retard-fr\", \"company\": \"SNCF\", \"title\": \"SNCF Connect : retard de votre train et remboursement\", \"language\": \"fr\", \"section\": \"Retard d'un train et remboursement SNCF > Autres compagnies de train\", \"text\": \"la région concernée.\\n\\nVous avez besoin d'un justificatif de retard pour votre employeur ou l’administration ? Faites-en la demande directement en ligne :\\n\\n• choisissez votre région,\\n\\n• cliquez sur \\\"Services et contacts,\\n\\n• allez sur \\\"Bulletin de retard\\\",\\n\\n• remplissez les informations demandées.\\n\\nVous voyagez avec correspondance ?\\n\\nSi votre trajet comprend une correspondance en TGV INOUI et TER, utilisez le formulaire de réclamation TGV INOUI & INTERCITÉS pour l’ensemble de votre voyage.\\n\\n- ### CFF\\n\\n| Durée retard | Montant compensé |\\n\\n| Entre 1h et 2h | 25% du prix du billet |\\n\\n| Plus de 2h | 50% du prix du billet |\\n\\nBarème compensation\\n\\nSi votre train est supprimé, vous pouvez annuler votre billet et obtenir un remboursement. En cas de retard de votre train de plus d’1h prévu avant le départ, le remboursement sera partiel si le voyage est interrompu.\\n\\nSeuls les remboursements dont le montant est supérieur à 5 CHF sont versés. Vous avez 90 jours après le voyage pour déposer votre demande de compensation via le formulaire disponible sur le site CFF.\\n\\nEn cas de mouvement social, rendez-vous sur le site de la compagnie pour en savoir plus sur les conditions d’échange et de remboursement qui s’appliquent.\\n\\n- ### Deutsche Bahn\\n\\n| Durée retard | Montant compensé |\\n\\n| Entre 1h et 2h | 25% du prix du billet |\\n\\n| Plus de 2h | 50% du prix du billet |\\n\\nBarème compensation\\n\\nPour un billet aller-retour : la compensation est basée sur le prix de l’aller ou du retour (ou la moitié du prix total si indiqué).\\n\\nSeuls les remboursements dont le montant est supérieur à 4 euros sont versés. Vous avez le choix entre bon d’achat, un paiement en point de vente physique ou un paiement par virement. Vous avez\", \"score\": 23.866}]}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "function": {
+            "name": "calculate_compensation",
+            "arguments": "{\"rate_bands\":[{\"percentage\":\"0\",\"from_minutes\":0},{\"percentage\":\"25\",\"from_minutes\":30},{\"percentage\":\"50\",\"from_minutes\":120},{\"percentage\":\"75\",\"from_minutes\":180}],\"minimum\":\"0\",\"price\":\"\"}"
+          },
+          "type": "function",
+          "id": "relay_005"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_005",
+      "content": "{\"error\": \"[<class 'decimal.ConversionSyntax'>]\"}"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "arguments": "{\"topic\":\"ticket_price\"}",
+            "name": "ask_traveler"
+          },
+          "id": "relay_006"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_006",
+      "content": "\"77 euros.\""
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_007",
+          "type": "function",
+          "function": {
+            "arguments": "{\"rate_bands\":[{\"percentage\":\"0\",\"from_minutes\":0},{\"percentage\":\"25\",\"from_minutes\":30},{\"percentage\":\"50\",\"from_minutes\":120},{\"percentage\":\"75\",\"from_minutes\":180}],\"minimum\":\"0\",\"price\":\"77\"}",
+            "name": "calculate_compensation"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_007",
+      "content": "{\"amount\": \"57.75\"}"
+    },
+    {
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_008",
+          "type": "function",
+          "function": {
+            "arguments": "{\"topic\":\"payment_preference\"}",
+            "name": "ask_traveler"
+          }
+        }
+      ],
+      "role": "assistant"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_008",
+      "content": "\"Bank transfer, please.\""
+    }
+  ],
+  "options": {
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "ask_traveler",
+          "description": "Ask one necessary topic from the supplied topic list.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "topic"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "departures",
+          "description": "Departures at one station; maximum four-hour window, 40 rows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "station": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "station",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_trains",
+          "description": "Direct trains only; search each connecting leg separately. Use narrow windows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "destination",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "train_stops",
+          "description": "All stops of a train. Date is its service day; train numbers can be ambiguous.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "train": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "train",
+              "date"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_forms",
+          "description": "Discover available claim recipients, including unfamiliar companies.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_form",
+          "description": "Read a company's fields, formats, instructions, and allowed values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "file_claim",
+          "description": "File one claim per ticket using exact form fields and observed train_id values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              },
+              "fields": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "company",
+              "fields"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "no_claim",
+          "description": "Declare nothing owed for the entire request, after rules and relevant train evidence.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_rules",
+          "description": "Search cached passages with keywords in the document language. Company is optional.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_rule_documents",
+          "description": "List rule metadata; omit company to discover all operators and laws.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_rule_document",
+          "description": "Read a short document by ID; use search_rules for large documents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "doc_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "doc_id"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_compensation",
+          "description": "Apply the retrieved policy and minimum. For a resolved connection, supply ALL rate_bands; Python selects the band from its final delay. Otherwise supply percentage: 25 means 25%, not 0.25. Minimum 0 only if no minimum applies.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "string"
+              },
+              "minimum": {
+                "type": "string"
+              },
+              "rate_bands": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from_minutes": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "percentage": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "from_minutes",
+                    "percentage"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "price",
+              "minimum"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_delay",
+          "description": "Difference between full ISO planned/recorded timestamps, floored to minutes.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "planned": {
+                "type": "string"
+              },
+              "recorded": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "planned",
+              "recorded"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "resolve_connection",
+          "description": "Through ticket, unknown onward train: look up incoming and missed departures, choose the first feasible noncancelled replacement and return exact final delay. Uses counted train calls. Departure and connection are scheduled HH:MM times from the request.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "via": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "departure": {
+                "type": "string"
+              },
+              "connection": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "via",
+              "destination",
+              "date",
+              "departure",
+              "connection"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "budget",
+          "description": "Remaining counted tool calls and model calls.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "finish",
+          "description": "Finish only after all required claims or the no-claim decision are recorded.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "parallel_tool_calls": false,
+    "max_tokens": 1800
+  }
+}

@@ -1,0 +1,2 @@
+# Integrity checks use the original file bytes, so disable line-ending conversion.
+* -text

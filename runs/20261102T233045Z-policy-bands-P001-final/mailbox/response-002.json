@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_002","function":{"name":"find_trains","arguments":"{\"destination\":\"Nice-Ville\",\"origin\":\"Toulon\",\"from_time\":\"20:00\",\"to_time\":\"20:30\",\"date\":\"2026-10-22\"}"},"type":"function"}]}

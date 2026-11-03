@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_006",
+      "type": "function",
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"retard correspondance indemnisation 120 minutes\",\"company\":\"SNCF\",\"limit\":5}"
+      }
+    }
+  ]
+}

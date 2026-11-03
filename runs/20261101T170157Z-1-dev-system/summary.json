@@ -1,0 +1,707 @@
+{
+ "set": "practice",
+ "system": "/workspace/team/system.py",
+ "rows": [
+  {
+   "id": "P001",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.36
+  },
+  {
+   "id": "P002",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.41
+  },
+  {
+   "id": "P003",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.42
+  },
+  {
+   "id": "P004",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.4
+  },
+  {
+   "id": "P005",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.43
+  },
+  {
+   "id": "P007",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.46
+  },
+  {
+   "id": "P008",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.34
+  },
+  {
+   "id": "P010",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.31
+  },
+  {
+   "id": "P016",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.3
+  },
+  {
+   "id": "P017",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.35
+  },
+  {
+   "id": "P020",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.39
+  },
+  {
+   "id": "P021",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.34
+  },
+  {
+   "id": "P023",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.39
+  },
+  {
+   "id": "P024",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.45
+  },
+  {
+   "id": "P025",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.35
+  },
+  {
+   "id": "P028",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.39
+  },
+  {
+   "id": "P030",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.36
+  },
+  {
+   "id": "P031",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.32
+  },
+  {
+   "id": "P032",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.38
+  },
+  {
+   "id": "P034",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 6,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.4
+  },
+  {
+   "id": "P036",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.39
+  },
+  {
+   "id": "P038",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.4
+  },
+  {
+   "id": "P039",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.37
+  },
+  {
+   "id": "P041",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.4
+  },
+  {
+   "id": "P043",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.33
+  },
+  {
+   "id": "P044",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 1,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.33
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 26,
+  "correct": 0,
+  "extra": 0,
+  "questions": 0,
+  "over": 0,
+  "tools": 0,
+  "model": 26,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "off",
+   "error": "no model calls in this run, so we made no call and charged nothing",
+   "usd": 0.0,
+   "seconds": 0.0
+  }
+ ],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 6832128,
+ "sandbox": false
+}

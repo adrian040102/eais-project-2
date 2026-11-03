@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"function":{"name":"search_rules","arguments":"{\"company\":\"DB\",\"limit\":5,\"query\":\"ICE Verspätung 60 Minuten Entschädigung Mindestbetrag\"}"},"type":"function","id":"relay_005"}],"content":null}

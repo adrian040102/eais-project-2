@@ -1,0 +1,16 @@
+{
+  "kind": "supervised-codex-relay-smoke",
+  "created_utc": "2026-11-02T23:16:54.997290+00:00",
+  "ids": [
+    "P003"
+  ],
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+  "relay_sha256": "a8931e0badda4cfd23cb485a3939b7c150cb9f7d92f4ff6e3eee6f045106e55e",
+  "api_cost_usd": 0,
+  "subscription_usage": "not measured; this test consumes Codex usage",
+  "token_counts": "not measured",
+  "course_api_tested": false,
+  "limitations": "A Codex agent answers exported messages as JSON. Its surrounding instructions, tool-call serialization, latency, and token limits differ from raw course API calls. This is a supervised diagnostic, not an official model-performance measurement."
+}

@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"id":"relay_012","type":"function","function":{"name":"finish","arguments":"{}"}}],"content":null}

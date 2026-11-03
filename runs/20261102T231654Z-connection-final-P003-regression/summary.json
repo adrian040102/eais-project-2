@@ -1,0 +1,102 @@
+{
+ "set": "supervised-relay-smoke",
+ "system": "/workspace/runs/20261102T231654Z-connection-final-P003-regression/source/system.py",
+ "rows": [
+  {
+   "id": "P003",
+   "points": 1.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 1,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 3,
+   "model": 6,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [],
+   "seconds": 324.45
+  }
+ ],
+ "totals": {
+  "points": 1.0,
+  "max": 1,
+  "correct": 1,
+  "extra": 0,
+  "questions": 0,
+  "over": 0,
+  "tools": 3,
+  "model": 6,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 1,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 37.07
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 18.79
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 8.45
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 12.16
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 9.3
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "codex-subagent-relay",
+   "reasoning_effort": "low",
+   "usd": 0,
+   "tokens_measured": false,
+   "subscription_usage_measured": false,
+   "seconds": 237.98
+  }
+ ],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 1,
+ "cache_bytes": 6832128,
+ "sandbox": false
+}

@@ -1,0 +1,1878 @@
+[
+ {
+  "id": "P001",
+  "text": "Date: Thursday, 22 October 2026\n\nGood evening,\n\nThe day before yesterday I travelled from Toulon to Nice on the OUIGO at 20:15. It got to Nice more than two hours late. I bought the ticket in the OUIGO app. I'd like my compensation, please.\n\nLuca",
+  "traveler": {
+   "answers": {
+    "travel_date": "Tuesday 20 October.",
+    "departure_time": "The OUIGO left Toulon at 20:15.",
+    "route": "From Toulon to Nice, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought in the OUIGO app.",
+    "ticket_seller": "I bought it in the OUIGO app.",
+    "ticket_price": "25 euros.",
+    "travel_class": "Second class.",
+    "travelcard": "No travelcard.",
+    "reservation": "No reservation.",
+    "booking_date": "About two weeks before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At about 0:25 in Nice.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "OUIGO",
+     "amount": "12.50",
+     "currency": "EUR",
+     "train": "7853",
+     "runs": [
+      "tr-1795cac1732e"
+     ],
+     "price": "25.00",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 130,
+     "planned_arrival": "2026-10-20 22:13",
+     "recorded_arrival": "2026-10-21 00:23:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-20",
+   "written": "2026-10-22",
+   "type": "ouigo",
+   "notes": "OUIGO 7853 reached Nice-Ville at 00:23:00, planned 22:13, so the delay is 130 minutes (ruling R2). The payout for this ticket is in section 3.3.2 of OUIGO's conditions of carriage and sale (CGTV), so the claim goes to OUIGO. OUIGO pays 50% of the ticket price from 120 minutes, in vouchers, and 50% of 25.00 EUR is 12.50 EUR."
+  }
+ },
+ {
+  "id": "P002",
+  "text": "Date: Sunday, 25 October 2026\n\nGood evening,\n\nOn Tuesday I travelled from Karlsruhe to Basel SBB on the EuroCity at 21:26. We arrived in Basel SBB more than an hour late. I bought the ticket for EUR 18.50. I'd like my compensation, please.\n\nBest, Sara",
+  "traveler": {
+   "answers": {
+    "travel_date": "Tuesday 20 October.",
+    "departure_time": "The EuroCity left Karlsruhe at 21:26.",
+    "route": "From Karlsruhe to Basel SBB, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought in the DB Navigator app.",
+    "ticket_seller": "I bought it in the DB Navigator app.",
+    "ticket_price": "18.50 euros.",
+    "travel_class": "Second class.",
+    "travelcard": "None.",
+    "reservation": "No reservation.",
+    "booking_date": "The day before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 0:25 in Basel SBB.",
+    "delay_reason": "I don't remember any announcement.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "4.63",
+     "currency": "EUR",
+     "train": "9",
+     "runs": [
+      "tr-5df2ae16c974"
+     ],
+     "price": "18.50",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_seller",
+       "ticket_structure"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 75,
+     "planned_arrival": "2026-10-20 23:10",
+     "recorded_arrival": "2026-10-21 00:25:34"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-20",
+   "written": "2026-10-25",
+   "type": "single_ask",
+   "notes": "EC 9 reached Basel SBB at 00:25:34, planned 23:10, so the delay is 75 minutes (ruling R2). The payout for this ticket is in \"Compensation for passengers with an international through ticket\" on DB's page \"Your rights as a rail passenger\", so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 18.50 EUR is 4.63 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P003",
+  "text": "Date : lundi 26 octobre 2026\n\nMercredi, j'ai voyagé de Mannheim à Stuttgart avec l'ICE de 12h58. Nous sommes arrivés à Stuttgart avec à peu près 80 minutes de retard. J'ai acheté le billet dans l'appli DB Navigator pour 12,30 €. Qu'est-ce que je peux récupérer ? Merci de déposer la demande.\n\nMerci, Marco",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercredi 21 octobre.",
+    "departure_time": "L'ICE est parti de Mannheim à 12h58.",
+    "route": "De Mannheim à Stuttgart, sans changement.",
+    "ticket_structure": "Un seul billet pour tout le trajet, acheté dans l'appli DB Navigator.",
+    "ticket_seller": "Je l'ai acheté dans l'appli DB Navigator.",
+    "ticket_price": "12,30 €.",
+    "travel_class": "En seconde.",
+    "travelcard": "Aucune.",
+    "reservation": "Non.",
+    "booking_date": "La veille.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Vers 14h55 à Stuttgart.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Un virement si possible."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "minimum",
+    "train": "225",
+    "required_runs": [
+     "tr-dfe0d6d0ee2d"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-21",
+   "written": "2026-10-26",
+   "type": "nothing_minimum",
+   "notes": "ICE 225 reached Stuttgart Hbf at 14:55:00, planned 13:35, so the delay is 80 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. Nothing is owed, because 3.08 EUR is below the minimum payout of 4 EUR in the company's rules."
+  }
+ },
+ {
+  "id": "P004",
+  "text": "Datum: Samstag, 24. Oktober 2026\n\nSehr geehrte Damen und Herren,\n\nIch bin am 22. Oktober mit dem ICE um 9:46 von Stuttgart Hbf nach Ulm gefahren. Wir sind über eine Stunde zu spät in Ulm angekommen. Das Ticket habe ich im DB Navigator gekauft. Was steht mir zu? Bitte stellen Sie den Antrag für mich.\n\nVielen Dank!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Donnerstag, 22. Oktober.",
+    "departure_time": "Der ICE fuhr um 9:46 in Stuttgart Hbf ab.",
+    "route": "Von Stuttgart Hbf nach Ulm Hbf, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der DB-App.",
+    "ticket_seller": "Gekauft in der DB-App.",
+    "ticket_price": "17,30 €.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Keine Reservierung.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 11:15 in Ulm Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "threshold",
+    "train": "913",
+    "required_runs": [
+     "tr-aaf7431debcd"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-22",
+   "written": "2026-10-24",
+   "type": "mismatch_over",
+   "notes": "ICE 913 reached Ulm Hbf at 11:14:00, planned 10:29, so the delay is 45 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. Nothing is owed, because 45 minutes is under DB's 60 minutes."
+  }
+ },
+ {
+  "id": "P005",
+  "text": "Date : mardi 20 octobre 2026\n\nHier, j'ai pris le Lyria de 18h18 de Paris-Gare-de-Lyon à Genève. Le train est arrivé à Genève avec plus d'une heure de retard. Merci de faire la réclamation pour moi.\n\nMerci d'avance.",
+  "traveler": {
+   "answers": {
+    "travel_date": "Lundi 19 octobre.",
+    "departure_time": "Le TGV Lyria est parti de Paris Gare de Lyon à 18h18.",
+    "route": "De Paris Gare de Lyon à Genève, sans changement.",
+    "ticket_structure": "Un seul billet pour tout le trajet, acheté sur SNCF Connect.",
+    "ticket_seller": "Je l'ai acheté sur SNCF Connect.",
+    "ticket_price": "59 €.",
+    "travel_class": "En seconde.",
+    "travelcard": "Pas de carte.",
+    "reservation": "Pas de réservation.",
+    "booking_date": "La veille.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Aux alentours de 22h55 à Genève.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Un virement si possible."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "14.75",
+     "currency": "EUR",
+     "train": "9781",
+     "runs": [
+      "tr-4da47953643c"
+     ],
+     "price": "59.00",
+     "payment": "virement",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_seller",
+       "ticket_structure"
+      ],
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 80,
+     "planned_arrival": "2026-10-19 21:36",
+     "recorded_arrival": "2026-10-19 22:56:38"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-19",
+   "written": "2026-10-20",
+   "type": "single_ask",
+   "notes": "TGV 9781 reached Genève at 22:56:38, planned 21:36, so the delay is 80 minutes (ruling R2). The payout for this ticket is in \"Vous avez acheté votre billet sur un canal de vente SNCF\" on the TGV Lyria page \"Train retardé, billet indemnisé\", so the claim goes to SNCF. SNCF pays 25% of the ticket price from 1 hour, and 25% of 59.00 EUR is 14.75 EUR."
+  }
+ },
+ {
+  "id": "P006",
+  "text": "Datum: Mittwoch, 21. Oktober 2026\n\nMoin,\n\nGestern habe ich den ICE von Düsseldorf nach Nürnberg genommen, Abfahrt 19:18. Wir sind über eine Stunde zu spät in Nürnberg angekommen. Das Ticket habe ich für 52,50 € gekauft. Was steht mir zu? Bitte stellen Sie den Antrag für mich.\n\nVielen Dank!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Dienstag, 20. Oktober.",
+    "departure_time": "Der ICE fuhr um 19:18 in Düsseldorf Hbf ab.",
+    "route": "Von Düsseldorf Hbf nach Nürnberg Hbf, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der DB-App.",
+    "ticket_seller": "Gekauft in der DB-App.",
+    "ticket_price": "52,50 €.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 23:50 in Nürnberg Hbf.",
+    "delay_reason": "Verzögerungen im Betriebsablauf.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "threshold",
+    "train": "821",
+    "required_runs": [
+     "tr-cf069b164b4e"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-20",
+   "written": "2026-10-21",
+   "type": "mismatch_over",
+   "notes": "ICE 821 reached Nürnberg Hbf at 23:48:00, planned 22:59, so the delay is 49 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. Nothing is owed, because 49 minutes is under DB's 60 minutes."
+  }
+ },
+ {
+  "id": "P007",
+  "text": "Date: Thursday, 22 October 2026\n\nYesterday I was on the Intercités from Nancy to Lyon Perrache, the one that leaves at 7:46. We arrived in Lyon Perrache almost an hour late. That was the outward journey of a return ticket I bought on SNCF Connect. Can you claim my compensation?\n\nBest, Nina",
+  "traveler": {
+   "answers": {
+    "travel_date": "Wednesday 21 October.",
+    "departure_time": "The Intercités left Nancy at 7:46.",
+    "route": "From Nancy to Lyon Perrache, no change.",
+    "ticket_structure": "A return ticket from Nancy to Lyon Perrache and back, in one booking on SNCF Connect.",
+    "ticket_seller": "I bought it on SNCF Connect.",
+    "ticket_price": "59 euros for the outward trip and 102 euros for the return.",
+    "travel_class": "Second.",
+    "travelcard": "None.",
+    "reservation": "No reservation.",
+    "booking_date": "The day before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At about 13:10 in Lyon Perrache.",
+    "delay_reason": "I don't remember any announcement.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "14.75",
+     "currency": "EUR",
+     "train": "4200",
+     "runs": [
+      "tr-f76312c9e625"
+     ],
+     "price": "59.00",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 55,
+     "planned_arrival": "2026-10-21 12:16",
+     "recorded_arrival": "2026-10-21 13:11:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-21",
+   "written": "2026-10-22",
+   "type": "return_ticket",
+   "notes": "IC 4200 reached Lyon Perrache at 13:11:00, planned 12:16, so the delay is 55 minutes (ruling R2). The traveler had a return ticket with a price for each direction, so the price is the price of the outward trip, 59.00 EUR, as in SNCF's documents. The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 25% of the ticket price from 30 minutes, and 25% of 59.00 EUR is 14.75 EUR."
+  }
+ },
+ {
+  "id": "P008",
+  "text": "Datum: Sonntag, 25. Oktober 2026\n\nGuten Tag,\n\nIch bin am Donnerstag mit dem TGV um 18:28 von Lille Europe nach Marseille gefahren. Wir sind über eine halbe Stunde zu spät in Marseille angekommen. Was steht mir zu? Bitte stellen Sie den Antrag für mich.\n\nDanke im Voraus.",
+  "traveler": {
+   "answers": {
+    "travel_date": "Donnerstag, 22. Oktober.",
+    "departure_time": "Der TGV fuhr um 18:28 in Lille Europe ab.",
+    "route": "Von Lille Europe nach Marseille, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft bei SNCF Connect.",
+    "ticket_seller": "Gekauft bei SNCF Connect.",
+    "ticket_price": "122,50 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 0:30 in Marseille.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "30.63",
+     "currency": "EUR",
+     "train": "5124",
+     "runs": [
+      "tr-d2b6c755182c"
+     ],
+     "price": "122.50",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 35,
+     "planned_arrival": "2026-10-22 23:53",
+     "recorded_arrival": "2026-10-23 00:28:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-22",
+   "written": "2026-10-25",
+   "type": "single_ask",
+   "notes": "TGV INOUI 5124 reached Marseille-Saint-Charles at 00:28:00, planned 23:53, so the delay is 35 minutes (ruling R2). The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 25% of the ticket price from 30 minutes, and 25% of 122.50 EUR is 30.63 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P010",
+  "text": "Date: Thursday, 22 October 2026\n\nHello,\n\nOn 19 October I was on the ICE from Frankfurt to Mannheim. It got to Mannheim over an hour late. I bought the ticket on bahn.de. Can you claim my compensation?\n\nThank you!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Monday 19 October.",
+    "departure_time": "The ICE left Frankfurt at 11:50.",
+    "route": "From Frankfurt to Mannheim, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought on bahn.de.",
+    "ticket_seller": "I bought it on bahn.de.",
+    "ticket_price": "16.50 euros.",
+    "travel_class": "Second.",
+    "travelcard": "None.",
+    "reservation": "No reservation.",
+    "booking_date": "About two weeks before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 13:35 in Mannheim.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 5
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "4.13",
+     "currency": "EUR",
+     "train": "595",
+     "runs": [
+      "tr-0f4e2ec0010d"
+     ],
+     "price": "16.50",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "departure_time"
+      ],
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 63,
+     "planned_arrival": "2026-10-19 12:30",
+     "recorded_arrival": "2026-10-19 13:33:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 5,
+   "facts_needed": 3,
+   "day": "2026-10-19",
+   "written": "2026-10-22",
+   "type": "single_ask",
+   "notes": "ICE 595 reached Mannheim Hbf at 13:33:00, planned 12:30, so the delay is 63 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 16.50 EUR is 4.13 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P011",
+  "text": "Date: Friday, 23 October 2026\n\nHello,\n\nOn 20 October I was on the ICE from Offenburg to Freiburg, the one that leaves at 12:00. We arrived in Freiburg around 65 minutes late. I bought the ticket on bahn.de. What can I get back? Please file it for me.\n\nThank you!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mardi 20 octobre.",
+    "departure_time": "L'ICE est parti d'Offenbourg à 12h00.",
+    "route": "D'Offenbourg à Fribourg-en-Brisgau, sans changement.",
+    "ticket_structure": "Un seul billet pour tout le trajet, acheté sur bahn.de.",
+    "ticket_seller": "Je l'ai acheté sur bahn.de.",
+    "ticket_price": "11,90 €.",
+    "travel_class": "Seconde classe.",
+    "travelcard": "Aucune.",
+    "reservation": "Non.",
+    "booking_date": "Environ deux semaines avant.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Aux alentours de 13h35 à Fribourg-en-Brisgau.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Par virement, s'il vous plaît."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "minimum",
+    "train": "71",
+    "required_runs": [
+     "tr-b4759eed3056"
+    ]
+   },
+   "required_topics": [
+    [
+     "ticket_price"
+    ]
+   ],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-20",
+   "written": "2026-10-23",
+   "type": "nothing_minimum",
+   "notes": "ICE 71 reached Freiburg(Breisgau) Hbf at 13:35:00, planned 12:31, so the delay is 64 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. Nothing is owed, because 2.98 EUR is below the minimum payout of 4 EUR in the company's rules."
+  }
+ },
+ {
+  "id": "P012",
+  "text": "Date : jeudi 22 octobre 2026\n\nBonjour,\n\nHier, j'ai voyagé d'Aix-en-Provence TGV à Avignon TGV avec l'OUIGO de 17h16. Le train est arrivé à Avignon TGV avec plus de deux heures de retard. J'ai acheté le billet sur l'appli OUIGO. Je voudrais être indemnisé, merci.\n\nCordialement, Pierre",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercredi 21 octobre.",
+    "departure_time": "L'OUIGO est parti d'Aix-en-Provence TGV à 17h16.",
+    "route": "D'Aix-en-Provence TGV à Avignon TGV, sans changement.",
+    "ticket_structure": "Un seul billet pour tout le trajet, acheté sur l'appli OUIGO.",
+    "ticket_seller": "Je l'ai acheté sur l'appli OUIGO.",
+    "ticket_price": "10 €.",
+    "travel_class": "Seconde classe.",
+    "travelcard": "Pas de carte.",
+    "reservation": "Pas de réservation.",
+    "booking_date": "Environ deux semaines avant.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Aux alentours de 20h00 à Avignon TGV.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Un virement si possible."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "OUIGO",
+     "amount": "5.00",
+     "currency": "EUR",
+     "train": "7824",
+     "runs": [
+      "tr-04608f1abdcc"
+     ],
+     "price": "10.00",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 140,
+     "planned_arrival": "2026-10-21 17:38",
+     "recorded_arrival": "2026-10-21 19:58:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-21",
+   "written": "2026-10-22",
+   "type": "ouigo",
+   "notes": "OUIGO 7824 reached Avignon TGV at 19:58:00, planned 17:38, so the delay is 140 minutes (ruling R2). The payout for this ticket is in section 3.3.2 of OUIGO's conditions of carriage and sale (CGTV), so the claim goes to OUIGO. OUIGO pays 50% of the ticket price from 120 minutes, in vouchers, and 50% of 10.00 EUR is 5.00 EUR."
+  }
+ },
+ {
+  "id": "P014",
+  "text": "Datum: Mittwoch, 21. Oktober 2026\n\nGuten Tag,\n\nIch bin vorgestern mit dem ICE um 12:34 von Frankfurt Hbf nach Köln Hbf gefahren und hatte dort um 13:53 den Anschluss nach Würzburg Hbf. Der ICE kam mit rund 15 Minuten Verspätung in Köln Hbf an, und der Anschluss war weg. Ich hatte ein Ticket für die ganze Strecke, gekauft auf bahn.de. Können Sie die Entschädigung für mich beantragen?\n\nVielen Dank!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Montag, 19. Oktober.",
+    "departure_time": "Der ICE fuhr um 12:34 in Frankfurt Hbf ab, und mein Anschluss in Köln Hbf war um 13:53.",
+    "route": "Von Frankfurt Hbf nach Köln Hbf, dann weiter nach Würzburg Hbf.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft auf bahn.de.",
+    "ticket_seller": "Gekauft auf bahn.de.",
+    "ticket_price": "55,99 €.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Keine Reservierung.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Den nächsten ICE nach Würzburg Hbf, gegen 15:55.",
+    "arrival_time": "So um 19:40 in Würzburg Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 5
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "28.00",
+     "currency": "EUR",
+     "train": "314",
+     "runs": [
+      "tr-8aba6dfa206f"
+     ],
+     "price": "55.99",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "train_after_missed_connection",
+       "arrival_time"
+      ],
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 126,
+     "planned_arrival": "2026-10-19 17:32",
+     "recorded_arrival": "2026-10-19 19:38:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 5,
+   "facts_needed": 3,
+   "day": "2026-10-19",
+   "written": "2026-10-21",
+   "type": "missed_through",
+   "notes": "One ticket from DB for the whole trip, a through ticket (SCOPE.md), so the delay counts at Würzburg Hbf. ICE 314 reached Köln Hbf at 13:52:00, 13 minutes late, and the connection ICE 229 left at 13:53:00, 1 minute later, less than the 5 minutes of ruling R6. After the missed connection, the traveler took ICE 927, which reached Würzburg Hbf at 19:38:00. The planned arrival was 17:32 with ICE 229, so the delay is 126 minutes. The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 50% of the ticket price from 120 minutes, and 50% of 55.99 EUR is 28.00 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P015",
+  "text": "Date : samedi 24 octobre 2026\n\nBonjour à vous,\n\nLe 20 octobre, j'ai voyagé de Nice-Ville à Toulon avec le TGV de 16h56. Nous sommes arrivés à Toulon avec à peu près 50 minutes de retard. C'était le retour de mon aller-retour, réservé sur SNCF Connect. Je voudrais être indemnisé, merci.\n\nCordialement, Sara",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mardi 20 octobre.",
+    "departure_time": "Le TGV est parti de Nice à 16h56.",
+    "route": "De Nice à Toulon, sans changement.",
+    "ticket_structure": "Un aller-retour Toulon-Nice, en une seule réservation sur SNCF Connect.",
+    "ticket_seller": "Je l'ai acheté sur SNCF Connect.",
+    "ticket_price": "41 € pour l'aller et 32,50 € pour le retour.",
+    "travel_class": "En seconde.",
+    "travelcard": "Pas de carte.",
+    "reservation": "Pas de réservation.",
+    "booking_date": "La veille.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Aux alentours de 19h35 à Toulon.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Un virement si possible."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "8.13",
+     "currency": "EUR",
+     "train": "6180",
+     "runs": [
+      "tr-3e04e40cb209"
+     ],
+     "price": "32.50",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 50,
+     "planned_arrival": "2026-10-20 18:46",
+     "recorded_arrival": "2026-10-20 19:36:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-20",
+   "written": "2026-10-24",
+   "type": "return_ticket",
+   "notes": "TGV INOUI 6180 reached Toulon at 19:36:00, planned 18:46, so the delay is 50 minutes (ruling R2). The traveler had a return ticket with a price for each direction, so the price is the price of the return trip, 32.50 EUR, as in SNCF's documents. The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 25% of the ticket price from 30 minutes, and 25% of 32.50 EUR is 8.13 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P016",
+  "text": "Date : jeudi 22 octobre 2026\n\nBonjour à vous,\n\nHier, j'ai voyagé de Paris Gare de Lyon à Genève Cornavin avec le Lyria de 6h16. Le train est arrivé à Genève Cornavin avec environ 100 minutes de retard. Merci de faire la réclamation pour moi.\n\nMerci, Claire",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mittwoch, 21. Oktober.",
+    "departure_time": "Der TGV Lyria fuhr um 6:16 in Paris Gare de Lyon ab.",
+    "route": "Von Paris Gare de Lyon nach Genf, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der SBB Mobile App.",
+    "ticket_seller": "Gekauft in der SBB Mobile App.",
+    "ticket_price": "60 Franken.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Keine Reservierung.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 11:15 in Genf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Überweisung bitte."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SBB",
+     "amount": "15.00",
+     "currency": "CHF",
+     "train": "9761",
+     "runs": [
+      "tr-e5465efbb11a"
+     ],
+     "price": "60.00",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_seller",
+       "ticket_structure"
+      ],
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 101,
+     "planned_arrival": "2026-10-21 09:36",
+     "recorded_arrival": "2026-10-21 11:17:25"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-21",
+   "written": "2026-10-22",
+   "type": "single_ask",
+   "notes": "TGV 9761 reached Genève at 11:17:25, planned 09:36, so the delay is 101 minutes (ruling R2). The payout for this ticket is in \"Vous avez acheté votre billet sur un canal de vente CFF\" on the TGV Lyria page \"Train retardé, billet indemnisé\". The same page says \"Si vous n'avez pas acheté votre billet auprès de la SNCF, adressez votre demande à votre canal d'achat initial\", so the claim goes to SBB. SBB pays 25% of the ticket price from 30 minutes, and 25% of 60.00 CHF is 15.00 CHF."
+  }
+ },
+ {
+  "id": "P017",
+  "text": "Date: Friday, 23 October 2026\n\nHi,\n\nYesterday I travelled from Paris Gare de Lyon to Aix-en-Provence TGV on the TGV at 18:38. The train was over an hour late into Aix-en-Provence TGV. I bought the ticket on SNCF Connect for 39.40 euros. I'd like my compensation, please.\n\nBest, Sara",
+  "traveler": {
+   "answers": {
+    "travel_date": "Thursday 22 October.",
+    "departure_time": "The TGV left Paris Gare de Lyon at 18:38.",
+    "route": "From Paris Gare de Lyon to Aix-en-Provence TGV, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought on SNCF Connect.",
+    "ticket_seller": "I bought it on SNCF Connect.",
+    "ticket_price": "EUR 39.40.",
+    "travel_class": "Second class.",
+    "travelcard": "No travelcard.",
+    "reservation": "No.",
+    "booking_date": "A month ago.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At about 23:05 in Aix-en-Provence TGV.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "9.85",
+     "currency": "EUR",
+     "train": "6127",
+     "runs": [
+      "tr-356d4af8e1fa"
+     ],
+     "price": "39.40",
+     "payment": "virement",
+     "testday": false,
+     "required_topics": [],
+     "delay_min": 80,
+     "planned_arrival": "2026-10-22 21:44",
+     "recorded_arrival": "2026-10-22 23:04:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-22",
+   "written": "2026-10-23",
+   "type": "single_full",
+   "notes": "TGV INOUI 6127 reached Aix-en-Provence TGV at 23:04:00, planned 21:44, so the delay is 80 minutes (ruling R2). The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 25% of the ticket price from 30 minutes, and 25% of 39.40 EUR is 9.85 EUR."
+  }
+ },
+ {
+  "id": "P020",
+  "text": "Date: Saturday, 24 October 2026\n\nOn 20 October I was on the TGV Lyria from Paris Gare de Lyon to Geneva, the one that leaves at 16:18. The train was about 55 minutes late into Geneva. I bought the ticket on SNCF Connect for 118.40 euros. What am I owed? Please file the claim for me.\n\nBest, Nina",
+  "traveler": {
+   "answers": {
+    "travel_date": "Tuesday 20 October.",
+    "departure_time": "The TGV Lyria left Paris Gare de Lyon at 16:18.",
+    "route": "From Paris Gare de Lyon to Geneva, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought on SNCF Connect.",
+    "ticket_seller": "I bought it on SNCF Connect.",
+    "ticket_price": "EUR 118.40.",
+    "travel_class": "Second.",
+    "travelcard": "No travelcard.",
+    "reservation": "No.",
+    "booking_date": "About two weeks before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 20:35 in Geneva.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Money to my bank account, please."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "29.60",
+     "currency": "EUR",
+     "train": "9777",
+     "runs": [
+      "tr-5f9e979f7940"
+     ],
+     "price": "118.40",
+     "payment": "bon d'achat",
+     "testday": false,
+     "required_topics": [],
+     "delay_min": 57,
+     "planned_arrival": "2026-10-20 19:36",
+     "recorded_arrival": "2026-10-20 20:33:40"
+    }
+   ],
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-20",
+   "written": "2026-10-24",
+   "type": "single_full",
+   "notes": "TGV 9777 reached Genève at 20:33:40, planned 19:36, so the delay is 57 minutes (ruling R2). The payout for this ticket is in \"Vous avez acheté votre billet sur un canal de vente SNCF\" on the TGV Lyria page \"Train retardé, billet indemnisé\", so the claim goes to SNCF. SNCF pays 25% of the ticket price in SNCF vouchers from 30 to 59 minutes, and 25% of 118.40 EUR is 29.60 EUR."
+  }
+ },
+ {
+  "id": "P021",
+  "text": "Date : vendredi 23 octobre 2026\n\nBonjour à vous,\n\nLe 21 octobre, j'ai pris le TGV de 12h26 d'Aix-en-Provence TGV à Lyon Part-Dieu, où j'avais une correspondance à 14h10 pour Montpellier Sud de France. Le TGV est arrivé à Lyon Part-Dieu avec à peu près 130 minutes de retard et j'ai raté la correspondance. Merci de faire la réclamation pour moi.\n\nBonne journée, Noah",
+  "traveler": {
+   "answers": {
+    "travel_date": "Wednesday 21 October.",
+    "departure_time": "The TGV left Aix-en-Provence TGV at 12:26, and my connection in Lyon Part-Dieu was at 14:10.",
+    "route": "From Aix-en-Provence TGV to Lyon Part-Dieu, then on to Montpellier Sud de France.",
+    "ticket_structure": "One ticket for the whole trip, bought on SNCF Connect.",
+    "ticket_seller": "I bought it on SNCF Connect.",
+    "ticket_price": "77 euros.",
+    "travel_class": "Second class.",
+    "travelcard": "None.",
+    "reservation": "No reservation.",
+    "booking_date": "A month ago.",
+    "train_after_missed_connection": "I don't remember which one. We just took the next train to Montpellier Sud de France.",
+    "arrival_time": "At about 19:35 in Montpellier Sud de France.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 5
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "57.75",
+     "currency": "EUR",
+     "train": "9866",
+     "runs": [
+      "tr-9c7cb6e9b64c"
+     ],
+     "price": "77.00",
+     "payment": "virement",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_structure"
+      ],
+      [
+       "train_after_missed_connection",
+       "arrival_time"
+      ],
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 223,
+     "planned_arrival": "2026-10-21 15:50",
+     "recorded_arrival": "2026-10-21 19:33:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 5,
+   "facts_needed": 3,
+   "day": "2026-10-21",
+   "written": "2026-10-23",
+   "type": "missed_through",
+   "notes": "One ticket from SNCF for the whole trip, a through ticket (SCOPE.md), so the delay counts at Montpellier Sud de France. TGV INOUI 9866 reached Lyon Part Dieu at 16:03:00, 130 minutes late, and the connection TGV INOUI 9826 left at 14:30:00, before that arrival. After the missed connection, the traveler doesn't know which train they took, so we count the first direct train that left at least 10 minutes after the arrival (rulings R6 and R7), TGV INOUI 9879, which reached Montpellier Sud de France at 19:33:00. The planned arrival was 15:50 with TGV INOUI 9826, so the delay is 223 minutes. The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 75% of the ticket price from 3 hours, and 75% of 77.00 EUR is 57.75 EUR."
+  }
+ },
+ {
+  "id": "P022",
+  "text": "Date : dimanche 25 octobre 2026\n\nBonsoir,\n\nLe 22 octobre, j'ai voyagé du Mans à Strasbourg avec le TGV de 9h30. Nous sommes arrivés à Strasbourg avec à peu près 20 minutes de retard. J'ai acheté le billet sur SNCF Connect. À quoi ai-je droit ? Merci de faire la demande pour moi.\n\nMerci d'avance.",
+  "traveler": {
+   "answers": {
+    "travel_date": "Donnerstag, 22. Oktober.",
+    "departure_time": "Der TGV fuhr um 9:30 in Le Mans ab.",
+    "route": "Von Le Mans nach Straßburg, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft bei SNCF Connect.",
+    "ticket_seller": "Gekauft bei SNCF Connect.",
+    "ticket_price": "83,40 €.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "Gegen 13:30 in Straßburg.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "SNCF",
+    "reason": "threshold",
+    "train": "5482",
+    "required_runs": [
+     "tr-362050ae6b74"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-22",
+   "written": "2026-10-25",
+   "type": "nothing_threshold",
+   "notes": "TGV INOUI 5482 reached Strasbourg at 13:32:00, planned 13:12, so the delay is 20 minutes (ruling R2). The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. Nothing is owed, because 20 minutes is under the 30 minutes of the G30."
+  }
+ },
+ {
+  "id": "P023",
+  "text": "Datum: Mittwoch, 21. Oktober 2026\n\nHallo,\n\nAm 19. Oktober war ich im InterRegio von Brig nach Genf Cornavin (ab 18:26). Der Zug kam etwa 15 Minuten zu spät in Genf Cornavin an. Das Ticket habe ich in der SBB-App für 82 Franken gekauft. Was bekomme ich zurück? Bitte den Antrag stellen.\n\nLiebe Grüsse, Thomas",
+  "traveler": {
+   "answers": {
+    "travel_date": "Montag, 19. Oktober.",
+    "departure_time": "Der IR fuhr um 18:26 in Brig ab.",
+    "route": "Von Brig nach Genf Cornavin, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der SBB Mobile App.",
+    "ticket_seller": "Gekauft in der SBB Mobile App.",
+    "ticket_price": "82 Franken.",
+    "travel_class": "2. Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "Etwa 21:10 in Genf Cornavin.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "SBB",
+    "reason": "threshold",
+    "train": "1832",
+    "required_runs": [
+     "tr-5709309deb3b"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-19",
+   "written": "2026-10-21",
+   "type": "nothing_threshold",
+   "notes": "IR 1832 reached Genève at 21:11:01, planned 20:55, so the delay is 16 minutes (ruling R2). The payout for this ticket is in \"Delays/cancellations in Switzerland: national passenger rights\" on SBB's page \"Compensation for delays\", so the claim goes to SBB. Nothing is owed, because 16 minutes is under SBB's 60 minutes."
+  }
+ },
+ {
+  "id": "P024",
+  "text": "Datum: Sonntag, 25. Oktober 2026\n\nIch bin am Dienstag mit dem ICE um 7:36 von Dortmund nach Mannheim Hbf gefahren und hatte dort um 10:33 den Anschluss nach Stuttgart Hbf. Der ICE kam mit rund 25 Minuten Verspätung in Mannheim Hbf an, und der Anschluss war weg. Ich hatte zwei getrennte Tickets: Dortmund Hbf-Mannheim Hbf im DB Navigator für 70,30 € und Mannheim Hbf-Stuttgart auf bahn.de für 16,50 €. Können Sie die Entschädigung für mich beantragen?\n\nDanke, Lea",
+  "traveler": {
+   "answers": {
+    "travel_date": "Dienstag, 20. Oktober.",
+    "departure_time": "Der ICE fuhr um 7:36 in Dortmund Hbf ab, und mein Anschluss in Mannheim Hbf war um 10:33.",
+    "route": "Von Dortmund Hbf nach Mannheim Hbf, dann weiter nach Stuttgart Hbf.",
+    "ticket_structure": "Zwei getrennte Tickets: Dortmund Hbf-Mannheim Hbf und Mannheim Hbf-Stuttgart Hbf.",
+    "ticket_seller": "Dortmund Hbf-Mannheim Hbf in der DB-App, Mannheim Hbf-Stuttgart Hbf auf bahn.de.",
+    "ticket_price": "70,30 € für das erste, 16,50 € für das zweite.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Keine Reservierung.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Weiss ich nicht mehr genau, wir haben einfach den nächsten Zug nach Stuttgart Hbf genommen.",
+    "arrival_time": "So um 12:00 in Stuttgart Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "threshold",
+    "companies": [
+     "DB"
+    ],
+    "train": "103",
+    "required_runs": [
+     "tr-6531567853d9"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-20",
+   "written": "2026-10-25",
+   "type": "missed_separate",
+   "notes": "Two separate tickets, each its own contract (Regulation 2021/782, Article 12). The first ticket ends at Mannheim Hbf, where ICE 103 arrived at 10:52:00, planned 10:26, so its delay is 26 minutes. Nothing is owed for the second ticket, because the late train was on the first ticket. The payout for the first ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. For the first ticket nothing is owed either, because 26 minutes is under DB's 60 minutes."
+  }
+ },
+ {
+  "id": "P025",
+  "text": "Date : dimanche 25 octobre 2026\n\nBonjour à vous,\n\nLe 21 octobre, j'ai pris le TGV INOUI d'Angers à Valence TGV. Le train est arrivé à Valence TGV avec plus de deux heures de retard. J'ai acheté le billet pour 61,99 €. Qu'est-ce que je peux récupérer ? Merci de déposer la demande.\n\nBonne journée, Laura",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercoledì 21 ottobre.",
+    "departure_time": "Il TGV è partito da Angers alle 5:29.",
+    "route": "Da Angers a Valence TGV, senza cambi.",
+    "ticket_structure": "Un solo biglietto per tutto il viaggio, comprato su SNCF Connect.",
+    "ticket_seller": "L'ho comprato su SNCF Connect.",
+    "ticket_price": "61,99 euro.",
+    "travel_class": "Seconda classe.",
+    "travelcard": "Nessuna carta.",
+    "reservation": "Nessuna prenotazione.",
+    "booking_date": "Il giorno prima.",
+    "train_after_missed_connection": "Non ho perso nessuna coincidenza.",
+    "arrival_time": "Verso le 13:05 a Valence TGV.",
+    "delay_reason": "Non ho sentito annunci.",
+    "payment_preference": "Rimborso in denaro."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "31.00",
+     "currency": "EUR",
+     "train": "5300",
+     "runs": [
+      "tr-b92b0c003438"
+     ],
+     "price": "61.99",
+     "payment": "virement",
+     "testday": false,
+     "required_topics": [
+      [
+       "departure_time"
+      ]
+     ],
+     "delay_min": 170,
+     "planned_arrival": "2026-10-21 10:15",
+     "recorded_arrival": "2026-10-21 13:05:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-21",
+   "written": "2026-10-25",
+   "type": "single_ask",
+   "notes": "TGV INOUI 5300 reached Valence TGV Rhône-Alpes Sud at 13:05:00, planned 10:15, so the delay is 170 minutes (ruling R2). The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 50% of the ticket price from 2 hours, and 50% of 61.99 EUR is 31.00 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P028",
+  "text": "Date: Friday, 23 October 2026\n\nHello,\n\nOn Monday I took the 18:31 ICE from Hannover to Düsseldorf. We arrived in Düsseldorf almost an hour late. I bought the ticket on bahn.de for 39.90 euros. I guess that's not enough for anything, but can you check and claim it if there is something?\n\nBest, Felix",
+  "traveler": {
+   "answers": {
+    "travel_date": "Monday 19 October.",
+    "departure_time": "The ICE left Hanover at 18:31.",
+    "route": "From Hanover to Düsseldorf, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought on bahn.de.",
+    "ticket_seller": "I bought it on bahn.de.",
+    "ticket_price": "39.90 euros.",
+    "travel_class": "Second class.",
+    "travelcard": "None.",
+    "reservation": "No reservation.",
+    "booking_date": "About two weeks before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 22:30 in Düsseldorf.",
+    "delay_reason": "They said a technical problem with the train.",
+    "payment_preference": "Money to my bank account, please."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "9.98",
+     "currency": "EUR",
+     "train": "544",
+     "runs": [
+      "tr-b2cf09388b06"
+     ],
+     "price": "39.90",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 68,
+     "planned_arrival": "2026-10-19 21:20",
+     "recorded_arrival": "2026-10-19 22:28:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-19",
+   "written": "2026-10-23",
+   "type": "mismatch_under",
+   "notes": "ICE 544 reached Düsseldorf Hbf at 22:28:00, planned 21:20, so the delay is 68 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 39.90 EUR is 9.98 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P030",
+  "text": "Date : dimanche 25 octobre 2026\n\nBonsoir,\n\nLe 21 octobre, j'ai voyagé de Marseille Saint-Charles à Avignon TGV avec le TGV de 12h01. Nous sommes arrivés à Avignon TGV avec plus de deux heures de retard. J'ai acheté le billet pour 18,90 €. Je voudrais être indemnisé, merci.\n\nBonne journée, Martin",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercredi 21 octobre.",
+    "departure_time": "Le TGV est parti de Marseille Saint-Charles à 12h01.",
+    "route": "De Marseille Saint-Charles à Avignon TGV, sans changement.",
+    "ticket_structure": "Un seul billet pour tout le trajet, acheté sur SNCF Connect.",
+    "ticket_seller": "Je l'ai acheté sur SNCF Connect.",
+    "ticket_price": "18,90 €.",
+    "travel_class": "Seconde classe.",
+    "travelcard": "Pas de carte.",
+    "reservation": "Non.",
+    "booking_date": "Environ deux semaines avant.",
+    "train_after_missed_connection": "Je n'ai pas raté de correspondance.",
+    "arrival_time": "Vers 15h25 à Avignon TGV.",
+    "delay_reason": "Je n'ai pas entendu d'annonce.",
+    "payment_preference": "Par virement, s'il vous plaît."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SNCF",
+     "amount": "9.45",
+     "currency": "EUR",
+     "train": "6116",
+     "runs": [
+      "tr-9127eb645eb3"
+     ],
+     "price": "18.90",
+     "payment": "virement",
+     "testday": false,
+     "required_topics": [],
+     "delay_min": 170,
+     "planned_arrival": "2026-10-21 12:37",
+     "recorded_arrival": "2026-10-21 15:27:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-21",
+   "written": "2026-10-25",
+   "type": "single_ask",
+   "notes": "TGV INOUI 6116 reached Avignon TGV at 15:27:00, planned 12:37, so the delay is 170 minutes (ruling R2). The payout for this ticket is in \"Le calcul de votre compensation\" on SNCF Voyageurs' page for TGV INOUI and INTERCITÉS, so the claim goes to SNCF. SNCF pays 50% of the ticket price from 2 hours, and 50% of 18.90 EUR is 9.45 EUR."
+  }
+ },
+ {
+  "id": "P031",
+  "text": "Data: sabato 24 ottobre 2026\n\nGiovedì sono andato da Verona a Zugo con l'EuroCity delle 16:32. Siamo arrivati a Zugo con circa 65 minuti di ritardo. Ho comprato il biglietto per 111,40 euro. Cosa mi spetta? Per favore fate voi la richiesta.\n\nSaluti, Chiara",
+  "traveler": {
+   "answers": {
+    "travel_date": "Giovedì 22 ottobre.",
+    "departure_time": "L'EuroCity è partito da Verona alle 16:32.",
+    "route": "Da Verona a Zugo, senza cambi.",
+    "ticket_structure": "Un solo biglietto per tutto il viaggio, comprato sull'app Trenitalia.",
+    "ticket_seller": "L'ho comprato sull'app Trenitalia.",
+    "ticket_price": "111,40 euro.",
+    "travel_class": "Seconda.",
+    "travelcard": "Nessuna.",
+    "reservation": "No.",
+    "booking_date": "Il giorno prima.",
+    "train_after_missed_connection": "Non ho perso nessuna coincidenza.",
+    "arrival_time": "Intorno alle 22:05 a Zugo.",
+    "delay_reason": "Non ho sentito annunci.",
+    "payment_preference": "Rimborso in denaro."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "Trenitalia",
+     "amount": "27.85",
+     "currency": "EUR",
+     "train": "36",
+     "runs": [
+      "tr-11d63d112aa5"
+     ],
+     "price": "111.40",
+     "payment": "rimborso",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_seller",
+       "ticket_structure"
+      ]
+     ],
+     "delay_min": 65,
+     "planned_arrival": "2026-10-22 21:00",
+     "recorded_arrival": "2026-10-22 22:05:15"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-22",
+   "written": "2026-10-24",
+   "type": "single_ask",
+   "notes": "EC 36 reached Zug at 22:05:15, planned 21:00, so the delay is 65 minutes (ruling R2). The payout for this ticket is in Part IV, section 9.1 of Trenitalia's conditions of carriage (CGT), so the claim goes to Trenitalia. Trenitalia pays 25% of the ticket price from 60 minutes, and 25% of 111.40 EUR is 27.85 EUR."
+  }
+ },
+ {
+  "id": "P032",
+  "text": "Datum: Freitag, 23. Oktober 2026\n\nSehr geehrte Damen und Herren,\n\nIch war im ICE von Fulda nach Ulm Hbf (ab 18:49). Wir sind etwa 65 Minuten zu spät in Ulm Hbf angekommen. Das Ticket habe ich auf bahn.de gekauft. Ich hätte gern meine Entschädigung.\n\nViele Grüße, Matteo",
+  "traveler": {
+   "answers": {
+    "travel_date": "Montag, 19. Oktober.",
+    "departure_time": "Der ICE fuhr um 18:49 in Fulda ab.",
+    "route": "Von Fulda nach Ulm Hbf, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft auf bahn.de.",
+    "ticket_seller": "Gekauft auf bahn.de.",
+    "ticket_price": "44,90 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "Gegen 23:05 in Ulm Hbf.",
+    "delay_reason": "Technische Störung am Zug, hiess es.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 5
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "11.23",
+     "currency": "EUR",
+     "train": "693",
+     "runs": [
+      "tr-36ba112af422"
+     ],
+     "price": "44.90",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "travel_date"
+      ],
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 64,
+     "planned_arrival": "2026-10-19 22:00",
+     "recorded_arrival": "2026-10-19 23:04:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 5,
+   "facts_needed": 3,
+   "day": "2026-10-19",
+   "written": "2026-10-23",
+   "type": "single_ask",
+   "notes": "ICE 693 reached Ulm Hbf at 23:04:00, planned 22:00, so the delay is 64 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 44.90 EUR is 11.23 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P033",
+  "text": "Date: Wednesday, 21 October 2026\n\nGood evening,\n\nOn 20 October I took the 16:58 Frecciarossa from Milano Centrale to Naples. It got to Naples around 95 minutes late. I bought the ticket in the Trenitalia app for 65.90 euros. Can you claim my compensation?\n\nThank you!",
+  "traveler": {
+   "answers": {
+    "travel_date": "Dienstag, 20. Oktober.",
+    "departure_time": "Der Frecciarossa fuhr um 16:58 in Mailand ab.",
+    "route": "Von Mailand nach Neapel, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der Trenitalia-App.",
+    "ticket_seller": "Gekauft in der Trenitalia-App.",
+    "ticket_price": "65,90 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "Gegen 0:05 in Neapel.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "Trenitalia",
+     "amount": "16.48",
+     "currency": "EUR",
+     "train": "9649",
+     "runs": [
+      "tr-b916be06e0ea"
+     ],
+     "price": "65.90",
+     "payment": "rimborso",
+     "testday": false,
+     "required_topics": [],
+     "delay_min": 95,
+     "planned_arrival": "2026-10-20 22:32",
+     "recorded_arrival": "2026-10-21 00:07:30"
+    }
+   ],
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-20",
+   "written": "2026-10-21",
+   "type": "single_full",
+   "notes": "FR 9649 reached Napoli Centrale at 00:07:30, planned 22:32, so the delay is 95 minutes (ruling R2). The payout for this ticket is in \"Compensation for delays exceeding 59 minutes for Frecce, Intercity and Intercity Notte trains\" on Trenitalia's page \"Compensation for delays and refund\", so the claim goes to Trenitalia. Trenitalia pays 25% of the ticket price from 60 minutes, and 25% of 65.90 EUR is 16.48 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P034",
+  "text": "Datum: Freitag, 23. Oktober 2026\n\nIch bin vorgestern mit dem ICE um 7:50 von Frankfurt Hbf nach Stuttgart Hbf gefahren und hatte dort um 9:23 den Anschluss nach Kassel-Wilhelmshöhe. Der ICE kam etwa 10 Minuten zu spät in Stuttgart Hbf an, und der Anschluss war weg. Was steht mir zu? Bitte stellen Sie den Antrag für mich.\n\nMit freundlichen Grüßen, Jonas",
+  "traveler": {
+   "answers": {
+    "travel_date": "Wednesday 21 October.",
+    "departure_time": "The ICE left Frankfurt at 7:50, and my connection in Stuttgart was at 9:23.",
+    "route": "From Frankfurt to Stuttgart, then on to Kassel-Wilhelmshöhe.",
+    "ticket_structure": "One ticket for the whole trip, bought on bahn.de.",
+    "ticket_seller": "I bought it on bahn.de.",
+    "ticket_price": "108.99 euros.",
+    "travel_class": "Second.",
+    "travelcard": "None.",
+    "reservation": "No.",
+    "booking_date": "A month ago.",
+    "train_after_missed_connection": "I don't remember which one. We just took the next train to Kassel-Wilhelmshöhe.",
+    "arrival_time": "At around 15:45 in Kassel-Wilhelmshöhe.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 6
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "54.50",
+     "currency": "EUR",
+     "train": "591",
+     "runs": [
+      "tr-a58bbc79d291"
+     ],
+     "price": "108.99",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_structure"
+      ],
+      [
+       "train_after_missed_connection",
+       "arrival_time"
+      ],
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 213,
+     "planned_arrival": "2026-10-21 12:11",
+     "recorded_arrival": "2026-10-21 15:44:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 6,
+   "facts_needed": 4,
+   "day": "2026-10-21",
+   "written": "2026-10-23",
+   "type": "missed_through",
+   "notes": "One ticket from DB for the whole trip, a through ticket (SCOPE.md), so the delay counts at Kassel-Wilhelmshöhe. ICE 591 reached Stuttgart Hbf at 09:21:00, 10 minutes late, and the connection ICE 772 left at 09:25:00, 4 minutes later, less than the 8 minutes of ruling R6. After the missed connection, the traveler doesn't know which train they took, so we count the first direct train that left at least 8 minutes after the arrival (rulings R6 and R7), ICE 770, which reached Kassel-Wilhelmshöhe at 15:44:00. The planned arrival was 12:11 with ICE 772, so the delay is 213 minutes. The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 50% of the ticket price from 120 minutes, and 50% of 108.99 EUR is 54.50 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P036",
+  "text": "Data: domenica 25 ottobre 2026\n\nSalve,\n\nMercoledì sono andato da Milano Centrale a Desenzano del Garda con il regionale delle 21:25. Il treno è arrivato a Desenzano del Garda con circa 130 minuti di ritardo. Ho comprato il biglietto sull'app Trenord. Cosa posso avere indietro? Grazie se fate la domanda.\n\nGrazie, Laura",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercoledì 21 ottobre.",
+    "departure_time": "Il regionale è partito da Milano Centrale alle 21:25.",
+    "route": "Da Milano Centrale a Desenzano del Garda, senza cambi.",
+    "ticket_structure": "Un solo biglietto per tutto il viaggio, comprato sull'app Trenord.",
+    "ticket_seller": "L'ho comprato sull'app Trenord.",
+    "ticket_price": "9,15 euro.",
+    "travel_class": "Seconda.",
+    "travelcard": "Nessuna.",
+    "reservation": "No.",
+    "booking_date": "Il giorno prima.",
+    "train_after_missed_connection": "Non ho perso nessuna coincidenza.",
+    "arrival_time": "Verso le 0:55 a Desenzano del Garda.",
+    "delay_reason": "Non ho sentito annunci.",
+    "payment_preference": "Rimborso in denaro."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "Trenord",
+     "amount": "4.58",
+     "currency": "EUR",
+     "train": "2643",
+     "runs": [
+      "tr-12cfc60ef8b3"
+     ],
+     "price": "9.15",
+     "payment": "bonifico",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 128,
+     "planned_arrival": "2026-10-21 22:48",
+     "recorded_arrival": "2026-10-22 00:56:00",
+     "delay_at": "in arrivo"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-21",
+   "written": "2026-10-25",
+   "type": "trenord",
+   "notes": "REG 2643 reached Desenzano Del Garda-sirmione at 00:56:00, planned 22:48, so the delay is 128 minutes (ruling R2). The payout for this ticket is in \"Indennizzo del biglietto per ritardo\" on Trenord's page \"Indennizzo per ritardi\", so the claim goes to Trenord. Trenord pays 50% of the ticket price from 120 minutes, and 50% of 9.15 EUR is 4.58 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P037",
+  "text": "Date: Thursday, 22 October 2026\n\nHello there,\n\nOn Monday I took the 9:27 ICE from Offenburg to Fulda. We arrived in Fulda almost an hour late. I bought the ticket on bahn.de. I guess that's not enough for anything, but can you check and claim it if there is something?\n\nMany thanks.",
+  "traveler": {
+   "answers": {
+    "travel_date": "Monday 19 October.",
+    "departure_time": "The ICE left Offenburg at 9:27.",
+    "route": "From Offenburg to Fulda, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought on bahn.de.",
+    "ticket_seller": "I bought it on bahn.de.",
+    "ticket_price": "30.50 euros.",
+    "travel_class": "Second.",
+    "travelcard": "None.",
+    "reservation": "No.",
+    "booking_date": "A month ago.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 13:10 in Fulda.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "7.63",
+     "currency": "EUR",
+     "train": "374",
+     "runs": [
+      "tr-6b3e233d507e"
+     ],
+     "price": "30.50",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 61,
+     "planned_arrival": "2026-10-19 12:11",
+     "recorded_arrival": "2026-10-19 13:12:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-19",
+   "written": "2026-10-22",
+   "type": "mismatch_under",
+   "notes": "ICE 374 reached Fulda at 13:12:00, planned 12:11, so the delay is 61 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 30.50 EUR is 7.63 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P038",
+  "text": "Datum: Donnerstag, 22. Oktober 2026\n\nSehr geehrte Damen und Herren,\n\nIch bin vorgestern mit dem ICE um 13:13 von Stuttgart Hbf nach Köln Hbf gefahren und hatte dort um 17:11 den Anschluss nach Hamburg Hbf. Der ICE kam mit rund 15 Minuten Verspätung in Köln Hbf an, und der Anschluss war weg. Ich hatte ein Ticket für die ganze Strecke, gekauft auf bahn.de. Was bekomme ich zurück? Bitte den Antrag stellen.\n\nDanke, Nina",
+  "traveler": {
+   "answers": {
+    "travel_date": "Dienstag, 20. Oktober.",
+    "departure_time": "Der ICE fuhr um 13:13 in Stuttgart Hbf ab, und mein Anschluss in Köln Hbf war um 17:11.",
+    "route": "Von Stuttgart Hbf nach Köln Hbf, dann weiter nach Hamburg Hbf.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft auf bahn.de.",
+    "ticket_seller": "Gekauft auf bahn.de.",
+    "ticket_price": "90,99 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Nein.",
+    "booking_date": "Etwa zwei Wochen vorher.",
+    "train_after_missed_connection": "Weiss ich nicht mehr genau, wir haben einfach den nächsten Zug nach Hamburg Hbf genommen.",
+    "arrival_time": "So um 23:00 in Hamburg Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 5
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "22.75",
+     "currency": "EUR",
+     "train": "2012",
+     "runs": [
+      "tr-7f31f727fc15"
+     ],
+     "price": "90.99",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "train_after_missed_connection",
+       "arrival_time"
+      ],
+      [
+       "ticket_price"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 106,
+     "planned_arrival": "2026-10-20 21:15",
+     "recorded_arrival": "2026-10-20 23:01:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 5,
+   "facts_needed": 3,
+   "day": "2026-10-20",
+   "written": "2026-10-22",
+   "type": "missed_through",
+   "notes": "One ticket from DB for the whole trip, a through ticket (SCOPE.md), so the delay counts at Hamburg Hbf. ICE 2012 reached Köln Hbf at 17:22:00, 16 minutes late, and the connection ICE 106 left at 17:13:00, before that arrival. After the missed connection, the traveler doesn't know which train they took, so we count the first direct train that left at least 5 minutes after the arrival (rulings R6 and R7), ICE 516, which reached Hamburg Hbf at 23:01:00. The planned arrival was 21:15 with ICE 106, so the delay is 106 minutes. The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 90.99 EUR is 22.75 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P039",
+  "text": "Data: sabato 24 ottobre 2026\n\nSalve,\n\nIl 21 ottobre sono andato da Napoli Centrale a Roma con l'Intercity delle 16:31. Siamo arrivati a Roma con oltre un'ora di ritardo. Ho comprato il biglietto sull'app Trenitalia. Cosa posso avere indietro? Grazie se fate la domanda.\n\nCordiali saluti, David",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercoledì 21 ottobre.",
+    "departure_time": "L'Intercity è partito da Napoli Centrale alle 16:31.",
+    "route": "Da Napoli Centrale a Roma Termini, senza cambi.",
+    "ticket_structure": "Un solo biglietto per tutto il viaggio, comprato sull'app Trenitalia.",
+    "ticket_seller": "L'ho comprato sull'app Trenitalia.",
+    "ticket_price": "50,50 euro.",
+    "travel_class": "Seconda classe.",
+    "travelcard": "Nessuna carta.",
+    "reservation": "No.",
+    "booking_date": "Circa due settimane prima.",
+    "train_after_missed_connection": "Non ho perso nessuna coincidenza.",
+    "arrival_time": "Intorno alle 19:25 a Roma Termini.",
+    "delay_reason": "Non ho sentito annunci.",
+    "payment_preference": "Rimborso in denaro."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "Trenitalia",
+    "reason": "threshold",
+    "train": "95072",
+    "required_runs": [
+     "tr-5fd01d8603fd"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-21",
+   "written": "2026-10-24",
+   "type": "mismatch_over",
+   "notes": "IC 95072 reached Roma Termini at 19:25:00, planned 18:34, so the delay is 51 minutes (ruling R2). The payout for this ticket is in \"Compensation for delays exceeding 59 minutes for Frecce, Intercity and Intercity Notte trains\" on Trenitalia's page \"Compensation for delays and refund\", so the claim goes to Trenitalia. Nothing is owed, because 51 minutes is under the 60 minutes of Trenitalia."
+  }
+ },
+ {
+  "id": "P040",
+  "text": "Date: Thursday, 22 October 2026\n\nGood evening,\n\nYesterday I travelled from Brescia to Treviglio on the regional train at 21:28. It got to Treviglio about an hour and a half late. I bought the ticket in the Trenord app. What can I get back? Please file it for me.\n\nBest, Claire",
+  "traveler": {
+   "answers": {
+    "travel_date": "Wednesday 21 October.",
+    "departure_time": "The regional train left Brescia at 21:28.",
+    "route": "From Brescia to Treviglio, no change.",
+    "ticket_structure": "One ticket for the whole trip, bought in the Trenord app.",
+    "ticket_seller": "I bought it in the Trenord app.",
+    "ticket_price": "3.85 euros.",
+    "travel_class": "Second.",
+    "travelcard": "None.",
+    "reservation": "No.",
+    "booking_date": "The day before.",
+    "train_after_missed_connection": "I didn't miss a connection.",
+    "arrival_time": "At around 23:35 in Treviglio.",
+    "delay_reason": "No announcement that I heard.",
+    "payment_preference": "Bank transfer, please."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "Trenord",
+    "reason": "minimum",
+    "train": "2646",
+    "required_runs": [
+     "tr-5b3fa5b202d6"
+    ]
+   },
+   "required_topics": [
+    [
+     "ticket_price"
+    ]
+   ],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-21",
+   "written": "2026-10-22",
+   "type": "trenord",
+   "notes": "REG 2646 reached Treviglio at 23:34:00, planned 22:03, so the delay is 91 minutes (ruling R2). The payout for this ticket is in \"Indennizzo del biglietto per ritardo\" on Trenord's page \"Indennizzo per ritardi\", so the claim goes to Trenord. Nothing is owed, because 0.96 EUR is below the minimum payout of 4 EUR in the company's rules."
+  }
+ },
+ {
+  "id": "P041",
+  "text": "Date : mardi 20 octobre 2026\n\nBonjour,\n\nHier, j'ai pris l'ICE de 12h58 de Mannheim à Stuttgart. Nous sommes arrivés à Stuttgart avec plus d'une heure de retard. J'ai acheté le billet sur bahn.de pour 16,90 €. À quoi ai-je droit ? Merci de faire la demande pour moi.\n\nCordialement, Noah",
+  "traveler": {
+   "answers": {
+    "travel_date": "Montag, 19. Oktober.",
+    "departure_time": "Der ICE fuhr um 12:58 in Mannheim Hbf ab.",
+    "route": "Von Mannheim Hbf nach Stuttgart Hbf, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft auf bahn.de.",
+    "ticket_seller": "Gekauft auf bahn.de.",
+    "ticket_price": "16,90 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine.",
+    "reservation": "Keine Reservierung.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 15:10 in Stuttgart Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 3
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "4.23",
+     "currency": "EUR",
+     "train": "225",
+     "runs": [
+      "tr-a0153651ceb3"
+     ],
+     "price": "16.90",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 97,
+     "planned_arrival": "2026-10-19 13:35",
+     "recorded_arrival": "2026-10-19 15:12:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 3,
+   "facts_needed": 1,
+   "day": "2026-10-19",
+   "written": "2026-10-20",
+   "type": "single_full",
+   "notes": "ICE 225 reached Stuttgart Hbf at 15:12:00, planned 13:35, so the delay is 97 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 16.90 EUR is 4.23 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P043",
+  "text": "Datum: Sonntag, 25. Oktober 2026\n\nMoin,\n\nIch bin am Mittwoch mit dem ICE um 11:55 von Leipzig Hbf nach Erfurt Hbf gefahren. Wir sind über eine Stunde zu spät in Erfurt Hbf angekommen. Das Ticket habe ich im DB Navigator für 11,90 € gekauft. Was steht mir zu? Bitte stellen Sie den Antrag für mich.\n\nViele Grüße, Jonas",
+  "traveler": {
+   "answers": {
+    "travel_date": "Mercoledì 21 ottobre.",
+    "departure_time": "L'ICE è partito da Lipsia alle 11:55.",
+    "route": "Da Lipsia a Erfurt, senza cambi.",
+    "ticket_structure": "Un solo biglietto per tutto il viaggio, comprato nell'app DB Navigator.",
+    "ticket_seller": "L'ho comprato nell'app DB Navigator.",
+    "ticket_price": "11,90 euro.",
+    "travel_class": "Seconda classe.",
+    "travelcard": "Nessuna.",
+    "reservation": "Nessuna prenotazione.",
+    "booking_date": "Il giorno prima.",
+    "train_after_missed_connection": "Non ho perso nessuna coincidenza.",
+    "arrival_time": "Verso le 13:35 a Erfurt.",
+    "delay_reason": "Non ho sentito annunci.",
+    "payment_preference": "Rimborso in denaro."
+   },
+   "limit": 2
+  },
+  "answer": {
+   "claims": [],
+   "no_claim": {
+    "company": "DB",
+    "reason": "minimum",
+    "train": "507",
+    "required_runs": [
+     "tr-7f6d94ff56c7"
+    ]
+   },
+   "required_topics": [],
+   "limit": 2,
+   "facts_needed": 0,
+   "day": "2026-10-21",
+   "written": "2026-10-25",
+   "type": "nothing_minimum",
+   "notes": "ICE 507 reached Erfurt Hbf at 13:36:00, planned 12:33, so the delay is 63 minutes (ruling R2). The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. Nothing is owed, because 2.98 EUR is below the minimum payout of 4 EUR in the company's rules."
+  }
+ },
+ {
+  "id": "P044",
+  "text": "Datum: Freitag, 23. Oktober 2026\n\nIch bin gestern mit dem ICE um 8:53 von Hannover Hbf nach Mannheim Hbf gefahren und hatte dort um 12:30 den Anschluss nach Erfurt Hbf. Der ICE kam etwa 95 Minuten zu spät in Mannheim Hbf an, und der Anschluss war weg. Ich habe dann den ICE um 14:30 genommen und war gegen 17:25 in Erfurt Hbf. Das Ticket habe ich für 94,50 € gekauft. Können Sie die Entschädigung für mich beantragen?\n\nMit freundlichen Grüßen, Marco",
+  "traveler": {
+   "answers": {
+    "travel_date": "Donnerstag, 22. Oktober.",
+    "departure_time": "Der ICE fuhr um 8:53 in Hannover Hbf ab, und mein Anschluss in Mannheim Hbf war um 12:30.",
+    "route": "Von Hannover Hbf nach Mannheim Hbf, dann weiter nach Erfurt Hbf.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft im DB Navigator.",
+    "ticket_seller": "Gekauft im DB Navigator.",
+    "ticket_price": "94,50 €.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Den nächsten ICE nach Erfurt Hbf, gegen 14:30.",
+    "arrival_time": "So um 17:25 in Erfurt Hbf.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Überweisung bitte."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "DB",
+     "amount": "23.63",
+     "currency": "EUR",
+     "train": "575",
+     "runs": [
+      "tr-e23b0be213cc"
+     ],
+     "price": "94.50",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "ticket_structure"
+      ],
+      [
+       "delay_reason"
+      ]
+     ],
+     "delay_min": 117,
+     "planned_arrival": "2026-10-22 15:30",
+     "recorded_arrival": "2026-10-22 17:27:00"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-22",
+   "written": "2026-10-23",
+   "type": "missed_through",
+   "notes": "One ticket from DB for the whole trip, a through ticket (SCOPE.md), so the delay counts at Erfurt Hbf. ICE 575 reached Mannheim Hbf at 13:30:00, 93 minutes late, and the connection ICE 372 left at 12:51:00, before that arrival. After the missed connection, the traveler took ICE 370, which reached Erfurt Hbf at 17:27:00. The planned arrival was 15:30 with ICE 372, so the delay is 117 minutes. The payout for this ticket is in section 9.2.1 of DB's Beförderungsbedingungen, so the claim goes to DB. DB pays 25% of the ticket price from 60 minutes, and 25% of 94.50 EUR is 23.63 EUR after rounding to the cent."
+  }
+ },
+ {
+  "id": "P045",
+  "text": "Data: mercoledì 21 ottobre 2026\n\nLunedì sono andato da Briga a Olten con l'ICE. Siamo arrivati a Olten con circa 70 minuti di ritardo. Ho comprato il biglietto sull'app FFS. Per favore presentate la richiesta per me.\n\nGrazie mille.",
+  "traveler": {
+   "answers": {
+    "travel_date": "Montag, 19. Oktober.",
+    "departure_time": "Der ICE fuhr um 11:18 in Brig ab.",
+    "route": "Von Brig nach Olten, ohne Umsteigen.",
+    "ticket_structure": "Ein Ticket für die ganze Strecke, gekauft in der SBB-App.",
+    "ticket_seller": "Gekauft in der SBB-App.",
+    "ticket_price": "28,80 Franken.",
+    "travel_class": "Zweite Klasse.",
+    "travelcard": "Keine Ermässigungskarte.",
+    "reservation": "Nein.",
+    "booking_date": "Am Vortag.",
+    "train_after_missed_connection": "Ich hatte keinen Anschluss.",
+    "arrival_time": "So um 14:10 in Olten.",
+    "delay_reason": "Ich habe keine Durchsage gehört.",
+    "payment_preference": "Per Überweisung."
+   },
+   "limit": 4
+  },
+  "answer": {
+   "claims": [
+    {
+     "company": "SBB",
+     "amount": "7.20",
+     "currency": "CHF",
+     "train": "278",
+     "runs": [
+      "tr-5d316092c9db",
+      "tr-d325d26b99e8"
+     ],
+     "price": "28.80",
+     "payment": "Überweisung",
+     "testday": false,
+     "required_topics": [
+      [
+       "departure_time"
+      ],
+      [
+       "ticket_price"
+      ]
+     ],
+     "delay_min": 71,
+     "planned_arrival": "2026-10-19 13:00",
+     "recorded_arrival": "2026-10-19 14:11:24"
+    }
+   ],
+   "required_topics": [],
+   "limit": 4,
+   "facts_needed": 2,
+   "day": "2026-10-19",
+   "written": "2026-10-21",
+   "type": "single_ask",
+   "notes": "ICE 278 reached Olten at 14:11:24, planned 13:00, so the delay is 71 minutes (ruling R2). The payout for this ticket is in \"Delays/cancellations in Switzerland: national passenger rights\" on SBB's page \"Compensation for delays\", so the claim goes to SBB. SBB pays 25% of the ticket price from 60 minutes, and 25% of 28.80 CHF is 7.20 CHF."
+  }
+ }
+]

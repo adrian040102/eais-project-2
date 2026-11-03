@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "tool_calls": [
+    {
+      "type": "function",
+      "id": "relay_002",
+      "function": {
+        "name": "search_rules",
+        "arguments": "{\"query\":\"retard indemnisation plus de 2 heures remboursement\",\"company\":\"OUIGO\",\"limit\":5}"
+      }
+    }
+  ],
+  "content": null
+}

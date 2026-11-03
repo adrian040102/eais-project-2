@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"type":"function","id":"relay_006","function":{"arguments":"{\"query\":\"compensation retard arrivee OUIGO 120 minutes minimum indemnisation\",\"company\":\"OUIGO\",\"limit\":8}","name":"search_rules"}}]}

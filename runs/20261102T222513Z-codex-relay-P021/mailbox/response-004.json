@@ -1,0 +1,14 @@
+{
+  "content": null,
+  "role": "assistant",
+  "tool_calls": [
+    {
+      "function": {
+        "name": "calculate_delay",
+        "arguments": "{\"planned\":\"2026-10-21 15:50:00\",\"recorded\":\"2026-10-21 16:30:00\"}"
+      },
+      "type": "function",
+      "id": "relay_004"
+    }
+  ]
+}

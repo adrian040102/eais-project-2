@@ -1,0 +1,1 @@
+{"content":null,"tool_calls":[{"id":"relay_001","type":"function","function":{"arguments":"{\"limit\":5,\"query\":\"retard train OUIGO remboursement indemnisation 120 minutes\",\"company\":\"OUIGO\"}","name":"search_rules"}}],"role":"assistant"}

@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"type":"function","function":{"name":"search_rules","arguments":"{\"company\":\"SNCF\",\"limit\":8,\"query\":\"retard TGV INOUI correspondance retard final indemnisation minimum\"}"},"id":"relay_004"}],"content":null}

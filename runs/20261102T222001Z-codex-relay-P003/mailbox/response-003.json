@@ -1,0 +1,1 @@
+{"content":null,"tool_calls":[{"type":"function","function":{"arguments":"{\"company\":\"DB\",\"limit\":5,\"query\":\"Fahrgastrechte 60 Minuten 25 Prozent Mindestbetrag\"}","name":"search_rules"},"id":"relay_003"}],"role":"assistant"}

@@ -1,0 +1,37 @@
+id,case_type,companies,decision,points,penalty,net_points,max,status,issues,tool_calls,model_calls,questions,question_limit,questions_over,usd,seconds
+P001,ouigo,OUIGO,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.09
+P002,single_ask,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.3
+P003,nothing_minimum,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.19
+P004,mismatch_over,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.16
+P005,single_ask,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.1
+P006,mismatch_over,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.11
+P007,return_ticket,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.09
+P008,single_ask,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.11
+P010,single_ask,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,5,0,0.0,0.1
+P011,nothing_minimum,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim | topics,0,0,0,3,0,0.0,0.24
+P012,ouigo,OUIGO,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.16
+P014,missed_through,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,5,0,0.0,0.18
+P015,return_ticket,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.17
+P016,single_ask,SBB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.15
+P017,single_full,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,2,0,0.0,0.11
+P020,single_full,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,2,0,0.0,0.12
+P021,missed_through,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,5,0,0.0,0.11
+P022,nothing_threshold,SNCF,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.1
+P023,nothing_threshold,SBB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.1
+P024,missed_separate,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.09
+P025,single_ask,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.15
+P028,mismatch_under,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.11
+P030,single_ask,SNCF,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,2,0,0.0,0.14
+P031,single_ask,Trenitalia,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.22
+P032,single_ask,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,5,0,0.0,0.32
+P033,single_full,Trenitalia,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,2,0,0.0,0.18
+P034,missed_through,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,6,0,0.0,0.14
+P036,trenord,Trenord,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.09
+P037,mismatch_under,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.09
+P038,missed_through,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,5,0,0.0,0.1
+P039,mismatch_over,Trenitalia,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.1
+P040,trenord,Trenord,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim | topics,0,0,0,3,0,0.0,0.11
+P041,single_full,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,3,0,0.0,0.11
+P043,nothing_minimum,DB,no_claim,0.0,0.0,0.0,1,ok,missing-no-claim,0,0,0,2,0,0.0,0.22
+P044,missed_through,DB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.27
+P045,single_ask,SBB,claim,0.0,0.0,0.0,1,ok,missing-claim,0,0,0,4,0,0.0,0.14

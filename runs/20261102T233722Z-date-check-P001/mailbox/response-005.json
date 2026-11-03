@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_005","type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"retard 120 minutes OUIGO Grande Vitesse voyage direct indemnisation\",\"company\":\"OUIGO\",\"limit\":8}"}}]}

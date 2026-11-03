@@ -1,0 +1,28 @@
+# The Python packages that your system can import, besides the standard library, your own modules and p2kit.
+#
+# We install exactly these versions, and nothing else, in one folder, and every team's code gets that folder
+# read-only, in our checkpoint and final runs and in the Gradescope quick score. If your system imports a package
+# that isn't here, it fails to load in grading. To get the same packages on your own machine:
+#
+#     python3 -m pip install --no-deps -r packages.txt
+#
+# Each line names a package, its version and, after "import:", the names you import in Python. The lines marked
+# "needed by" are there because another package on the list needs them; you can import them too. None of these
+# packages makes network calls on its own, and your code has no network in grading anyway.
+numpy==2.2.6              # import: numpy
+scipy==1.15.3             # import: scipy
+scikit-learn==1.7.2       # import: sklearn
+joblib==1.6.0             # import: joblib (needed by scikit-learn)
+threadpoolctl==3.7.0      # import: threadpoolctl (needed by scikit-learn)
+cloudpickle==3.1.2        # import: cloudpickle (needed by joblib)
+rank-bm25==0.2.2          # import: rank_bm25
+rapidfuzz==3.14.5         # import: rapidfuzz
+regex==2026.9.29          # import: regex
+python-dateutil==3.0.0    # import: dateutil
+six==1.17.0               # import: six (needed by python-dateutil)
+tzdata==2026.5            # import: tzdata (needed by python-dateutil; also gives zoneinfo the time zones)
+pydantic==2.14.1          # import: pydantic
+pydantic-core==2.50.1     # import: pydantic_core (needed by pydantic)
+annotated-types==0.8.0    # import: annotated_types (needed by pydantic)
+typing-extensions==4.16.0 # import: typing_extensions (needed by pydantic)
+typing-inspection==0.4.4  # import: typing_inspection (needed by pydantic)

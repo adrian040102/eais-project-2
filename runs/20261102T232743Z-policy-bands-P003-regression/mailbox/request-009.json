@@ -1,0 +1,559 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Help the traveler complete every compensation decision through the tools.\nWork through missing facts, train identification, rule retrieval, then the form.\nUse ask_traveler for missing facts; plain questions in your answer do not reach the traveler.\nAsk only necessary topics, once each. Never invent prices, dates, sellers, or delay causes.\nDo not ask for facts already stated or unambiguously derived, including explicit dates.\nResolve relative dates and weekdays from the date at the start of the request. All times are local.\nUse recorded train data, not approximate delays reported by the traveler. Search each leg\nof a connection separately. Use canonical station names and windows of at most four hours;\nfrom_time and to_time must differ. Pick the intended run by date, route, and planned time.\nFor missed connections, establish ticket_structure and the actual onward journey through\ntrain_after_missed_connection or arrival_time, unless already stated. For a through ticket\nwhose onward train is unknown, use resolve_connection with the route and both scheduled\ndeparture times from the request. It resolves the incoming, missed and replacement trains\nand final delay. Copy its exact arrival times and minutes; do not guess or round them.\nFor a known onward train, identify it and calculate_delay from the original planned final\narrival to that train's recorded arrival. Separate tickets are assessed separately.\nSearch the rules before deciding. Use keywords in the documents' language; search_rules\ndoes not translate. Omit its company filter for EU/cross-border rules. Confirm that the\npassage applies to this ticket, train category, and journey. Operator and claim recipient\nmay differ: use the seller, ticket structure, rules, and list_forms to choose the recipient.\nInclude the observed train category in rule queries. A company's regional, domestic,\nand international policies can differ. Use the table column for the actual train category\nand the row for the final delay, rather than the first percentage in the search results.\nRead get_form before filing, including help, required_if, allowed values, and price basis.\nForms may be unfamiliar. Use their exact field names and exact observed train_id values.\nCalculate compensation with calculate_compensation using the rate and minimum from the\napplicable rules. Always supply minimum explicitly; use 0 only after checking that no\nminimum applies. If all payouts are zero, record no_claim without a form or payment question.\nAfter resolve_connection, supply ALL rate_bands from the applicable policy instead of\nselecting a percentage yourself; Python selects the band using the final journey delay.\nUse calculate_delay for planned/actual timestamps from different trains; otherwise\nuse the relevant train tool's delay. Return tickets may require the affected direction's\nprice. Check exclusions and ask the reported delay_reason if the rule depends on it.\nWhen a payable claim offers a payment choice, ask payment_preference unless already known.\nDo not choose a voucher or transfer for the traveler. Check whether the choice changes the rate.\nThe form's train is the first late/cancelled train causing the disruption, including the\nincoming late train for a missed connection. File one claim per company and ticket;\naccepted filings are final, while rejected ones can be corrected. Still file when the\nrules describe automatic payments. Deadlines, waiting periods, and proof are satisfied.\nIf any claim is owed, file the owed claims and leave the unowed tickets without no_claim.\nUse no_claim only when nothing is owed for the entire request, for the responsible company.\nBefore no_claim, identify the relevant run with train_stops or complete find_trains with\nat most five results. Obtain all necessary missing facts before either decision.\nReserve calls for form retrieval, filing, and possible correction. Call finish only after\nall tickets are handled. A tool error is information to correct, never a no-claim decision.\n\nRule companies: Cross-border, DB, EU, OUIGO, SBB, SNCF, TGV Lyria, TILO, Trenitalia, Trenord\nAvailable traveler topics: {\"travel_date\": \"the day of the trip\", \"departure_time\": \"the planned departure time of the first train, or of the train the traveler means\", \"route\": \"where the trip started, where the traveler changed trains and where it ended\", \"ticket_structure\": \"one through ticket for the whole trip, or separate tickets, and for which parts\", \"ticket_seller\": \"where each ticket was bought (company, app, website or ticket office)\", \"ticket_price\": \"the price paid for each ticket\", \"travel_class\": \"first or second class\", \"travelcard\": \"travelcards or passes, e.g. GA, Half Fare, BahnCard, Deutschland-Ticket, or none\", \"reservation\": \"whether the traveler had a seat reservation, with its reference\", \"booking_date\": \"when the tickets were bought\", \"train_after_missed_connection\": \"which train the traveler took after missing a connection or after a train stopped short\", \"arrival_time\": \"when the traveler actually arrived at the destination, as the traveler remembers it\", \"delay_reason\": \"the reason for the delay that staff announced, as the traveler remembers it\", \"payment_preference\": \"how the traveler would like to be paid, e.g. bank transfer or voucher\"}"
+    },
+    {
+      "role": "user",
+      "content": "Date : lundi 26 octobre 2026\n\nMercredi, j'ai voyagé de Mannheim à Stuttgart avec l'ICE de 12h58. Nous sommes arrivés à Stuttgart avec à peu près 80 minutes de retard. J'ai acheté le billet dans l'appli DB Navigator pour 12,30 €. Qu'est-ce que je peux récupérer ? Merci de déposer la demande.\n\nMerci, Marco"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_001",
+          "type": "function",
+          "function": {
+            "name": "ask_traveler",
+            "arguments": "{\"topic\":\"ticket_structure\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_001",
+      "content": "\"Un seul billet pour tout le trajet, acheté dans l'appli DB Navigator.\""
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_002",
+          "type": "function",
+          "function": {
+            "name": "find_trains",
+            "arguments": "{\"origin\":\"Mannheim Hbf\",\"destination\":\"Stuttgart Hbf\",\"date\":\"2026-10-28\",\"from_time\":\"12:30\",\"to_time\":\"13:30\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_002",
+      "content": "{\"error\": \"no train data for 2026-10-28; days with data: 2026-10-19, 2026-10-20, 2026-10-21, 2026-10-22, 2026-10-23, 2026-10-24, 2026-10-25, 2026-10-26\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_003",
+          "type": "function",
+          "function": {
+            "name": "search_rules",
+            "arguments": "{\"query\":\"ICE Verspätung Entschädigung 60 Minuten Mindestbetrag\",\"company\":\"DB\",\"limit\":8}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_003",
+      "content": "{\"passages\": [{\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Bedingungen für den Erwerb und die Nutzung von Zeitkarten > (Zeitkarten) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 14.10.2026 > B Bedingungen für den Erwerb und die Nutzung von Zeitkarten (Zeitkarten) > B.13 Haftung für Ausfall, Verspätung und Anschlussversäumnis\", \"text\": \"13.1 Für Inhaber einer Zeitkarte für die Produktklassen IC/EC oder ICE oder einer IC/EC- Aufpreiskarte nach Nr. 12 gelten die Nummern 9.1.3, 9.2 und 9.3 BB Personenverkehr mit der Maßgabe, dass diese bei Ausfall, Verspätung oder Anschlussversäumnis ab 60 Minuten innerhalb der Geltungsdauer der Fahrkarte eine Erstattung bzw. Entschädigung in Höhe von 5 € für die 2. Wagenklasse und 7,50 € für die 1. Wagenklasse erhalten, Verspätungen ab 20 Minuten können zwecks Erreichen der Zeitgrenze nach Satz 1 addiert und gesammelt eingereicht werden. Insgesamt werden maximal 25 % des gezahlten Fahrkartenpreises ausgezahlt.\", \"score\": 20.855}, {\"doc_id\": \"de-db-rechtliche-regelungen-de\", \"company\": \"DB\", \"title\": \"DB: Ihre Rechte als Fahrgast im Eisenbahnverkehr, rechtliche Regelungen\", \"language\": \"de\", \"section\": \"Ihre Rechte als Fahrgast im Eisenbahnverkehr > Regelungen und Ansprüche im internationalen Eisenbahnverkehr > Eurostar Tickets > Alle Infos\", \"text\": \"Bei Zugausfall oder Verspätung ab 60 Minuten haben Sie für Ihr Eurostar-Ticket einen Anspruch auf Erstattung/Entschädigung.\\n\\nVorgehen bei Zugausfall:\\n\\nBei einem Zugausfall wird Ihnen das Ticket erstattet.\\n\\n- Wenn Sie Ihr Ticket bei **Eurostar gekauft** haben, nutzten Sie bitte das entsprechende **Formular** auf der Internetseite von Eurostar, um die Erstattung zu beantragen.\\n\\n- Wenn Sie Ihr Eurostar-Ticket bei der DB **gekauft** haben, **können Sie Ihr Ticket bis 3 Monate nach Reisedatum selbstständig unter \\\"Meine Reisen\\\" über** **bahn.de** **stornieren.**\\n\\nVorgehen bei Verspätungen:\\n\\nBei Verspätungen ab 60 Minuten erhalten Sie eine Entschädigung.\\n\\n- Diese Entschädigung können Sie bequem online auf der Internetseite von Eurostar beantragen.\", \"score\": 19.586}, {\"doc_id\": \"de-db-rechtliche-regelungen-de\", \"company\": \"DB\", \"title\": \"DB: Ihre Rechte als Fahrgast im Eisenbahnverkehr, rechtliche Regelungen\", \"language\": \"de\", \"section\": \"Ihre Rechte als Fahrgast im Eisenbahnverkehr > Regelungen und Ansprüche im internationalen Eisenbahnverkehr > Entschädigung für Reisende mit einer durchgehenden internationalen Fahrkarte > Alle Infos\", \"text\": \"- Reisende mit einer durchgehenden internationalen Fahrkarte erhalten ab einer Verspätung von 60 Minuten am Zielbahnhof eine Entschädigung in Höhe von 25 Prozent des Fahrkartenpreises für die einfache Fahrt.\\n\\n- Reisende mit einer durchgehenden internationalen Fahrkarte erhalten ab einer Verspätung von 120 Minuten am Zielbahnhof eine Entschädigung in Höhe von 50 Prozent des Fahrkartenpreises für die einfache Fahrt.\\n\\nBei Fahrkarten mit Hin- und Rückfahrt gilt: Die Entschädigung wird auf Grundlage des Fahrpreises berechnet, der jeweils für die betreffende Teilstrecke/Einzelstrecke angegeben ist. Wenn keine Fahrpreise für die Einzelstrecken der Reise angegeben sind, wird die Entschädigung auf der Grundlage des halben entrichteten Fahrpreises berechnet.\\n\\nFür die Berechnung der Gesamtentschädigung werden neben der Fahrkarte auch zur Fahrkarte gehörige Reservierungen, Aufpreise und Zuschläge, sofern sie verpflichtend zu entrichten waren und eindeutig als zugehörig erkennbar sind, addiert.\\n\\nEntschädigungsbeträge von weniger als 4 Euro werden nicht ausgezahlt.\", \"score\": 19.286}, {\"doc_id\": \"de-db-bib-de\", \"company\": \"DB\", \"title\": \"Besondere Internationale Beförderungsbedingungen der Deutschen Bahn AG, Stand 21.10.2026\", \"language\": \"de\", \"section\": \"Bahn AG für Reisen mit Rail Pass Ticket (SCIC-RPT) > C.2 Eurail Global Pass > 2.17 Fahrgastrechte\", \"text\": \"Bei Ausfall und/oder Verspätung von Zügen (oder anderen Verkehrsmitteln der am Angebot beteiligten Bahnen und Schifffahrtslinien) von mindestens 60 Minuten am Zielort besteht Anspruch auf Entschädigung.\\n\\nFür Eurail Global Pässe werden für Verspätungen am Zielort zwischen 60 und 119 Minuten werden 12 EUR, für Verspätungen am Zielort ab 120 Minuten werden 24 EUR als Entschädigung gezahlt.\\n\\nDie Beantragung von Entschädigungen für\\n\\n• Verspätung oder Zugausfall für Inhaber von Global Pässen erfolgt online auf der Internetseite eurail.delay-compensation\\n\\n• Verspätung oder Zugausfall für Inhaber von Eurail German Rail Pässen erfolgt online auf der Internetseite eurail.delay-compensation oder -alternativ- über das bei der DB (in DB-Zügen, DB Reisezentren, DB Informationen, bahn.de-Download) erhältliche Fahrgastrechteformular, welches per Post an das Servicecenter Fahrgastrechte, D-60647 Frankfurt am Main zusenden ist.\\n\\nFür Ansprüche auf Weiterbeförderung oder Hilfeleistungen (z.B. Hotel- oder Taxikosten) ist der Beförderer zuständig, der den Reisenden zu dem Ort gebracht hat, an dem er die Weiterbeförderung oder Hilfeleistung benötigt.\\n\\nEntstehen dem Reisenden durch die Weiterbeförderung oder Hilfeleistung Kosten, so gilt für den Anspruch auf Kostenersatz für Inhaber von Eurail Global Pässen und Eurail German Rail Pässen folgendes:\\n\\nDiese Ansprüche bearbeitet das Servicecenter Fahrgastrechte dann, wenn ein Beförderer auf einer DB Strecke zur Weiterbeförderung oder zur Hilfeleistung an Ort und Stelle verpflichtet war. Das betrifft ebenfalls die ICE-Züge auf ihrer gesamten Fahrtstrecke bis/von Brüssel. In allen anderen Fällen wird die DB die Fahrkarte an denjenigen Beförderer weiterleiten, der zur Weiterbeförderung oder zur Hilfeleistung verpflichtet war. Die DB wird die Reisenden unverzüglich über die Weiterleitung unterrichten.\\n\\nZuschläge, Aufpreise und Reservierungen werden durch den BEFÖRDERER reguliert, bei dem sie erworben wurden.\\n\\nZuschläge, Aufpreise oder Reservierungen, die für reservierungspflichtige Züge ausgegeben werden, gelten als separater Beförderungsvertrag und werden bei der Regulierung deshalb einzeln je Zug betrachtet.\", \"score\": 18.697}, {\"doc_id\": \"de-db-rechtliche-regelungen-de\", \"company\": \"DB\", \"title\": \"DB: Ihre Rechte als Fahrgast im Eisenbahnverkehr, rechtliche Regelungen\", \"language\": \"de\", \"section\": \"Ihre Rechte als Fahrgast im Eisenbahnverkehr > Ihre Rechte und Ansprüche im Detail > Entschädigung bei verspäteter Ankunft am Zielbahnhof > Alle Infos\", \"text\": \"- Ab **60 Minuten Verspätung an Ihrem Zielbahnhof** erhalten Sie eine Entschädigung von 25 Prozent des gezahlten Fahrpreises für die einfache Fahrt\\n\\n- Ab **120 Minuten Verspätung an Ihrem Zielbahnhof** erhalten Sie eine Entschädigung von 50 Prozent des gezahlten Fahrpreises für die einfache Fahrt\\n\\n- Bei Fahrkarten für die Hin- und Rückfahrt wird die Entschädigung jeweils auf Grundlage des für die Hin- bzw. Rückfahrt entrichteten Fahrpreises berechnet. Wenn der Fahrpreis für die Hin- und Rückfahrt gesamthaft ausgewiesen ist, wird die Entschädigung auf der Grundlage des halben entrichteten Fahrpreises berechnet.\\n\\n- Die Fahrgastrechte für den Eisenbahnverkehr gelten auch im Nachtreiseverkehr (z.B. EuroNight).\\n\\n- Sie können im Entschädigungsfall zwischen einem Gutschein oder der Auszahlung des Geldbetrags wählen.\\n\\n- Entschädigungsbeträge unter 4 Euro werden nicht ausgezahlt.\\n\\n- Verträge mit **Reiseveranstaltern**, bei denen die Eisenbahnfahrt nicht die Hauptleistung des Vertrages bildet, fallen in den Bereich des Reisevertragsrechts. Sollten Sie also andere, nicht die Eisenbahnfahrt betreffende Rückfragen oder Beschwerden haben, wenden Sie sich für diese Themen direkt an Ihren Reiseveranstalter bzw. Airline, weil hierfür unter Umständen andere gesetzliche Regelungen und Rechtsansprüche gelten.\", \"score\": 18.358}, {\"doc_id\": \"de-db-bib-de\", \"company\": \"DB\", \"title\": \"Besondere Internationale Beförderungsbedingungen der Deutschen Bahn AG, Stand 21.10.2026\", \"language\": \"de\", \"section\": \"Bahn AG für Reisen mit Rail Pass Ticket (SCIC-RPT) > C.1 Interrail > 1.16 Fahrgastrechte\", \"text\": \"Bei Ausfall und/oder Verspätung von Zügen (oder anderen Verkehrsmitteln der am Angebot beteiligten Bahnen und Schifffahrtslinien) von mindestens 60 Minuten am Zielort besteht für Inhaber eines Interrail-Passes (Global-Pass oder One Country Pass) Anspruch auf Entschädigung.\\n\\nFür Verspätungen am Zielort zwischen 60 und 119 Minuten werden 12 EUR, für Verspätungen am Zielort ab 120 Minuten werden 24 EUR als Entschädigung gezahlt.\\n\\nDie Beantragung von Entschädigungen für\\n\\n• Verspätung oder Zugausfall für Inhaber von Global Pässen erfolgt online auf der Internetseite eurail.delay-compensation\\n\\n• Verspätung oder Zugausfall für Inhaber von One Country Pässen erfolgt online auf der Internetseite eurail.delay-compensation oder -alternativ- über das bei der DB (in DB-Zügen, DB Reisezentren, DB Informationen, bahn.de-Download) erhältliche Fahrgastrechteformular, welches per Post an folgende Adresse zu senden ist:\\n\\nD-60647 Frankfurt am Main\\n\\nEntschädigungen werden nur ausgezahlt, wenn der berechnete Betrag höher als 4€ ist.\\n\\nFür Ansprüche auf Weiterbeförderung oder Hilfeleistungen (z.B. Hotel- oder Taxikosten) ist der Beförderer zuständig, der den Reisenden zu dem Ort gebracht hat, an dem er die Weiterbeförderung oder Hilfeleistung benötigt.\\n\\nEntstehen dem Reisenden durch die Weiterbeförderung oder Hilfeleistung Kosten, so gilt für den Anspruch auf Kostenersatz für Inhaber von Interrail Global Pässen und OneCountry Pässen folgendes:\\n\\nDiese Ansprüche bearbeitet das Servicecenter Fahrgastrechte dann, wenn ein Beförderer auf einer DB Strecke zur Weiterbeförderung oder zur Hilfeleistung an Ort und Stelle verpflichtet war. Das betrifft ebenfalls die ICE-Züge auf ihrer gesamten Fahrtstrecke bis/von Brüssel. In allen anderen Fällen wird die DB die Fahrkarte an denjenigen Beförderer weiterleiten, der zur Weiterbeförderung oder zur Hilfeleistung verpflichtet war. Die DB wird die Reisenden unverzüglich über die Weiterleitung unterrichten.\\n\\nZuschläge, Aufpreise und Reservierungen werden durch den BEFÖRDERER reguliert, bei dem sie erworben wurden.\\n\\nZuschläge, Aufpreise oder Reservierungen, die für reservierungspflichtige Züge ausgegeben werden, gelten als separater Beförderungsvertrag und werden bei der Regulierung deshalb einzeln je Zug betrachtet.\", \"score\": 18.357}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG > (Aktionsangebote) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 12.10.2026 > E Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG (Aktionsangebote) > 4. Haftung für Ausfall, Verspätung und Anschlussversäumnis\", \"text\": \"4.1 Abweichend von Nr. 9.1.1 BB Personenverkehr können Fahrkarten „44-Stunden-Ticket Young “ im Fall von Zugausfall und Verspätung nicht in Zügen der Produktklasse C genutzt werden. In diesen Fällen muss zunächst eine Fahrkarte der Produktklasse C erworben werden. Für die Erstattung gilt Nr. 9.3 BB Personenverkehr.\\n\\n4.2 Für Inhaber eines „44-Stunden-Tickets Young “ gelten die Nummern 9.1.1 bis 9.1.4 und 9.2.1 und 9.3 BB Personenverkehr mit der Maßgabe, dass diese bei Ausfall, Verspätung oder Anschlussversäumnis ab 60 Minuten innerhalb der Geltungsdauer der Fahrkarte eine Erstattung bzw. Entschädigung in Höhe von 5 € erhalten. Verspätungen ab 20 Minuten können im Rahmen der Entschädigung zwecks Erreichens der Zeitgrenze nach Satz 1 addiert und gesammelt eingereicht werden. Insgesamt werden je „44-Stunden-Ticket Young “ maximal 25% des Preises der Fahrkarte ausgezahlt.\", \"score\": 17.888}, {\"doc_id\": \"de-db-rechtliche-regelungen-de\", \"company\": \"DB\", \"title\": \"DB: Ihre Rechte als Fahrgast im Eisenbahnverkehr, rechtliche Regelungen\", \"language\": \"de\", \"section\": \"Ihre Rechte als Fahrgast im Eisenbahnverkehr > Regelungen und Ansprüche im internationalen Eisenbahnverkehr > German Rail Pass > Alle Infos\", \"text\": \"Bei Ausfall und/oder Verspätung von Zügen der DB, die jeweils zu einer verspäteten Ankunft von mindestens 60 Minuten am Zielort führen, besteht Anspruch auf Entschädigung.\\n\\nBei Verspätungsfällen von mindestens 60 Minuten pro Fall erhalten Sie folgende Pauschalen:\\n\\n- 5 Euro bei Pässen 2. Klasse,\\n\\n- 7,50 Euro bei Pässen 1. Klasse\\n\\nIm Falle von Hilfeleistungen im Sinne des Artikel 20 der Verordnung (EU) 2021/782 besteht Anspruch auf Erstattung der entstandenen Kosten (z.B. für eine Übernachtung oder ein alternatives Verkehrsmittel).\\n\\nFür die Bearbeitung und Regulierung der Ansprüche ist das Servicecenter Fahrgastrechte verantwortlich.\", \"score\": 17.768}]}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_004",
+          "type": "function",
+          "function": {
+            "name": "search_rules",
+            "arguments": "{\"query\":\"ICE Fernverkehr Produktklasse A B Entschädigungsbeträge weniger 4 Euro\",\"company\":\"DB\",\"limit\":8}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_004",
+      "content": "{\"passages\": [{\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Personen durch die Unternehmen der Deutsche Bahn AG > (BB Personenverkehr) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 24.09.2026 > A Beförderungsbedingungen für Personen durch die Unternehmen der Deutsche Bahn AG (BB Personenverkehr) > A.1 Grundsätze > 1.4 Produktklassen\", \"text\": \"Die EVU bieten die Beförderung in den Zügen der folgenden Produktklassen an:\\n\\n(i) für den DB Fernverkehr\\n\\n• Produktklasse ICE: InterCityExpress (ICE), InterCityExpress Sprinter (ICE Sprinter), TGV, railjet express (RJX), railjet (RJ), EuroCityExpress (ECE),\\n\\n• Produktklasse IC/EC: InterCity (IC), EuroCity (EC), D- Zug (D),\\n\\n(ii) für den Nahverkehr (nur im Rahmen der Nutzung von Fahrkarten für Produktklassen des Fernverkehrs)\\n\\n• Produktklasse C: Interregio-Express (IRE), Regional-Express (RE), Flughafen- Express (FEX), Metropolexpress (MEX) Regionalbahn (RB) und S-Bahn (S), sowie die von NE EVU zusätzlich ausgewiesenen Zugbezeichnungen.\", \"score\": 19.744}, {\"doc_id\": \"de-db-bib-de\", \"company\": \"DB\", \"title\": \"Besondere Internationale Beförderungsbedingungen der Deutschen Bahn AG, Stand 21.10.2026\", \"language\": \"de\", \"section\": \"der Deutschen Bahn AG gültig ab 14. Dezember 2025 > Stand 21.10.2026 > Inhaltsverzeichnis > Wie ist der Tarif zu lesen?\", \"text\": \"zige Zahlung vorliegt, wenn die Fahrkarten selbständig aneinander gestückelt gebucht werden und/oder die vom Buchungssystem vorge- schlagenen fahrplanmäßigen Anschlusszeiten verändert werden. |\\n| NETZKARTE | Eine Zeitkarte für unbegrenzt viele Reisen auf einem Bahnnetz inner- halb des angegebenen Geltungszeitraums. Z.B. BahnCard 100, Inter- rail-Pass, Eurail-Pass. |\\n| NICHTBUNDESEIGENE EI- SENBAHNEN (NE) | Sind alle in Deutschland verkehrenden EVU, die keine DB EVU sind. |\\n| NRT-FAHRKARTE | Fahrkarte, in die keine Reservierung eingetragen ist. Dabei kann es sich um eine grenzüberschreitende Fahrkarte (DURCHGANGSFAHRKARTE) als auch um eine Fahrkarte für den Verkehr innerhalb eines Landes (Inlandsfahrkarte) handeln. |\\n| PASSZUSCHLAG | Zugangsberechtigung für Inhaber einer Netzkarte (z.B. Interrail- Pass), um bestimmte Züge nutzen zu können (siehe Teil A - Nr. A5.2.5). |\\n| PASSANGEBOT | Zeitkarte und/oder Netzkarte für ein gesamtes Bahnnetz, ohne Angabe einer von Abfahrts- und Zielort. (z.B. BC 100, Interrail-Pass). Im internationalen Fernverkehr zählen die Eurailpässe, die Interrailpässe und German Rail Pässe dazu, wie sie in den SCIC-RPT geregelt sind. Gegensatz dazu ist eine relationsbezogene Fahrkarte. |\\n| PRODUKTKLASSE | Unterscheidungskriterium für Zugarten. Fahrkarten zu den Produktklassen gelten in den folgenden Zügen: Für den Fernverkehr: • Produktklasse ICE: Intercity-Express (ICE), Intercity-Express Sprinter (ICE Sprinter), TGV, railjet express (RJX), railjet (RJ), Eurocity-Express (ECE) • Produktklasse IC/EC: Intercity (IC), Eurocity (EC), Euronight (EN), D-Zug (D) Für den Nahverkehr (Bezeichnung auf der Fahrkarte „NV“): • Produktklasse C: Interregio-Express (IRE), Flughafen-Express (FEX), Metropolexpress (MEX), Regional-Express (RE), Regionalbahn (RB) und S-Bahn(S) |\\n| RELATIONSBEZOGENE FAHRKARTE | Eine Fahrkarte, die einen Abfahrts- und einen Zielort enthält. Gegensatz dazu ist eine Zeitfahrkarte. |\\n\\n| RPRR 2021 | Kurzform für die geltende Fahrgastrechte-Verordnung „Rail Passenger's Rights Regulation“.Verordnung (EU) 2021/782 des Europäischen Parlaments und des Rates vom 29. April 2021 über die Rechte und Pflichten der Fahrgäste im Eisenbahnverkehr(„Passenger Rights Regulation“ - Neufassung). |\\n| SCIC |\", \"score\": 17.277}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG > (Aktionsangebote) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 12.10.2026 > E Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG (Aktionsangebote) > 3. Aktionsbeschreibung\", \"text\": \"3.1 Das „Familienticket“ wird angeboten für Reisen von mindestens einer Person ab 15 Jahren und einem Kind im Alter bis einschließlich 14 Jahren. „Familientickets“ werden für maximal 5 Personen, davon maximal 2 Personen ab 15 Jahren ausgegeben.\\n\\nIst die maximale Anzahl von 5 Personen pro Fahrkarte erreicht, werden weitere Kinder bis 5 Jahre unentgeltlich und ohne Fahrkarte gemäß Nr. 3.7.1 BB Personenverkehr befördert. Im Buchungsverlauf sind diese weiteren Kinder nicht anzugeben, um das Angebot „Familienticket“ zu erhalten.\\n\\nDas Angebot kann bis 2 Tage vor dem 1. Geltungstag erworben werden.\\n\\n3.2 Das Angebot enthält für maximal 5 Personen gemäß Nr. 3.1 eine unentgeltliche Sitzplatzreservierung nach Verfügbarkeit.\\n\\n3.3 Fahrkarten „Familienticket“ werden ausschließlich in der 2. Klasse angeboten, ein Übergang in die 1. Klasse ist ausgeschlossen.\\n\\n3.4 Das „Familienticket“ wird für 59,99 Euro für eine einfache Fahrt und für 99,99 Euro für eine Hin- und Rückfahrt ausschließlich für Fahrten in der Produktklasse ICE, IC/EC angeboten. Für Fahrten mit einem zusätzlichen Vor-und/oder Nachlauf in der Produktklasse C wird das Familienangebot für eine einfache Fahrt für 81,99 Euro und für eine Hin- und Rückfahrt für 143,99 Euro angeboten.\\n\\nEin BahnCard-Rabatt wird nicht gewährt.\\n\\n3.5 Das Familienticket wird mit einem City Ticket nach Nr. 3.5.2 BB Personenverkehr ausgegeben.\\n\\n3.6 Das Angebot berechtigt zur Fahrt an den Tagen und in den Zügen, die auf der Fahrkarte bezeichnet sind (Zugbindung). Sie gelten in Zügen der Produktklasse C im Vor- und Nachlauf zu den in der Fahrkarte eingetragenen Zügen am jeweils eingetragenen Geltungstag sowie bis 10:00 Uhr des Folgetages.\\n\\n3.7 Soweit das durch die DB Fernverkehr AG bereitgestellte Kontingent aufgebraucht ist, ist ein Erwerb von Fahrkarten zum Familienangebot nicht mehr möglich.\", \"score\": 16.804}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG > (Aktionsangebote) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 12.10.2026 > E Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG (Aktionsangebote) > 4. 30% Gutschein\", \"text\": \"4.1 Der ausgegebene Gutschein nach Nr. 3.3 ist für eine einfache Fahrt für eine Person für den Buchungs-und Reisezeitraum bis 30.09.2026 gültig, kann einmalig eingelöst werden und reduziert den Fahrkartenpreis um 30%. Es gelten die Bedingungen für Aktionsgutscheine gemäß E.1.3 der Aktionsangebote.\\n\\n4.2 Der Gutschein kann ausschließlich über bahn.de oder die App DB Navigator innerhalb des Kundenkontos eingelöst werden.\\n\\n4.3 Der Gutschein ist nicht mit anderen Gutscheinen, BahnBonus Prämien oder Aktionsangeboten kombinierbar.\\n\\n4.4 Der Gutschein kann ausschließlich für Fahrten eingelöst werden, für die mindestens eine Teilstrecke in den Zügen der Produktklasse ICE oder IC/EC erfolgt. Der Mindestfahrkartenwert beträgt 15 Euro.\", \"score\": 16.29}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Personen durch die Unternehmen der Deutsche Bahn AG > (BB Personenverkehr) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 24.09.2026 > A Beförderungsbedingungen für Personen durch die Unternehmen der Deutsche Bahn AG (BB Personenverkehr) > A.3 Fahrpreise > 3.7 Kinder\", \"text\": \"nächsten Haltebahnhof eine fahrplanmäßige Fahrtzeit von weniger als 10 Minuten vorgesehen ist.\\n\\nKonnte vor Antritt der Fahrt keine Fahrkarte gelöst werden, weil ein Fahrkartenschalter oder Fahrkartenautomat nicht vorhanden, nicht geöffnet oder nicht betriebsbereit war, ist das erhöhte Beförderungsentgelt nicht zu zahlen.\\n\\nGleiches gilt, wenn aufgrund eines technischen Problems des Buchungssystems der Erwerb einer Fahrkarte über den digitalen Verkauf in einem Zug der Produktklasse ICE bzw. IC/EC bis 10 Minuten nach der tatsächlichen Abfahrtszeit des Zuges am Einstiegsbahnhof nicht möglich war. Der Reisende erhält in diesen Fällen zunächst eine Fahrpreisnacherhebung, mit einem Zusatzbeleg. In diesem Fall beginnt eine Zahlungsfrist von 14 Tagen erst mit der Zusendung einer gesonderten schriftlichen Aufforderung durch das Eisenbahnverkehrsunternehmen.\\n\\nErgibt die Prüfung des Eisenbahnverkehrsunternehmens, dass am Einstiegsbahnhof ein Fahrkartenschalter oder Fahrkartenautomat tatsächlich nicht vorhanden, nicht geöffnet oder nicht betriebsbereit war bzw. dass der Erwerb einer Fahrkarte über den digitalen Verkauf in dem Zug der Produktklasse ICE bzw. IC/EC bis 10 Minuten nach dessen tatsächlicher Abfahrt am Einstiegsbahnhof aufgrund technischer Probleme des Buchungssystems nicht möglich war, so ist statt des erhöhten Beförderungsentgeltes lediglich der Flexpreis unter Berücksichtigung anwendbarer Ermäßigungen (z.B. Bahn-Card- und/oder Kinderermäßigung) zu zahlen.\\n\\n3.8.2 bleibt frei\\n\\n3.8.3 bleibt frei\\n\\n3.8.4 bleibt frei\\n\\n3.8.5 Ein Reisender, der bei Antritt der Fahrt nicht mit einer gültigen Fahrkarte versehen und zur Zahlung eines erhöhten Beförderungsentgeltes verpflichtet ist, kann von der Beförderung ausgeschlossen werden.\", \"score\": 16.09}, {\"doc_id\": \"de-db-bib-de\", \"company\": \"DB\", \"title\": \"Besondere Internationale Beförderungsbedingungen der Deutschen Bahn AG, Stand 21.10.2026\", \"language\": \"de\", \"section\": \"A Besondere Internationale Beförderungsbedingungen - Allgemeiner Teil (SCIC-NRT) > B Länderteil – Bedingungen für Bahnreisen ins Ausland und im europäischen Ausland > B.1 Belgien > 1.9 BahnCard 100 Rabatt\", \"text\": \"Inhaber einer BahnCard 100 erhalten abweichend von Teil A – Nr. 5.2.3 und Nr. 5.2.4 keinen Rabatt von 25% auf den belgischen Streckenteil, sondern können gegen Zahlung des den ICE nach/von/innerhalb Belgiens nutzen:\\n\\n| | 2. Klasse ab | 1. Klasse ab |\\n| Deutschland - Antwerpen | 49,90 Euro | 92,30 Euro |\\n| Deutschland - Brüssel | 44,90 Euro | 83,20 Euro |\\n| Deutschland - Brüssel Airport (Zaventem), inklusive Diabolo-Zuschlag | 54,90 Euro | 101,60 Euro |\\n| Deutschland - Leuven | 39,90 Euro | 73,80 Euro |\\n| Deutschland - Liège/Lüttich | 18,50 Euro | 34,20 Euro |\\n| Liège/Lüttich - Leuven | 22,90 Euro | 42,40 Euro |\\n| Liège/Lüttich - Brüssel Airport (Zaventem), inklusive Diabolo-Zuschlag | 34,90 Euro | 64,60 Euro |\\n| Liège/Lüttich - Brüssel | 26,40 Euro | 49,00 Euro |\\n| Liège/Lüttich - Antwerpen | 34,90 Euro | 64,60 Euro |\\n| Leuven - Brüssel Airport (Zaventem), inklusive Diabolo-Zuschlag | 20,90 Euro | 38,70 Euro |\\n| Leuven - Antwerpen | 16,90 Euro | 31,30 Euro |\\n| Brüssel Airport (Zaventem), inklusive Diabolo-Zuschlag - Antwerpen | 24,90 Euro | 46,10 Euro |\", \"score\": 15.17}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG > (Aktionsangebote) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 12.10.2026 > E Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG (Aktionsangebote) > 3. Aktion\", \"text\": \"3.1 Das 10 Fahrten-Ticket bzw. 20-Fahrten-Ticket kann über die Internetseite www.bahn.de/mehrfahrten für innerdeutsche Fahrten bis 250km erworben werden, wenn zumindest eine Teilstrecke in der Produktklasse ICE, IC/EC angeboten wird.\", \"score\": 15.159}, {\"doc_id\": \"de-db-bb-de\", \"company\": \"DB\", \"title\": \"Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026\", \"language\": \"de\", \"section\": \"Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG > (Aktionsangebote) > Gültig ab 14. Dezember 2025 Aktualisierter Stand vom 12.10.2026 > E Beförderungsbedingungen für Aktionsangebote der DB Fernverkehr AG (Aktionsangebote) > 3. Fahrkarten\", \"text\": \"3.1 Der Erwerb von Fahrkarten „44-Stunden-Ticket Young “ ist bis einen Tag vor dem jeweils 1. Geltungstag als digitales Ticket für Personen bis einschließlich 26 Jahre möglich.\\n\\n3.2 Die Fahrkarten werden ausschließlich für die 2. Wagenklasse zum Festpreis von 44 Euro ausgegeben. Ein BahnCard Rabatt wird nicht gewährt. Das Angebot ist kontingentiert und wird im Rahmen der Verfügbarkeit ausgegeben. Soweit das bereitgestellte Kontingent aufgebraucht ist, ist ein Erwerb nicht mehr möglich.\\n\\n3.3 Ein Rabatt für Kinder gemäß Nr. 3.7.4 BB Personenverkehr wird nicht gewährt. Abweichend von Nummer 3.7.2 und 3.7.3 BB Personenverkehr wird keine kostenfreie Kindermitnahme angeboten.\\n\\n3.4 Die Fahrkarten „44-Stunden-Ticket Young “ werden ohne City-Ticket nach Nr. 3.5 BB Personenverkehr ausgegeben.\\n\\n3.5 Das „44-Stunden-Ticket Young“ berechtigt im jeweiligen Reisezeitraum nach Nr. 2 zu unbegrenzten Fahrten in den Zügen der Produktklasse ICE und IC/EC. Die Fahrt muss bis zum Ende des Reisezeitraums am jeweiligen Sonntag, 14 Uhr, beendet sein. Eine Nutzung von Zügen der Produktklasse C ist auch im Parallelverkehr nicht erlaubt.\\n\\n3.6 Ein Übergang in die 1. Wagenklasse ist nicht erlaubt.\\n\\n3.7 Umtausch und Erstattung der Fahrkarten „44-Stunden-Ticket Young “ sind ausgeschlossen.\", \"score\": 14.734}]}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_005",
+          "type": "function",
+          "function": {
+            "name": "calculate_compensation",
+            "arguments": "{\"price\":\"12.30\",\"percentage\":\"25\",\"minimum\":\"4\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_005",
+      "content": "{\"amount\": \"0.00\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_006",
+          "type": "function",
+          "function": {
+            "name": "train_stops",
+            "arguments": "{\"train\":\"ICE 12:58 Mannheim to Stuttgart\",\"date\":\"2026-10-28\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_006",
+      "content": "{\"error\": \"train must look like 'ICE 2871' or '2871', got 'ICE 12:58 Mannheim to Stuttgart'\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_007",
+          "type": "function",
+          "function": {
+            "name": "ask_traveler",
+            "arguments": "{\"topic\":\"travel_date\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_007",
+      "content": "\"Mercredi 21 octobre.\""
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "relay_008",
+          "type": "function",
+          "function": {
+            "name": "find_trains",
+            "arguments": "{\"origin\":\"Mannheim Hbf\",\"destination\":\"Stuttgart Hbf\",\"date\":\"2026-10-21\",\"from_time\":\"12:30\",\"to_time\":\"13:30\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "relay_008",
+      "content": "{\"origin\": \"Mannheim Hbf\", \"destination\": \"Stuttgart Hbf\", \"from\": \"2026-10-21 12:30\", \"to\": \"2026-10-21 13:30\", \"trains\": [{\"train\": \"ICE 595\", \"train_id\": \"tr-400ef0f90391\", \"line\": null, \"operator\": \"DB Fernverkehr\", \"dep_planned\": \"2026-10-21 12:33\", \"dep_recorded\": \"2026-10-21 14:44:00\", \"dep_delay_min\": 131, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 13:11\", \"arr_recorded\": \"2026-10-21 15:19:00\", \"arr_delay_min\": 128, \"arr_kind\": \"recorded\", \"arr_cancelled\": false}, {\"train\": \"ICE 225\", \"train_id\": \"tr-dfe0d6d0ee2d\", \"line\": null, \"operator\": \"ICE\", \"dep_planned\": \"2026-10-21 12:58\", \"dep_recorded\": \"2026-10-21 14:11:00\", \"dep_delay_min\": 73, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 13:35\", \"arr_recorded\": \"2026-10-21 14:55:00\", \"arr_delay_min\": 80, \"arr_kind\": \"recorded\", \"arr_cancelled\": false}, {\"train\": \"ICE 2013\", \"train_id\": \"tr-30c491a59c80\", \"line\": null, \"operator\": \"DB Fernverkehr\", \"dep_planned\": \"2026-10-21 13:23\", \"dep_recorded\": \"2026-10-21 13:39:00\", \"dep_delay_min\": 16, \"dep_cancelled\": false, \"arr_planned\": \"2026-10-21 14:51\", \"arr_recorded\": \"2026-10-21 15:03:00\", \"arr_delay_min\": 12, \"arr_kind\": \"recorded\", \"arr_cancelled\": false}], \"note_direct_only\": \"direct trains only; for a change, search each leg\"}"
+    }
+  ],
+  "options": {
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "ask_traveler",
+          "description": "Ask one necessary topic from the supplied topic list.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "topic"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "departures",
+          "description": "Departures at one station; maximum four-hour window, 40 rows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "station": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "station",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_trains",
+          "description": "Direct trains only; search each connecting leg separately. Use narrow windows.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "from_time": {
+                "type": "string"
+              },
+              "to_time": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "destination",
+              "date",
+              "from_time",
+              "to_time"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "train_stops",
+          "description": "All stops of a train. Date is its service day; train numbers can be ambiguous.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "train": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "train",
+              "date"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_forms",
+          "description": "Discover available claim recipients, including unfamiliar companies.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_form",
+          "description": "Read a company's fields, formats, instructions, and allowed values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "file_claim",
+          "description": "File one claim per ticket using exact form fields and observed train_id values.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              },
+              "fields": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "company",
+              "fields"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "no_claim",
+          "description": "Declare nothing owed for the entire request, after rules and relevant train evidence.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "company"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_rules",
+          "description": "Search cached passages with keywords in the document language. Company is optional.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_rule_documents",
+          "description": "List rule metadata; omit company to discover all operators and laws.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_rule_document",
+          "description": "Read a short document by ID; use search_rules for large documents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "doc_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "doc_id"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_compensation",
+          "description": "Apply the retrieved policy and minimum. For a resolved connection, supply ALL rate_bands; Python selects the band from its final delay. Otherwise supply percentage: 25 means 25%, not 0.25. Minimum 0 only if no minimum applies.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "string"
+              },
+              "minimum": {
+                "type": "string"
+              },
+              "rate_bands": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from_minutes": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "percentage": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "from_minutes",
+                    "percentage"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "price",
+              "minimum"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_delay",
+          "description": "Difference between full ISO planned/recorded timestamps, floored to minutes.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "planned": {
+                "type": "string"
+              },
+              "recorded": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "planned",
+              "recorded"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "resolve_connection",
+          "description": "Through ticket, unknown onward train: look up incoming and missed departures, choose the first feasible noncancelled replacement and return exact final delay. Uses counted train calls. Departure and connection are scheduled HH:MM times from the request.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "type": "string"
+              },
+              "via": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "departure": {
+                "type": "string"
+              },
+              "connection": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "origin",
+              "via",
+              "destination",
+              "date",
+              "departure",
+              "connection"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "budget",
+          "description": "Remaining counted tool calls and model calls.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "finish",
+          "description": "Finish only after all required claims or the no-claim decision are recorded.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "parallel_tool_calls": false,
+    "max_tokens": 1800
+  }
+}

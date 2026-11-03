@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_002","type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"retard indemnisation 60 minutes 25%\",\"company\":\"OUIGO\",\"limit\":5}"}}]}

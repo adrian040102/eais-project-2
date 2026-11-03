@@ -1,0 +1,1 @@
+{"tool_calls":[{"type":"function","function":{"name":"search_rules","arguments":"{\"query\":\"retard TGV INOUI indemnisation 2 heures\",\"company\":\"SNCF\",\"limit\":8}"},"id":"relay_004"}],"content":null,"role":"assistant"}

@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_002","type":"function","function":{"name":"departures","arguments":"{\"station\":\"Mannheim Hbf\",\"date\":\"2026-10-21\",\"from_time\":\"12:00\",\"to_time\":\"16:00\"}"}}]}

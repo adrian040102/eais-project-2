@@ -1,0 +1,35 @@
+{
+  "python": "3.10.22",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "cloudpickle": "3.1.2",
+    "rank-bm25": "0.2.2",
+    "rapidfuzz": "3.14.5",
+    "regex": "2026.9.29",
+    "python-dateutil": "3.0.0",
+    "six": "1.17.0",
+    "tzdata": "2026.5",
+    "pydantic": "2.14.1",
+    "pydantic-core": "2.50.1",
+    "annotated-types": "0.8.0",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "certifi": "2026.10.23"
+  },
+  "image": "eais-p2:py310",
+  "image_id": "sha256:99681e82b738a427e0437b974dd8d1873108860faafce2cfd15c22ef2b830339",
+  "validated_date": "2026-10-31",
+  "docker_server": "27.1.1",
+  "wsl_version": "3.0.3.0",
+  "installed_wsl_distributions": [
+    "docker-desktop"
+  ],
+  "base_image_digest": "sha256:5be5aaecb962a41567bc8041f1e9e3432cb085b037fe057f9a562630b2e4b370",
+  "container_user": "eais (uid 1000)",
+  "sandbox": "ordinary Docker container; official bubblewrap disabled"
+}

@@ -1,0 +1,165 @@
+# Ihre Rechte als unser Fahrgast
+
+Hier finden Sie Informationen, welche Entschädigung Ihnen bei Zugverspätungen, verpassten Anschlüssen oder ausgefallenen Zügen zusteht und wie und wo Sie diese beantragen.
+
+Sie können bei uns Ihre Fahrgastrechte für alle Züge der Deutschen Bahn geltend machen: S-Bahn, RB, RE, IRE, IC/EC, ICE sowie Nachtzüge.
+
+Ihre Rechte als unser Fahrgast
+
+Hier finden Sie Informationen, welche Entschädigung Ihnen bei Zugverspätungen, verpassten Anschlüssen oder ausgefallenen Zügen zusteht und wie und wo Sie diese beantragen.
+
+Sie können bei uns Ihre Fahrgastrechte für alle Züge der Deutschen Bahn geltend machen: S-Bahn, RB, RE, IRE, IC/EC, ICE sowie Nachtzüge.
+
+## So können Sie Ihren Entschädigungsanspruch geltend machen...
+
+- Welche Ansprüche stehen Ihnen unter welchen Voraussetzungen zu (neue Seite)
+
+digital über das DB Kundenkonto auf bahn.de oder im DB Navigator
+
+digital über die Auftragssuche auf bahn.de oder im DB Navigator
+
+mit dem Fahrgastrechte-Formular
+
+- mit dem EU-Antragsformular (neue Seite)
+
+## Entschädigung über das DB Kundenkonto auf bahn.de oder im DB Navigator beantragen
+
+Wenn Sie Ihr Ticket über Ihr DB Kundenkonto gekauft haben bzw. das Ticket/die Zeitkarte im DB Kundenkonto hinterlegt ist, können Sie Ihre Fahrgastrechte direkt aus dem DB Kundenkonto heraus beantragen. Loggen Sie sich bitte in Ihr DB Kundenkonto ein und wählen Sie die Reise/Zeitkarte aus, für die Sie die Entschädigung beantragen wollen. Klicken Sie unter "Fahrgastrechte" den Button "Entschädigung beantragen" an und folgen Sie den weiteren Schritten.
+
+- FAQ: Wie kann ich meine Entschädigung beantragen?
+
+## Entschädigung übers Kundenkonto beantragen
+
+## Entschädigung über die Auftragssuche auf bahn.de oder im DB Navigator beantragen
+
+Für digital gekaufte Tickets, die nicht im DB Kundenkonto hinterlegt sind, können die Fahrgastrechte über die Auftragssuche beantragt werden. Hierzu benötigen Sie die Auftragsnummer und den Nachnamen der reisenden Person. Rufen Sie den Auftrag auf und klicken Sie anschließend unter "Fahrgastrechte" den Button "Entschädigung beantragen" an und folgen Sie den weiteren Schritten.
+
+- FAQ: Wie kann ich meine Entschädigung beantragen?
+
+## Entschädigung über die Auftragssuche beantragen
+
+Zur Auftragssuche Privatreisen
+
+Zur Auftragssuche Geschäftsreisen
+
+## Entschädigung mit dem Fahrgastrechte-Formular beantragen
+
+Laden Sie sich hier das barrierefreie Formular als PDF herunter und füllen Sie es bequem online aus. Tipp: Am besten funktioniert es, wenn Sie es direkt in der Adobe Acrobat-App ausfüllen.
+
+Zudem erhalten Sie das Formular auch beim Servicepersonal im Zug, an der DB Information oder im DB Reisezentrum.
+
+- Fahrgastrechte-Formular aufrufen (PDF, 89 KB)
+
+## In 3 Schritten per Fahrgastrechte-Formular zur Entschädigung:
+
+### 1. Formular ausfüllen
+
+#### Formular ausfüllen
+
+Mit dem Fahrgastrechte-Formular erfragen wir die zur Bearbeitung Ihres Entschädigungsanliegens notwendigen Angaben.
+
+Bitte tragen Sie zunächst die Daten zu Ihrem geplanten Reiseverlauf und Ihrem tatsächlichen Reiseverlauf ein.
+
+Wählen Sie im nächsten Schritt die gewünschte Art der Entschädigung aus. Sie können hier zwischen einem Gutschein oder der Auszahlung des Geldbetrages wählen. Bitte beachten Sie: Bei einer Erstattung in Folge eines Fahrtabbruchs am Startbahnhof ist ausschließlich die Auszahlung eines Geldbetrags möglich.
+
+Ergänzen Sie abschließend noch die weiteren Angaben zur Bankverbindung (falls Sie eine Überweisung wünschen) und Ihre persönlichen Daten und bestätigen Sie Ihre Angaben mit Ihrer Unterschrift.
+
+### 2. Belege beilegen
+
+#### Belege
+
+Zur Bearbeitung Ihres Antrags benötigen wir Ihre Fahrkarte oder eine Fahrkartenkopie. Wenn Ihre Fahrkarte keinen Preisaufdruck hat, legen Sie bitte zudem einen Kostennachweis bei (Ausnahme: BahnCard 100).
+
+Weitere Belege, falls vorhanden:
+
+- Reservierungsbeleg, falls Sie Ihre Reservierung durch einen Zugausfall oder eine Zugverspätung nicht nutzen konnten
+
+- Etwaige Belege für Erstattungsanliegen, beispielsweise eine Zusatzfahrkarte für einen anderen Zug/Bus, Taxiquittung, Hotelrechnung, Fahrradkarte oder einen Fahrtkostennachweis
+
+- Im Zug ausgestellte Bescheinigungen wie zum Beispiel die „Bescheinigung Fahrgastrechte“ oder die „Bescheinigung über Komfortmängel“
+
+### 3. Fahrgastrechte-Formular und Belege abschicken oder abgeben
+
+#### Adresse
+
+Ist alles komplett? Dann senden Sie das Formular und die Belege per Post an folgende Adresse:
+
+DB Fernverkehr AG
+
+60647 Frankfurt am Main
+
+Alternativ können Sie die Unterlagen auch in einem DB Reisezentrum oder Ihrer Verkaufsstelle abgeben.
+
+Bei Nichtantritt oder Abbruch der Reise wegen Verspätung, Zugausfall oder Anschlussverlust haben Sie die Möglichkeit, sich das Ticket direkt im DB Reisezentrum erstatten zu lassen und eine Auszahlung zu erhalten. Ist eine Bearbeitung im DB Reisezentrum nicht möglich wird der Antrag auf Erstattung zur Bearbeitung an das Servicecenter Fahrgastrechte weitergeleitet.
+
+Ein in einer DB Agentur oder einem DB Reisezentrum eingereichter Antrag auf Entschädigung wird zur Bearbeitung immer an das Servicecenter Fahrgastrechte weitergeleitet.
+
+Beachten Sie die Sonderfälle, in denen Ihr Antrag nur über das Servicecenter und nicht in einem Reisezentrum bearbeitet werden kann!
+
+## Allgemeine Informationen
+
+### Fahrgastrechtliche Regelungen und Ansprüche
+
+Erfahren Sie, welche Regelungen gelten und welche Ansprüche Sie unter welchen Voraussetzungen haben.
+
+Ihre Rechte als Fahrgast im Eisenbahnverkehr
+
+### Übersicht teilnehmender Eisenbahnunternehmen im Servicecenter Fahrgastrechte
+
+Für Fahrten mit diesen Eisenbahnunternehmen können Sie Ansprüche über das Servicecenter Fahrgastrechte geltend machen.
+
+Übersicht teilnehmende Eisenbahnunternehmen
+
+### Mobilitäts­­eingeschränkte Fahrgäste
+
+Informationen speziell zu Fahrgastrechten und Zugangsregeln für Reisende mit Behinderung oder eingeschränkter Mobilität.
+
+Fahrgastrechte für Reisende mit Mobilitätseinschränkungen
+
+## Das könnte Sie auch interessieren
+
+### Was sind Fahrgastrechte?
+
+#### Alle Infos
+
+Bei Zugverspätungen und Zugausfällen sind die Rechte der Fahrgäste gesetzlich geregelt. Grundlage bildet hierbei die Verordnung (EU) 2021/782 des Europäischen Parlaments und des Rates vom 29.April 2021 über die Rechte und Pflichten der Fahrgäste im Eisenbahnverkehr (Neufassung).
+
+Fahrgastrechte gelten einheitlich im Eisenbahnverkehr in Deutschland und in Europa und räumen den Reisenden gleiche Rechte bei allen Eisenbahnunternehmen ein.
+
+Nachfolgend finden Sie Links zu den wichtigsten Gesetzen und Verordnungen zum Thema Fahrgastrechte.
+
+- Verordnung (EU) 2021/782 über die Rechte und Pflichten der Fahrgäste im Eisenbahnverkehr (Neufassung)
+
+- Allgemeines Eisenbahngesetz (AEG)
+
+- Eisenbahnverkehrs-Verordnung (EVO)
+
+### Verrechnung des Gutscheins im Internet oder am DB-Automaten
+
+#### Alle Infos
+
+Lösen Sie Gutscheine mit einer 7-stelligen alphanumerischen Gutscheinnummer direkt bei einer Buchung im Internet ein. Sie können Ihren Gutschein natürlich auch an DB-Automaten beim Kauf von DB-Fahrkarten anrechnen lassen.
+
+### Schlichtungsstellen
+
+#### Alle Infos
+
+Sollten Sie mit einer Entscheidung zu Ihrem Erstattungsantrag nicht einverstanden sein, können Sie sich an eine unabhängige Schlichtungsstelle wenden.
+
+## Häufig gestellte Fragen zu Fahrgastrechten
+
+- Finden Sie Antworten auf Fragen zum Thema Fahrgastrechte
+
+## Weitere Informationen
+
+- Beförderungsbedingungen für den Personenverkehr
+
+- Ihre Fahrgastrechte im Eisenbahnverkehr (PDF, 1 MB)
+
+- Broschüre "Ihre Rechte als unser Fahrgast" (PDF, 1 MB)
+
+- Übersicht über die vertraglichen Beförderer in Deutschland (PDF, 528 KB)
+
+- Wer ist Ihr Vertragspartner? (PDF, 564 KB)
+
+- Entschädigung mit dem EU-Formular beantragen

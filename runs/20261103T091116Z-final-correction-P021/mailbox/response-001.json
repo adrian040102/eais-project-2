@@ -1,0 +1,1 @@
+{"content":null,"role":"assistant","tool_calls":[{"type":"function","function":{"arguments":"{\"topic\":\"ticket_structure\"}","name":"ask_traveler"},"id":"relay_001"}]}

@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-03T11:03:36.665587+00:00",
+  "artifact": "p2-upload-2026-11-03-v1.zip",
+  "archive_sha256": "cabf30e016b40db4e5fe30f1185ad86ef0a1e027614b0916315802d1f1d1744f",
+  "archive_bytes": 9460,
+  "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+  "members": [
+    {
+      "path": "team/system.py",
+      "bytes": 30182,
+      "sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f"
+    }
+  ],
+  "review": {
+    "starter_guidance_remaining": false,
+    "credential_like_literals": false,
+    "functional_model_prompts_preserved": true,
+    "validated_source_unchanged": true
+  },
+  "upload_check": {
+    "status": "passed",
+    "completed_utc": "2026-11-03T11:04:27.183204+00:00",
+    "checker": "supplied check_upload.py",
+    "python": "3.10",
+    "cases": [
+      "P001",
+      "P016"
+    ],
+    "model_calls_enabled": false,
+    "sandbox": false,
+    "api_cost_usd": 0,
+    "result": "Both structure and runtime checks passed. Zero scores are expected with model calls disabled.",
+    "summary": "upload-check/summary.json"
+  }
+}

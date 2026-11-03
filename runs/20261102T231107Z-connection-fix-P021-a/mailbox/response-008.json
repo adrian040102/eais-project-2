@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_008",
+      "type": "function",
+      "function": {
+        "name": "file_claim",
+        "arguments": "{\"company\":\"SNCF\",\"fields\":{\"date_voyage\":\"21/10/2026\",\"numero_train\":\"TGV INOUI 9866\",\"gare_depart\":\"Aix-en-Provence TGV\",\"gare_arrivee\":\"Montpellier Sud de France\",\"heure_arrivee_prevue\":\"15:50\",\"heure_arrivee_reelle\":\"19:33\",\"retard_minutes\":223,\"prix_billet_eur\":\"77.00\",\"montant_demande_eur\":\"57.75\",\"mode_compensation\":\"virement\"}}"
+      }
+    }
+  ]
+}

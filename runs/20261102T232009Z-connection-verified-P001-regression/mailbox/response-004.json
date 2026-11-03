@@ -1,0 +1,1 @@
+{"role":"assistant","tool_calls":[{"type":"function","function":{"name":"list_rule_documents","arguments":"{\"company\":\"OUIGO\"}"},"id":"relay_004"}],"content":null}

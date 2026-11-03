@@ -1,0 +1,309 @@
+{
+  "local_date": "2026-11-03",
+  "timezone": "Europe/Berlin",
+  "current_source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+  "local_tests_passed": 72,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "api_cost_usd": 0,
+  "codex_usage": "unmeasured",
+  "token_counts": "unmeasured",
+  "course_api_tested": false,
+  "final_current_source_checks": [
+    {
+      "id": "P001",
+      "decision": "claim",
+      "score": "1/1",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "audited_fields": {
+        "date_voyage": "20/10/2026",
+        "heure_arrivee_prevue": "22:13",
+        "heure_arrivee_reelle": "00:23",
+        "retard_minutes": 130,
+        "montant_demande_eur": "12.50",
+        "mode_indemnisation": "bon d'achat"
+      }
+    },
+    {
+      "id": "P003",
+      "decision": "no claim",
+      "score": "1/1",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f"
+    },
+    {
+      "id": "P021",
+      "decision": "claim",
+      "score": "1/1",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "audited_fields": {
+        "date_voyage": "21/10/2026",
+        "heure_arrivee_prevue": "15:50",
+        "heure_arrivee_reelle": "19:33",
+        "retard_minutes": 223,
+        "montant_demande_eur": "57.75",
+        "mode_compensation": "virement"
+      }
+    }
+  ],
+  "all_development_runs": [
+    {
+      "run": "20261102T231107Z-connection-fix-P021-a",
+      "id": "P021",
+      "source_sha256": "0f23980a8a15fefc5b326a611b4a623c524a4355ff2bf5d686084d6b8b1ee364",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 2,
+      "question_limit": 5,
+      "model_requests": 9,
+      "tool_calls": 12,
+      "issues": [
+        "P"
+      ],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T231108Z-connection-fix-P021-b",
+      "id": "P021",
+      "source_sha256": "0f23980a8a15fefc5b326a611b4a623c524a4355ff2bf5d686084d6b8b1ee364",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 3,
+      "question_limit": 5,
+      "model_requests": 11,
+      "tool_calls": 14,
+      "issues": [
+        "P"
+      ],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T231654Z-connection-final-P003-regression",
+      "id": "P003",
+      "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 0,
+      "question_limit": 2,
+      "model_requests": 6,
+      "tool_calls": 3,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T231654Z-connection-final-P021-a",
+      "id": "P021",
+      "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 5,
+      "model_requests": 15,
+      "tool_calls": 1,
+      "issues": [
+        "missing-claim"
+      ],
+      "model_errors": [],
+      "validation_note": "Invalid relay responder: it programmatically generated null placeholder function calls instead of selecting actions. Raw score preserved; not a valid model-decision trial."
+    },
+    {
+      "run": "20261102T231654Z-connection-final-P021-b",
+      "id": "P021",
+      "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 4,
+      "question_limit": 5,
+      "model_requests": 11,
+      "tool_calls": 15,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T232009Z-connection-verified-P001-regression",
+      "id": "P001",
+      "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 3,
+      "model_requests": 10,
+      "tool_calls": 5,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T232009Z-connection-verified-P021-repeat",
+      "id": "P021",
+      "source_sha256": "ea87b531530827975375bfd2693fd200a2468ee4d4428012f72a44c5a19a61ce",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 5,
+      "question_limit": 5,
+      "model_requests": 14,
+      "tool_calls": 16,
+      "issues": [
+        "A"
+      ],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T232742Z-policy-bands-P021-a",
+      "id": "P021",
+      "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 4,
+      "question_limit": 5,
+      "model_requests": 12,
+      "tool_calls": 15,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T232743Z-policy-bands-P003-regression",
+      "id": "P003",
+      "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 2,
+      "question_limit": 2,
+      "model_requests": 10,
+      "tool_calls": 6,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T232743Z-policy-bands-P021-b",
+      "id": "P021",
+      "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 5,
+      "model_requests": 2,
+      "tool_calls": 1,
+      "issues": [
+        "missing-claim"
+      ],
+      "model_errors": [
+        "Relay response must be an assistant message object."
+      ],
+      "validation_note": "Invalid relay response {}. The driver rejected the missing assistant role and recorded a protocol error."
+    },
+    {
+      "run": "20261102T233043Z-policy-bands-P021-controlled-repeat",
+      "id": "P021",
+      "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 4,
+      "question_limit": 5,
+      "model_requests": 12,
+      "tool_calls": 15,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": "Fresh low-reasoning responder selected one action per turn. Parent only published the returned messages and assigned no business actions; one repeated call ID was corrected before publishing."
+    },
+    {
+      "run": "20261102T233045Z-policy-bands-P001-final",
+      "id": "P001",
+      "source_sha256": "b11e9b63bc1ce443bbe0350177defe9617e0f13fa297387eb8a3f830f443a1b9",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.5,
+      "questions": 2,
+      "question_limit": 3,
+      "model_requests": 10,
+      "tool_calls": 7,
+      "issues": [
+        "missing-claim",
+        "no-claim-when-owed"
+      ],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261102T233722Z-date-check-P001",
+      "id": "P001",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "points": 0.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 3,
+      "model_requests": 8,
+      "tool_calls": 3,
+      "issues": [
+        "missing-claim"
+      ],
+      "model_errors": [
+        "No supervised model response within 300 seconds."
+      ],
+      "validation_note": "Interrupted by Codex responder usage limit; mailbox response timed out. Correct travel date and 12.50 calculation were already observed; final filing was not reached."
+    },
+    {
+      "run": "20261103T091116Z-final-correction-P001",
+      "id": "P001",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 3,
+      "model_requests": 8,
+      "tool_calls": 5,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261103T091116Z-final-correction-P003",
+      "id": "P003",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 1,
+      "question_limit": 2,
+      "model_requests": 8,
+      "tool_calls": 5,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    },
+    {
+      "run": "20261103T091116Z-final-correction-P021",
+      "id": "P021",
+      "source_sha256": "b0cf4c5d985d42fecf7f22d2e80bdecae7466ccb3611f977cfa631711ce1298f",
+      "points": 1.0,
+      "max": 1,
+      "penalty": 0.0,
+      "questions": 4,
+      "question_limit": 5,
+      "model_requests": 12,
+      "tool_calls": 15,
+      "issues": [],
+      "model_errors": [],
+      "validation_note": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "type": "function",
+      "function": {
+        "name": "finish",
+        "arguments": "{}"
+      },
+      "id": "relay_010"
+    }
+  ]
+}

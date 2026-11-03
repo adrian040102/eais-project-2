@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"function":{"arguments":"{\"destination\":\"Stuttgart Hbf\",\"to_time\":\"13:30\",\"origin\":\"Mannheim Hbf\",\"date\":\"2026-10-28\",\"from_time\":\"12:30\"}","name":"find_trains"},"type":"function","id":"relay_001"}]}

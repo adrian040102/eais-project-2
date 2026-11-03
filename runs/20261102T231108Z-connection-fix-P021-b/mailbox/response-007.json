@@ -1,0 +1,14 @@
+{
+  "role": "assistant",
+  "content": null,
+  "tool_calls": [
+    {
+      "id": "relay_007",
+      "type": "function",
+      "function": {
+        "name": "ask_traveler",
+        "arguments": "{\"topic\":\"payment_preference\"}"
+      }
+    }
+  ]
+}

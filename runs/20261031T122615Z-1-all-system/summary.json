@@ -1,0 +1,716 @@
+{
+ "set": "practice",
+ "system": "/workspace/eais-p2-kit/team/system.py",
+ "rows": [
+  {
+   "id": "P001",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.09
+  },
+  {
+   "id": "P002",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.3
+  },
+  {
+   "id": "P003",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.19
+  },
+  {
+   "id": "P004",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.16
+  },
+  {
+   "id": "P005",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P006",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P007",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.09
+  },
+  {
+   "id": "P008",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P010",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P011",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim",
+    "topics"
+   ],
+   "seconds": 0.24
+  },
+  {
+   "id": "P012",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.16
+  },
+  {
+   "id": "P014",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.18
+  },
+  {
+   "id": "P015",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.17
+  },
+  {
+   "id": "P016",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.15
+  },
+  {
+   "id": "P017",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P020",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.12
+  },
+  {
+   "id": "P021",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P022",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P023",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P024",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.09
+  },
+  {
+   "id": "P025",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.15
+  },
+  {
+   "id": "P028",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P030",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.14
+  },
+  {
+   "id": "P031",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.22
+  },
+  {
+   "id": "P032",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.32
+  },
+  {
+   "id": "P033",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.18
+  },
+  {
+   "id": "P034",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 6,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.14
+  },
+  {
+   "id": "P036",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.09
+  },
+  {
+   "id": "P037",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.09
+  },
+  {
+   "id": "P038",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 5,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P039",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.1
+  },
+  {
+   "id": "P040",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim",
+    "topics"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P041",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.11
+  },
+  {
+   "id": "P043",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 2,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-no-claim"
+   ],
+   "seconds": 0.22
+  },
+  {
+   "id": "P044",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.27
+  },
+  {
+   "id": "P045",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 4,
+   "over": 0,
+   "tools": 0,
+   "model": 0,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 0.14
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 36,
+  "correct": 0,
+  "extra": 0,
+  "questions": 0,
+  "over": 0,
+  "tools": 0,
+  "model": 0,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [],
+ "stopped": null,
+ "setup": "ok",
+ "cache_entries": 0,
+ "cache_bytes": 0,
+ "sandbox": false
+}

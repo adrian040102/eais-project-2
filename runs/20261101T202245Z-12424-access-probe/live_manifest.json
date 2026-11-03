@@ -1,0 +1,9 @@
+{
+  "kind": "access-probe",
+  "ids": [
+    "P001"
+  ],
+  "cap_usd": 0.005,
+  "source_sha256": null,
+  "note": "Token supplied in memory and forwarded by environment name only."
+}

@@ -1,0 +1,1 @@
+{"tool_calls":[{"function":{"name":"ask_traveler","arguments":"{\"topic\":\"travelcard\"}"},"id":"relay_005","type":"function"}],"content":null,"role":"assistant"}

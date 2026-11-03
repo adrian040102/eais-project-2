@@ -1,0 +1,1 @@
+{"tool_calls":[{"type":"function","id":"relay_003","function":{"arguments":"{\"company\":\"OUIGO\",\"query\":\"OUIGO train à grande vitesse retard 2 heures indemnisation\",\"limit\":5}","name":"search_rules"}}],"content":null,"role":"assistant"}

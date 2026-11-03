@@ -1,0 +1,1 @@
+{"content":null,"tool_calls":[{"function":{"name":"search_rules","arguments":"{\"query\":\"ICE Entschädigung 60 Minuten Fahrpreis 25 Prozent Mindestbetrag\",\"limit\":6,\"company\":\"DB\"}"},"id":"relay_003","type":"function"}],"role":"assistant"}

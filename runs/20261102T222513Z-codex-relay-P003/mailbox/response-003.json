@@ -1,0 +1,1 @@
+{"role":"assistant","content":null,"tool_calls":[{"id":"relay_003","type":"function","function":{"name":"train_stops","arguments":"{\"train\":\"ICE 225\",\"date\":\"2026-10-21\"}"}}]}

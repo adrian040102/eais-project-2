@@ -1,0 +1,68 @@
+{
+ "set": "practice",
+ "system": "/workspace/eais-p2-kit/examples/probe_llm.py",
+ "rows": [
+  {
+   "id": "P001",
+   "points": 0.0,
+   "penalty": 0.0,
+   "max": 1,
+   "correct": 0,
+   "extra": 0,
+   "questions": 0,
+   "limit": 3,
+   "over": 0,
+   "tools": 0,
+   "model": 2,
+   "usd": 0.0,
+   "status": "ok",
+   "issues": [
+    "missing-claim"
+   ],
+   "seconds": 1.07
+  }
+ ],
+ "totals": {
+  "points": 0.0,
+  "max": 1,
+  "correct": 0,
+  "extra": 0,
+  "questions": 0,
+  "over": 0,
+  "tools": 0,
+  "model": 2,
+  "usd": 0.0,
+  "penalty": 0.0
+ },
+ "fully_right": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0
+ },
+ "usd": 0.0,
+ "model_calls": [
+  {
+   "model": "gpt-4o-mini",
+   "backend": "course",
+   "est_usd": 0.00028,
+   "endpoint": "course",
+   "seconds": 0.55,
+   "error": "course app, HTTP 403: You aren't in a confirmed Project 2 team yet. Make your team on the Project 2 page of the course app, then try again.",
+   "usd": 0.0
+  },
+  {
+   "model": "gpt-6-luna",
+   "backend": "course",
+   "est_usd": 0.000233,
+   "endpoint": "course",
+   "seconds": 0.33,
+   "error": "course app, HTTP 403: You aren't in a confirmed Project 2 team yet. Make your team on the Project 2 page of the course app, then try again.",
+   "usd": 0.0
+  }
+ ],
+ "stopped": null,
+ "setup": "none",
+ "cache_entries": 0,
+ "cache_bytes": 0,
+ "sandbox": false
+}

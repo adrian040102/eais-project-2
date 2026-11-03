@@ -1,0 +1,1 @@
+{"tool_calls":[{"function":{"arguments":"{\"origin\":\"Aix-en-Provence TGV\",\"departure\":\"12:26\",\"via\":\"Lyon Part-Dieu\",\"date\":\"2026-10-21\",\"connection\":\"14:10\",\"destination\":\"Montpellier Sud de France\"}","name":"resolve_connection"},"id":"relay_003","type":"function"}],"content":null,"role":"assistant"}

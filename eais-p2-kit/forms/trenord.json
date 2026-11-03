@@ -1,0 +1,124 @@
+{
+ "company": "Trenord",
+ "operators": [],
+ "language": "it",
+ "title": "Trenord: richiesta di indennità per ritardo (biglietto)",
+ "instructions": "Una richiesta per biglietto con origine e destinazione indicate. Il ritardo può essere in partenza dalla stazione di origine o in arrivo alla stazione di destinazione del biglietto. Importi in euro con il punto, per esempio 12.34.",
+ "messages": {
+  "missing": "Compilare il campo «{label}».",
+  "format": "Il campo «{label}» non è nel formato corretto. Formato richiesto: {hint}.",
+  "enum": "Valore non valido per «{label}». Valori ammessi: {values}.",
+  "unknown": "Campo sconosciuto: {name}.",
+  "not_object": "I campi devono essere inviati come oggetto (nome del campo: valore).",
+  "accepted": "Grazie, la sua richiesta è stata registrata.",
+  "train_none": "Campo «{label}»: in questa richiesta non ha ancora trovato nessun treno con departures, find_trains o train_stops. Cerchi il treno e poi indichi il nome, il numero o il train_id.",
+  "train_unknown": "Campo «{label}»: «{value}» non è nessuno dei treni che ha trovato in questa richiesta con departures, find_trains o train_stops. Indichi il nome come nei risultati (per esempio REG 10213), il numero, la linea e il numero, oppure il train_id. I suoi treni: {trains}.",
+  "train_several": "Campo «{label}»: «{value}» corrisponde a {n} treni dei suoi risultati: {trains}. Indichi il train_id del treno.",
+  "train_item": "{train}, giorno di servizio {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "data_viaggio",
+   "label": "Data del viaggio",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Giorno del viaggio.",
+   "format": "dd/mm/yyyy"
+  },
+  {
+   "name": "numero_treno",
+   "label": "Numero del treno in ritardo",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Numero del treno Trenord in ritardo.",
+   "format": "per esempio REG 10213"
+  },
+  {
+   "name": "stazione_partenza",
+   "label": "Stazione di origine del biglietto",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Stazione di origine indicata sul biglietto."
+  },
+  {
+   "name": "stazione_arrivo",
+   "label": "Stazione di destinazione del biglietto",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Stazione di destinazione indicata sul biglietto."
+  },
+  {
+   "name": "ritardo_rilevato",
+   "label": "Ritardo rilevato",
+   "type": "enum",
+   "required": true,
+   "slot": "delay_at",
+   "description": "Indicare se il ritardo per cui chiede l'indennità è in partenza dall'origine o in arrivo a destinazione.",
+   "values": [
+    "in arrivo",
+    "in partenza"
+   ]
+  },
+  {
+   "name": "orario_previsto",
+   "label": "Orario previsto",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Orario programmato alla stazione del ritardo (arrivo a destinazione o partenza dall'origine).",
+   "format": "HH:MM"
+  },
+  {
+   "name": "orario_effettivo",
+   "label": "Orario effettivo",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Orario effettivo alla stessa stazione.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "ritardo_minuti",
+   "label": "Ritardo in minuti",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Orario effettivo meno orario previsto, in minuti interi.",
+   "format": "numero intero"
+  },
+  {
+   "name": "prezzo_biglietto_eur",
+   "label": "Prezzo del biglietto in euro",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Prezzo pagato per il biglietto.",
+   "format": "numero, per esempio 13.00"
+  },
+  {
+   "name": "importo_richiesto_eur",
+   "label": "Importo richiesto in euro",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Importo dell'indennità richiesta.",
+   "format": "numero, per esempio 6.50"
+  },
+  {
+   "name": "modalita",
+   "label": "Modalità di pagamento",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "Forma del pagamento.",
+   "values": [
+    "bonifico",
+    "voucher"
+   ]
+  }
+ ]
+}

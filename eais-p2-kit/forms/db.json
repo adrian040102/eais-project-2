@@ -1,0 +1,115 @@
+{
+ "company": "DB",
+ "operators": [
+  "DB Fernverkehr",
+  "DB Regio"
+ ],
+ "language": "de",
+ "title": "Deutsche Bahn: Fahrgastrechte-Formular",
+ "instructions": "Ein Formular pro Fahrkarte. Sie reichen das Formular beim Servicecenter Fahrgastrechte (DB Dialog GmbH) ein. Beträge in Euro mit Punkt, z. B. 12.34.",
+ "messages": {
+  "missing": "Bitte füllen Sie das Feld «{label}» aus.",
+  "format": "Das Feld «{label}» hat ein ungültiges Format. Erwartet: {hint}.",
+  "enum": "Ungültiger Wert im Feld «{label}». Erlaubt sind: {values}.",
+  "unknown": "Unbekanntes Feld: {name}.",
+  "not_object": "Die Felder müssen als Objekt (Feldname: Wert) übergeben werden.",
+  "accepted": "Vielen Dank, Ihr Antrag ist eingegangen.",
+  "train_none": "Feld «{label}»: Sie haben in dieser Anfrage noch keinen Zug mit departures, find_trains oder train_stops gefunden. Suchen Sie den Zug und geben Sie dann seinen Namen, seine Nummer oder seine train_id an.",
+  "train_unknown": "Feld «{label}»: «{value}» ist keiner der Züge, die Sie in dieser Anfrage mit departures, find_trains oder train_stops gefunden haben. Geben Sie den Namen wie in den Suchergebnissen (z. B. ICE 1101), die Nummer, Linie und Nummer oder die train_id an. Ihre Züge: {trains}.",
+  "train_several": "Feld «{label}»: «{value}» passt zu {n} Zügen aus Ihren Suchergebnissen: {trains}. Geben Sie die train_id des Zuges an, den Sie meinen.",
+  "train_item": "{train}, Betriebstag {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "reisetag",
+   "label": "Reisetag",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Tag der Reise.",
+   "format": "dd.mm.yyyy"
+  },
+  {
+   "name": "zug",
+   "label": "Zug mit Verspätung oder Ausfall",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Bei verpasstem Anschluss: der verspätete Zug, mit dem Sie am Umsteigebahnhof angekommen sind",
+   "format": "z. B. ICE 100"
+  },
+  {
+   "name": "abfahrtsbahnhof",
+   "label": "Abfahrtsbahnhof laut Fahrkarte",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Abfahrtsbahnhof, wie er auf der Fahrkarte steht."
+  },
+  {
+   "name": "zielbahnhof",
+   "label": "Zielbahnhof laut Fahrkarte",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Zielbahnhof, wie er auf der Fahrkarte steht."
+  },
+  {
+   "name": "geplante_ankunft",
+   "label": "Geplante Ankunft am Zielbahnhof",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Ankunftszeit am Zielbahnhof laut Fahrplan mit der geplanten Verbindung.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "tatsaechliche_ankunft",
+   "label": "Tatsächliche Ankunft am Zielbahnhof",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Ankunftszeit des Zuges, mit dem Sie am Zielbahnhof angekommen sind.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "verspaetung_minuten",
+   "label": "Verspätung am Zielbahnhof in Minuten",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Tatsächliche minus geplante Ankunft in ganzen Minuten.",
+   "format": "ganze Zahl"
+  },
+  {
+   "name": "fahrpreis_eur",
+   "label": "Fahrpreis in Euro",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Gezahlter Preis der Fahrkarte, bei Hin- und Rückfahrt für die betroffene Fahrtrichtung.",
+   "format": "Zahl, z. B. 50.00"
+  },
+  {
+   "name": "entschaedigung_eur",
+   "label": "Entschädigung in Euro",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Betrag, den Sie beantragen.",
+   "format": "Zahl, z. B. 12.34"
+  },
+  {
+   "name": "auszahlung",
+   "label": "Auszahlung",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "Art der Auszahlung.",
+   "values": [
+    "Überweisung",
+    "Gutschein"
+   ]
+  }
+ ]
+}
