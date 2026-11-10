@@ -43,9 +43,13 @@ def prerequisites():
     )
 
 
-def filing(call_id="file", train="run-a", amount="12.50"):
-    return assistant(call(call_id, "file_claim", {"company": "Example Rail",
-                     "fields": {"train": train, "amount": amount}}))
+def filing(call_id="file", train="run-a", amount="12.50", methods=None, method=None):
+    args = {"company": "Example Rail", "fields": {"train": train, "amount": amount}}
+    if methods is not None:
+        args["payment_methods"] = {"method": methods}
+    if method is not None:
+        args["fields"]["method"] = method
+    return assistant(call(call_id, "file_claim", args))
 
 
 def finish(call_id="finish"):
@@ -183,6 +187,31 @@ class AgentLoopTests(unittest.TestCase):
         self.assertEqual(self.search.call_count, 1)
         self.assertIs(self.search.call_args.args[0], self.index)
         self.assertTrue(all(request["model"] == "gpt-6-luna" for request in tools.model_requests))
+        self.assertTrue(all(request["options"]["parallel_tool_calls"] for request in tools.model_requests))
+        self.assertEqual(len(tools.model_requests), 3)
+        self.assertEqual(len(tools.calls), 3)  # Two lookups and one filing still count separately.
+
+    def test_budget_note_is_current_and_does_not_accumulate(self):
+        tools = FakeTools([prerequisites(), filing(), finish()], model_budget=3)
+        self.assertEqual(self.run_agent(tools), "finished")
+        for index, (models, counted) in enumerate(((3, 20), (2, 18), (1, 17))):
+            notes = [m for m in tools.model_requests[index]["messages"] if m["role"] == "developer"]
+            self.assertEqual(len(notes), 1)
+            self.assertIn(f"{models} model calls and {counted} counted tool calls remain", notes[0]["content"])
+            self.assertIn("Prioritize required facts", notes[0]["content"])
+
+    def test_terminal_actions_wait_until_batched_results_have_been_reviewed(self):
+        arguments = {"file_claim": {"company": "Example Rail", "fields": {"train": "run-a", "amount": "12.50"}},
+                     "no_claim": {"company": "Example Rail"}, "finish": {}}
+        for name, args in arguments.items():
+            with self.subTest(action=name):
+                mixed = prerequisites()
+                mixed["tool_calls"].append(call("premature-decision", name, args))
+                tools = FakeTools([mixed, filing(), finish()])
+                self.assertEqual(self.run_agent(tools), "finished")
+                self.assertIn("own response", self.tool_reply(tools, 1, "premature-decision")[1]["error"])
+                self.assertEqual(len(self.named_calls(tools, "file_claim")), 1)
+                self.assertEqual(self.named_calls(tools, "no_claim"), [])
 
     def test_invalid_json_and_unlisted_method_return_errors_then_repair(self):
         broken = assistant(call("bad-json", "get_form", "{"),
@@ -331,8 +360,42 @@ class AgentLoopTests(unittest.TestCase):
                 self.assertIn("error", self.tool_reply(tools, 4, "missing-bands")[1])
                 self.assertEqual(self.tool_reply(tools, 5, "with-bands")[1], {"amount": amount})
 
+    def test_calculated_delay_selects_the_rate_and_is_cleared_after_filing(self):
+        tools = FakeTools([
+            prerequisites(),
+            assistant(call("delay", "calculate_delay",
+                           {"planned": "2026-10-20 17:32", "recorded": "2026-10-20 19:38"})),
+            assistant(call("missing-bands", "calculate_compensation",
+                           {"price": "55.99", "percentage": "25", "minimum": "4"})),
+            assistant(call("with-bands", "calculate_compensation",
+                           {"price": "55.99", "percentage": "25", "minimum": "4", "rate_bands": [
+                               {"from_minutes": 60, "percentage": "25"},
+                               {"from_minutes": 120, "percentage": "50"}]})),
+            filing("first-ticket", amount="28.00"),
+            assistant(call("next-ticket", "calculate_compensation",
+                           {"price": "50", "percentage": "25", "minimum": "4"})),
+            filing("second-ticket", train="run-b"), finish(),
+        ])
+        original_find = tools.find_trains
+
+        def find(*args, **kwargs):
+            result = original_find(*args, **kwargs)
+            result["trains"][0]["arr_planned"] = "2026-10-20 17:32"
+            result["trains"][1]["arr_recorded"] = "2026-10-20 19:38"
+            return result
+
+        tools.find_trains = find
+        self.assertEqual(self.run_agent(tools), "finished")
+        self.assertEqual(self.tool_reply(tools, 2, "delay")[1], {"minutes": 126})
+        self.assertIn("126 minutes", self.tool_reply(tools, 3, "missing-bands")[1]["error"])
+        self.assertEqual(self.tool_reply(tools, 4, "with-bands")[1], {"amount": "28.00"})
+        self.assertEqual(self.tool_reply(tools, 6, "next-ticket")[1], {"amount": "12.50"})
+        self.assertEqual(len(self.named_calls(tools, "file_claim")), 2)
+
     def test_payment_choice_is_requested_before_a_filing_is_sent(self):
-        tools = FakeTools([prerequisites(), filing("needs-choice"), filing("with-choice"), finish()])
+        tools = FakeTools([prerequisites(),
+                           filing("needs-choice", methods=["voucher", "transfer"], method="transfer"),
+                           filing("with-choice", methods=["voucher", "transfer"], method="transfer"), finish()])
         original_form = tools.get_form
 
         def form(company):
@@ -345,6 +408,54 @@ class AgentLoopTests(unittest.TestCase):
         self.assertIn("payment_preference", self.tool_reply(tools, 2, "needs-choice")[1])
         self.assertEqual(len(self.named_calls(tools, "ask_traveler")), 1)
         self.assertEqual(len(self.named_calls(tools, "file_claim")), 1)
+
+    def test_sole_policy_payment_is_used_without_a_preference_question(self):
+        tools = FakeTools([prerequisites(), filing(methods=["voucher"], method="transfer"), finish()])
+        original_form = tools.get_form
+
+        def form(company):
+            result = original_form(company)
+            result["fields"].append({"name": "method", "type": "enum", "values": ["voucher", "transfer"]})
+            return result
+
+        tools.get_form = form
+        self.assertEqual(self.run_agent(tools), "finished")
+        self.assertEqual(self.named_calls(tools, "ask_traveler"), [])
+        self.assertEqual(self.named_calls(tools, "file_claim")[0]["arguments"]["fields"]["method"], "voucher")
+
+    def test_payment_policy_must_use_values_from_the_discovered_form(self):
+        tools = FakeTools([prerequisites(), filing("invalid-policy", methods=["cash"], method="cash"),
+                           filing("valid-policy", methods=["voucher"], method="voucher"), finish()])
+        original_form = tools.get_form
+
+        def form(company):
+            result = original_form(company)
+            result["fields"].append({"name": "method", "type": "enum", "values": ["voucher", "transfer"]})
+            return result
+
+        tools.get_form = form
+        self.assertEqual(self.run_agent(tools), "finished")
+        self.assertIn("allowed form values", self.tool_reply(tools, 2, "invalid-policy")[1]["error"])
+        self.assertEqual(len(self.named_calls(tools, "file_claim")), 1)
+
+    def test_unanswered_payment_preference_does_not_authorize_a_choice(self):
+        tools = FakeTools([prerequisites(), filing("ask", methods=["voucher", "transfer"], method="transfer"),
+                           filing("unanswered", methods=["voucher", "transfer"], method="transfer")], model_budget=3)
+        original_form = tools.get_form
+
+        def form(company):
+            result = original_form(company)
+            result["fields"].append({"name": "method", "type": "enum", "values": ["voucher", "transfer"]})
+            return result
+
+        def ask(topic):
+            tools.counted("ask_traveler", {"topic": topic})
+            return "The traveler does not answer any more questions."
+
+        tools.get_form, tools.ask_traveler = form, ask
+        self.assertIn("incomplete", self.run_agent(tools))
+        self.assertEqual(len(self.named_calls(tools, "ask_traveler")), 1)
+        self.assertEqual(self.named_calls(tools, "file_claim"), [])
 
     def test_currency_and_delay_enums_do_not_trigger_payment_questions(self):
         tools = FakeTools([prerequisites(), filing(), finish()])
