@@ -21,7 +21,24 @@ CHANGE_TIMES = {
 }
 
 INSTRUCTIONS = """Help the traveler complete every compensation decision through the tools.
-Work through missing facts, train identification, rule retrieval, then the form.
+Identify the journey, retrieve its applicable rules, ask necessary missing facts, then decide.
+Initially ask only for missing date, route or departure details needed to identify the train,
+or seller/ticket structure needed to select the policy. Ask a missing departure time before
+guessing search windows. When both seller and ticket structure are needed, ask ticket_structure
+first and reuse any seller in its answer; ask ticket_seller only if it remains unknown. Reuse
+all facts supplied in an answer, not only the fact named by its topic. Use facts already
+stated or derived. For a direct journey, ask ticket_structure only if ticket boundaries
+could change the policy or recipient, not to reconfirm an established seller. Skip metadata listings when
+the company is already known. Before other questions, retrieve the policy's delay thresholds,
+price basis, minimum payout and permitted payment methods. If a payout remains possible,
+make a SEPARATE focused search for exclusions and delay causes in the documents' language;
+do not mix exclusion keywords into a long query about rates, prices and payment methods.
+A rates-only result leaves exclusions unresolved. Follow references to other rule sections
+or EU law, without a company filter for EU rules, before treating a claim as eligible.
+Keep track of which policy conditions are resolved and which need a traveler answer.
+Ask each question only because a specific unresolved condition needs it. Do not use a
+generic questionnaire about class, travelcards or reservations. If the established facts
+already rule out every payout, record no_claim with evidence before asking payment details.
 Use ask_traveler for missing facts; plain questions in your answer do not reach the traveler.
 Ask only necessary topics, once each. Never invent prices, dates, sellers, or delay causes.
 Do not ask for facts already stated or unambiguously derived, including explicit dates.
@@ -50,13 +67,23 @@ Forms may be unfamiliar. Use their exact field names and exact observed train_id
 Calculate compensation with calculate_compensation using the rate and minimum from the
 applicable rules. Always supply minimum explicitly; use 0 only after checking that no
 minimum applies. If all payouts are zero, record no_claim without a form or payment question.
-After resolve_connection, supply ALL rate_bands from the applicable policy instead of
+After resolve_connection or calculate_delay, supply ALL rate_bands from the applicable policy instead of
 selecting a percentage yourself; Python selects the band using the final journey delay.
 Use calculate_delay for planned/actual timestamps from different trains; otherwise
 use the relevant train tool's delay. Return tickets may require the affected direction's
-price. Check exclusions and ask the reported delay_reason if the rule depends on it.
-When a payable claim offers a payment choice, ask payment_preference unless already known.
-Do not choose a voucher or transfer for the traveler. Check whether the choice changes the rate.
+price. When exclusions depend on the cause, obtain delay_reason before filing unless the
+request already states it. Train times establish the delay, not its cause. A reported lack
+of an announcement is an answer; an unasked question is still unresolved.
+Determine the payment methods allowed by this policy for this delay and ticket. A form
+may list methods that are unavailable here. Ask payment_preference only for a payable
+claim with more than one permitted method, unless already known. Use the sole allowed
+method when there is no choice; a requested transfer cannot override a voucher-only rule.
+For file_claim, payment_methods maps each payment field name to ALL exact form values
+permitted by the retrieved policy for this ticket, independently of the traveler's preference.
+The fields object contains the chosen method; do not narrow payment_methods to that choice.
+Supply a single value only when the policy permits exactly one method.
+Before file_claim, verify that every missing fact needed for eligibility, price basis and
+the permitted payment choice has been answered. Resolve remaining questions before filing.
 The form's train is the first late/cancelled train causing the disruption, including the
 incoming late train for a missed connection. File one claim per company and ticket;
 accepted filings are final, while rejected ones can be corrected. Still file when the
@@ -65,6 +92,10 @@ If any claim is owed, file the owed claims and leave the unowed tickets without 
 Use no_claim only when nothing is owed for the entire request, for the responsible company.
 Before no_claim, identify the relevant run with train_stops or complete find_trains with
 at most five results. Obtain all necessary missing facts before either decision.
+Batch independent lookups or calculations in one response when all arguments are known.
+Batch traveler questions only when each is necessary regardless of the other answers;
+each still counts as a separate question. Wait for results before choosing dependent actions.
+Call file_claim, no_claim and finish individually, after reviewing all required evidence.
 Reserve calls for form retrieval, filing, and possible correction. Call finish only after
 all tickets are handled. A tool error is information to correct, never a no-claim decision.
 """
@@ -257,8 +288,11 @@ def tool_definitions():
              {"train": text, "date": text}),
         tool("list_forms", "Discover available claim recipients, including unfamiliar companies.", {}),
         tool("get_form", "Read a company's fields, formats, instructions, and allowed values.", {"company": text}),
-        tool("file_claim", "File one claim per ticket using exact form fields and observed train_id values.",
-             {"company": text, "fields": {"type": "object", "additionalProperties": True}}),
+        tool("file_claim", "File one claim per ticket. payment_methods maps payment field names to ALL "
+             "policy-permitted form values for this ticket, independently of the chosen method or preference.",
+             {"company": text, "fields": {"type": "object", "additionalProperties": True},
+              "payment_methods": {"type": "object", "additionalProperties":
+                  {"type": "array", "items": text, "minItems": 1, "uniqueItems": True}}}, ["company", "fields"]),
         tool("no_claim", "Declare nothing owed for the entire request, after rules and relevant train evidence.",
              {"company": text}),
         tool("search_rules", "Search cached passages with keywords in the document language. Company is optional.",
@@ -266,7 +300,7 @@ def tool_definitions():
         tool("list_rule_documents", "List rule metadata; omit company to discover all operators and laws.",
              {"company": company}, []),
         tool("read_rule_document", "Read a short document by ID; use search_rules for large documents.", {"doc_id": text}),
-        tool("calculate_compensation", "Apply the retrieved policy and minimum. For a resolved connection, supply "
+        tool("calculate_compensation", "Apply the retrieved policy and minimum. After resolving or calculating a delay, supply "
              "ALL rate_bands; Python selects the band from its final delay. Otherwise supply percentage: "
              "25 means 25%, not 0.25. Minimum 0 only if no minimum applies.",
              {"price": text, "percentage": text, "minimum": text, "rate_bands": {"type": "array", "minItems": 1,
@@ -306,14 +340,15 @@ def execute_tool(call, tools, index, state):
             return result
         if name == "calculate_compensation":
             bands = args.pop("rate_bands", None)
-            if state.get("connection"):
+            delay = state.get("delay")
+            if delay is not None:
                 if not bands:
                     raise ValueError("Supply ALL rate_bands from the applicable policy; the final journey delay is "
-                                     + str(state["connection"]["minutes"]) + " minutes.")
+                                     + str(delay) + " minutes.")
                 rates = {band["from_minutes"]: band["percentage"] for band in bands}
                 if len(rates) != len(bands) or any(type(start) is not int or start < 0 for start in rates):
                     raise ValueError("Rate bands need unique nonnegative integer from_minutes values.")
-                start = max((start for start in rates if start <= state["connection"]["minutes"]), default=None)
+                start = max((start for start in rates if start <= delay), default=None)
                 args["percentage"] = rates[start] if start is not None else "0"
             result = calculate_compensation(**args)
             state["compensation"] = result["amount"]
@@ -322,7 +357,10 @@ def execute_tool(call, tools, index, state):
             if any(datetime.fromisoformat(args[field]) not in state["timestamps"]
                    for field in ("planned", "recorded")):
                 raise ValueError("Use exact full timestamps returned by the train tools; do not round or invent times.")
-            return calculate_delay(**args)
+            result = calculate_delay(**args)
+            state["delay"] = result["minutes"]
+            state.pop("compensation", None)
+            return result
         if name == "resolve_connection":
             if not {"train_after_missed_connection", "arrival_time"}.intersection(state["asked"]):
                 return {"onward_answer": ask_once(tools, state, "train_after_missed_connection"),
@@ -330,6 +368,7 @@ def execute_tool(call, tools, index, state):
                                 "Otherwise identify the actual train with the train tools."}
             result = resolve_connection(tools, **args)
             state["connection"] = result
+            state["delay"] = result["minutes"]
             state.pop("compensation", None)
             for row in (result["incoming"], result["planned_connection"], result["replacement"]):
                 state["trains"][row["train_id"]] = row
@@ -343,6 +382,9 @@ def execute_tool(call, tools, index, state):
         if name in ("file_claim", "no_claim") and not state["rules"]:
             raise ValueError("Retrieve applicable rule passages before deciding.")
         if name == "file_claim":
+            permitted = args.pop("payment_methods", {})
+            if not isinstance(permitted, dict):
+                raise ValueError("payment_methods must map payment field names to allowed values from the policy.")
             if state.get("compensation") == "0.00":
                 raise ValueError("Calculated payout is zero. Use no_claim if nothing is owed; do not file a zero claim.")
             form = state["forms"].get(" ".join(tokenize(args["company"])))
@@ -351,12 +393,25 @@ def execute_tool(call, tools, index, state):
             args["company"] = form["company"]
             payment_words = {"uberweisung", "gutschein", "virement", "bonus", "rimborso", "bonifico",
                              "voucher", "transfer", "cash"}
-            payment_choice = any(f["type"] == "enum" and len(f.get("values", [])) > 1
-                                 and payment_words.intersection(tokenize(" ".join(f["values"])))
-                                 for f in form["fields"])
-            if payment_choice and "payment_preference" not in state["asked"]:
-                return {"payment_preference": ask_once(tools, state, "payment_preference"),
-                        "next": "Map the answer to an allowed payment value, then file the claim again."}
+            payment_fields = [f for f in form["fields"] if f["type"] == "enum"
+                              and (f["name"] in permitted or payment_words.intersection(tokenize(" ".join(f["values"]))))]
+            if set(permitted) - {f["name"] for f in payment_fields}:
+                raise ValueError("payment_methods contains a field that is not an enum on this form.")
+            for field in payment_fields:
+                methods = permitted.get(field["name"])
+                if not isinstance(methods, list) or not methods or any(m not in field["values"] for m in methods):
+                    raise ValueError("Supply policy-permitted payment_methods using allowed form values for " + field["name"])
+                if len(set(methods)) == 1:
+                    args["fields"][field["name"]] = methods[0]
+                    continue
+                if "payment_preference" not in state["asked"]:
+                    return {"payment_preference": ask_once(tools, state, "payment_preference"),
+                            "next": "Map the answer to a policy-permitted value, then file again."}
+                preference = state["asked"]["payment_preference"].strip()
+                if preference in ("", "I don't know.", "The traveler does not answer any more questions."):
+                    raise ValueError("Payment preference is unavailable; do not choose a method for the traveler.")
+                if args["fields"].get(field["name"]) not in methods:
+                    raise ValueError("Use a policy-permitted payment method for " + field["name"])
             train_fields = [f["name"] for f in form["fields"] if f["type"] == "train"]
             for field in train_fields:
                 value = args["fields"].get(field)
@@ -416,6 +471,8 @@ def execute_tool(call, tools, index, state):
                 state["no_claim_evidence"] = True
         if name == "file_claim" and result.get("status") == "accepted":
             state["filed"].add(filing_key)
+            for key in ("delay", "compensation", "connection"):
+                state.pop(key, None)
         if name == "no_claim" and result.get("status") == "recorded":
             state["declared"].add(" ".join(tokenize(result["company"])))
         if name == "read_rule_document":
@@ -451,10 +508,18 @@ def run_agent(request_text, tools):
     for _ in range(20):
         if should_stop(messages, tools):
             break
-        if len(json.dumps([messages, definitions], ensure_ascii=False)) > 190000:
+        remaining = tools.budget()
+        budget_note = (f"Live budget including this model call: {remaining['model_calls_left']} model calls "
+                       f"and {remaining['tool_calls_left']} counted tool calls remain. Batching does not "
+                       "increase the tool or traveler-question allowances.")
+        if remaining["model_calls_left"] <= 3:
+            budget_note += " Prioritize required facts, the form and filing; avoid optional research. File only with verified facts."
+        # Send one current budget note without accumulating stale values in history.
+        current_messages = messages + [{"role": "developer", "content": budget_note}]
+        if len(json.dumps([current_messages, definitions], ensure_ascii=False)) > 190000:
             return "incomplete: conversation reached the context limit"
-        response = tools.llm(messages, model=MODEL, tools=definitions,
-                             parallel_tool_calls=False, max_tokens=1800)
+        response = tools.llm(current_messages, model=MODEL, tools=definitions,
+                             parallel_tool_calls=True, max_tokens=1800)
         if not isinstance(response, dict):
             return "incomplete: invalid model response"
         if "error" in response:
@@ -476,7 +541,10 @@ def run_agent(request_text, tools):
         if not calls:
             messages.append({"role": "user", "content": "Use the tools to continue, or finish after all decisions are recorded."})
         for call in calls:
-            result = execute_tool(call, tools, index, state)
+            if len(calls) > 1 and call["function"].get("name") in {"file_claim", "no_claim", "finish"}:
+                result = {"error": "Make a final decision or finish in its own response after reviewing tool results."}
+            else:
+                result = execute_tool(call, tools, index, state)
             messages.append({"role": "tool", "tool_call_id": call["id"],
                              "content": json.dumps(result, ensure_ascii=False)})
     return "finished" if state["finished"] else "incomplete: call budget or round limit reached"
