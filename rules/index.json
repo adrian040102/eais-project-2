@@ -1,0 +1,362 @@
+[
+ {
+  "doc_id": "eu-reg-2021-782-en",
+  "company": "EU",
+  "title": "Regulation (EU) 2021/782 on rail passengers' rights and obligations",
+  "language": "en",
+  "kind": "law",
+  "public": true
+ },
+ {
+  "doc_id": "eu-ec-exemptions-table-en",
+  "company": "EU",
+  "title": "European Commission: summary table of national exemptions under Regulation (EU) 2021/782",
+  "language": "en",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "xb-cer-ajc-en",
+  "company": "Cross-border",
+  "title": "CER: Agreement on Journey Continuation (AJC)",
+  "language": "en",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "xb-railteam-hotnat-en",
+  "company": "Cross-border",
+  "title": "Railteam: Hop On The Next Available Train (HOTNAT)",
+  "language": "en",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "xb-sbb-ajc-merkblatt-de",
+  "company": "Cross-border",
+  "title": "SBB: Merkblatt Abkommen über die Weiterreise (AJC)",
+  "language": "de",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "xb-gcc-civ-prr-de",
+  "company": "Cross-border",
+  "title": "Allgemeine Beförderungsbedingungen für Eisenbahnreisende (GCC-CIV/PRR)",
+  "language": "de",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "xb-otif-civ-en",
+  "company": "Cross-border",
+  "title": "COTIF Appendix A: Uniform Rules concerning the Contract of International Carriage of Passengers by Rail (CIV)",
+  "language": "en",
+  "kind": "law",
+  "public": true
+ },
+ {
+  "doc_id": "ch-sbb-entschaedigung-de",
+  "company": "SBB",
+  "title": "SBB: Entschädigung bei Verspätung",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "ch-sbb-compensation-en",
+  "company": "SBB",
+  "title": "SBB: Compensation for delays",
+  "language": "en",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "ch-alliance-fahrgastrechte-de",
+  "company": "SBB",
+  "title": "Alliance SwissPass: Fahrgastrechte im öffentlichen Verkehr",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "ch-bav-was-habe-ich-de",
+  "company": "SBB",
+  "title": "Bundesamt für Verkehr: Was habe ich in welchen Fällen zu Gute?",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "ch-t600-de",
+  "company": "SBB",
+  "title": "Tarif 600: Gemeinsame Tarif-Nebenbestimmungen für den nationalen Direkten Verkehr und die Verbünde",
+  "language": "de",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "ch-vpb-de",
+  "company": "SBB",
+  "title": "Verordnung über die Personenbeförderung (VPB)",
+  "language": "de",
+  "kind": "law",
+  "public": true
+ },
+ {
+  "doc_id": "ch-tilo-info-clienti-it",
+  "company": "TILO",
+  "title": "TILO: Informazioni generali clienti",
+  "language": "it",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "ch-tilo-titoli-it",
+  "company": "TILO",
+  "title": "TILO: Titoli di trasporto",
+  "language": "it",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-fahrgastrechte-de",
+  "company": "DB",
+  "title": "DB: Ihre Rechte als unser Fahrgast",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-rechtliche-regelungen-de",
+  "company": "DB",
+  "title": "DB: Ihre Rechte als Fahrgast im Eisenbahnverkehr, rechtliche Regelungen",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-faq-keine-entschaedigung-de",
+  "company": "DB",
+  "title": "DB: Gibt es auch Fälle, in denen ich keine Verspätungsentschädigung erhalte?",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-faq-deutschlandticket-de",
+  "company": "DB",
+  "title": "DB: Zugausfälle und Verspätungen bei Reisen mit dem Deutschland-Ticket",
+  "language": "de",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-int-legal-en",
+  "company": "DB",
+  "title": "DB: Your rights as a rail passenger, legal regulations",
+  "language": "en",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-bb-de",
+  "company": "DB",
+  "title": "Beförderungsbedingungen der Deutschen Bahn AG, Stand 14.10.2026",
+  "language": "de",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "de-db-bib-de",
+  "company": "DB",
+  "title": "Besondere Internationale Beförderungsbedingungen der Deutschen Bahn AG, Stand 21.10.2026",
+  "language": "de",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "de-evo-de",
+  "company": "DB",
+  "title": "Eisenbahn-Verkehrsordnung (EVO)",
+  "language": "de",
+  "kind": "law",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncf-g30-fr",
+  "company": "SNCF",
+  "title": "SNCF Connect : G30, la Garantie 30 minutes",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncf-connect-aide-retard-fr",
+  "company": "SNCF",
+  "title": "SNCF Connect : retard de votre train et remboursement",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncfv-retard-tgv-ic-fr",
+  "company": "SNCF",
+  "title": "SNCF Voyageurs : en cas de retard, TGV INOUI et INTERCITÉS",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncfv-retard-ter-fr",
+  "company": "SNCF",
+  "title": "SNCF Voyageurs : en cas de retard, TER et Transilien",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncfv-reclamation-lyria-fr",
+  "company": "SNCF",
+  "title": "SNCF Voyageurs : réclamation Eurostar et TGV Lyria",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-sncf-tarifs-voyageurs-fr",
+  "company": "SNCF",
+  "title": "SNCF Voyageurs : Tarifs Voyageurs",
+  "language": "fr",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "fr-ter-aura-cgv-fr",
+  "company": "SNCF",
+  "title": "TER Auvergne-Rhône-Alpes : Conditions générales de vente et de transport",
+  "language": "fr",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "fr-ouigo-faq-retard-fr",
+  "company": "OUIGO",
+  "title": "OUIGO : tout savoir sur l'indemnisation en cas de retard",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-ouigo-cgtv-fr",
+  "company": "OUIGO",
+  "title": "OUIGO : Conditions générales de transport et de vente, version 74 du 6 octobre 2026",
+  "language": "fr",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "fr-lyria-indemnite-fr",
+  "company": "TGV Lyria",
+  "title": "TGV Lyria : train retardé, billet indemnisé",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "fr-lyria-echange-remboursement-fr",
+  "company": "TGV Lyria",
+  "title": "TGV Lyria : échange et remboursement des billets",
+  "language": "fr",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-indennizzo-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia: indennizzo per ritardo del treno",
+  "language": "it",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-compensation-en",
+  "company": "Trenitalia",
+  "title": "Trenitalia: compensation for delays and refund",
+  "language": "en",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-cgt-i-10-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte I, 10: Obblighi e responsabilità di Trenitalia",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-allegato7-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte I, Allegato 7: stazioni con margine aggiuntivo per il calcolo dell'indennità",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-cgt-ii-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte II: trasporto nazionale",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-listino-ii-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte II, Capitolo IV: listino prezzi, punti 1 a 7 (senza le tabelle dei prezzi dei punti 8 a 17)",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-cgt-iii-8-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte III (trasporto regionale), 8: rimborsi e indennizzi",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenitalia-cgt-iv-it",
+  "company": "Trenitalia",
+  "title": "Trenitalia CGT, Parte IV: trasporto internazionale",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenord-indennizzo-it",
+  "company": "Trenord",
+  "title": "Trenord: indennizzo per ritardi",
+  "language": "it",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenord-rimborsi-it",
+  "company": "Trenord",
+  "title": "Trenord: rimborsi e indennizzi",
+  "language": "it",
+  "kind": "page",
+  "public": true
+ },
+ {
+  "doc_id": "it-trenord-cgt-it",
+  "company": "Trenord",
+  "title": "Trenord: Condizioni generali di trasporto, settembre 2026",
+  "language": "it",
+  "kind": "conditions",
+  "public": true
+ }
+]

@@ -1,0 +1,111 @@
+{
+ "company": "OUIGO",
+ "operators": [],
+ "language": "fr",
+ "title": "OUIGO : demande d'indemnisation en cas de retard à l'arrivée",
+ "instructions": "Une demande par billet OUIGO. OUIGO verse l'indemnisation sous forme de bon d'achat. Montants en euros avec un point, par exemple 12.34.",
+ "messages": {
+  "missing": "Veuillez renseigner le champ « {label} ».",
+  "format": "Le champ « {label} » n'est pas au bon format. Format attendu : {hint}.",
+  "enum": "Valeur non valide pour « {label} ». Valeurs possibles : {values}.",
+  "unknown": "Champ inconnu : {name}.",
+  "not_object": "Les champs doivent être envoyés sous forme d'objet (nom du champ : valeur).",
+  "accepted": "Merci, votre demande a bien été enregistrée.",
+  "train_none": "Champ « {label} » : vous n'avez encore trouvé aucun train dans cette demande avec departures, find_trains ou train_stops. Cherchez le train, puis indiquez son nom, son numéro ou son train_id.",
+  "train_unknown": "Champ « {label} » : « {value} » n'est aucun des trains que vous avez trouvés dans cette demande avec departures, find_trains ou train_stops. Indiquez le nom tel qu'il figure dans les résultats (par exemple OUIGO 7815), le numéro, la ligne et le numéro, ou le train_id. Vos trains : {trains}.",
+  "train_several": "Champ « {label} » : « {value} » correspond à {n} trains de vos résultats : {trains}. Indiquez le train_id du train concerné.",
+  "train_item": "{train}, jour de circulation {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "date_voyage",
+   "label": "Date du voyage",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Jour du trajet.",
+   "format": "dd/mm/yyyy"
+  },
+  {
+   "name": "numero_train",
+   "label": "Numéro du train OUIGO",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Numéro du train OUIGO en retard.",
+   "format": "par exemple OUIGO 7812"
+  },
+  {
+   "name": "gare_depart",
+   "label": "Gare de départ",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Gare de départ du trajet."
+  },
+  {
+   "name": "gare_arrivee",
+   "label": "Gare d'arrivée",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Gare d'arrivée du trajet."
+  },
+  {
+   "name": "heure_arrivee_prevue",
+   "label": "Heure d'arrivée prévue",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Heure d'arrivée prévue à la gare d'arrivée du trajet.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "heure_arrivee_reelle",
+   "label": "Heure d'arrivée réelle",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Heure d'arrivée réelle à la gare d'arrivée du trajet.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "retard_minutes",
+   "label": "Retard à l'arrivée en minutes",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Heure réelle moins heure prévue, en minutes entières.",
+   "format": "nombre entier"
+  },
+  {
+   "name": "prix_trajet_eur",
+   "label": "Prix du trajet en euros (hors options)",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Montant payé pour le trajet, hors options et hors animal.",
+   "format": "nombre, par exemple 25.00"
+  },
+  {
+   "name": "montant_demande_eur",
+   "label": "Montant de l'indemnisation en euros",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Montant de l'indemnisation demandée.",
+   "format": "nombre, par exemple 6.25"
+  },
+  {
+   "name": "mode_indemnisation",
+   "label": "Forme de l'indemnisation",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "OUIGO verse l'indemnisation en bon d'achat.",
+   "values": [
+    "bon d'achat"
+   ]
+  }
+ ]
+}

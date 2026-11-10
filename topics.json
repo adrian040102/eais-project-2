@@ -1,0 +1,58 @@
+[
+ {
+  "topic": "travel_date",
+  "meaning": "the day of the trip"
+ },
+ {
+  "topic": "departure_time",
+  "meaning": "the planned departure time of the first train, or of the train the traveler means"
+ },
+ {
+  "topic": "route",
+  "meaning": "where the trip started, where the traveler changed trains and where it ended"
+ },
+ {
+  "topic": "ticket_structure",
+  "meaning": "one through ticket for the whole trip, or separate tickets, and for which parts"
+ },
+ {
+  "topic": "ticket_seller",
+  "meaning": "where each ticket was bought (company, app, website or ticket office)"
+ },
+ {
+  "topic": "ticket_price",
+  "meaning": "the price paid for each ticket"
+ },
+ {
+  "topic": "travel_class",
+  "meaning": "first or second class"
+ },
+ {
+  "topic": "travelcard",
+  "meaning": "travelcards or passes, e.g. GA, Half Fare, BahnCard, Deutschland-Ticket, or none"
+ },
+ {
+  "topic": "reservation",
+  "meaning": "whether the traveler had a seat reservation, with its reference"
+ },
+ {
+  "topic": "booking_date",
+  "meaning": "when the tickets were bought"
+ },
+ {
+  "topic": "train_after_missed_connection",
+  "meaning": "which train the traveler took after missing a connection or after a train stopped short"
+ },
+ {
+  "topic": "arrival_time",
+  "meaning": "when the traveler actually arrived at the destination, as the traveler remembers it"
+ },
+ {
+  "topic": "delay_reason",
+  "meaning": "the reason for the delay that staff announced, as the traveler remembers it"
+ },
+ {
+  "topic": "payment_preference",
+  "meaning": "how the traveler would like to be paid, e.g. bank transfer or voucher"
+ }
+]

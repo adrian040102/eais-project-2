@@ -1,0 +1,4 @@
+# The starter code needs only the Python standard library and Python 3.10, the version we grade with.
+# certifi is optional: it gives Python the certificates for HTTPS calls to the course app, which python.org's
+# Python on a Mac lacks until you run its "Install Certificates" script.
+certifi

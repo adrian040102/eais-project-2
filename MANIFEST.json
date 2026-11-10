@@ -1,0 +1,486 @@
+{
+ "bundle": "p2-starter",
+ "version": "2026-10-30.1",
+ "commit": "6c5470a6c425569288782da43f33cc4794cff993",
+ "days": [
+  "2026-10-19",
+  "2026-10-26"
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "size": 27106,
+   "sha256": "2b1c4af3aff3a73dc880ed4ee2592aa03a0da8dfa1c8cbc9d3351b74e4a5232c"
+  },
+  {
+   "path": "RULINGS.md",
+   "size": 4197,
+   "sha256": "ba41c2aee7e570302d50fcef3408b7536114617ba94ef8f14cbf204eb3f4a61c"
+  },
+  {
+   "path": "SCOPE.md",
+   "size": 3483,
+   "sha256": "179c05a487de1127e84bf2a5ba35272f77498743e68964f80b2ead7f0f4c475d"
+  },
+  {
+   "path": "TOOLS.md",
+   "size": 24110,
+   "sha256": "4cb96046b4881cb9aae33e57c53b41070d15f9a85647f528a74d9ca9780b91c0"
+  },
+  {
+   "path": "chat.py",
+   "size": 7821,
+   "sha256": "8b87c5eff3d135a585c3af1603163d77e7c54301c48f507148285182695ccf14"
+  },
+  {
+   "path": "chat_ui/__init__.py",
+   "size": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "chat_ui/server.py",
+   "size": 53551,
+   "sha256": "f480bfa13c52378d86b64a60a2c4b8488e3be450d8f07d2903f9985a627a4216"
+  },
+  {
+   "path": "chat_ui/static/assets/index-Bl5giXqe.js",
+   "size": 483485,
+   "sha256": "21843aab342f446f15d98fa843c88a137b1b3e84a23d59ff023dd7398c39f86a"
+  },
+  {
+   "path": "chat_ui/static/assets/index-MbI3lyxw.css",
+   "size": 25111,
+   "sha256": "88a9ea1459f9753a60ebe9509754d29a8b15986cc6ea9160b3f1d53111eb2f77"
+  },
+  {
+   "path": "chat_ui/static/index.html",
+   "size": 439,
+   "sha256": "24ab6578af42d17c79a34da46287c5b77d9b6e9ef7594c49d793047a3f14c2db"
+  },
+  {
+   "path": "check_upload.py",
+   "size": 6635,
+   "sha256": "5e8ed1579e256377bed0b82776decf0ce515611773ea5be92cbb31f59454b4b0"
+  },
+  {
+   "path": "data/stations.csv",
+   "size": 264102,
+   "sha256": "11147c3fad1a796f0ae41374395c3bf4b61f8881c2d3541e232d13f44141b66f"
+  },
+  {
+   "path": "data/trains-2026-10-19.csv.gz",
+   "size": 4556423,
+   "sha256": "ede7e184503330bdf78ec9580759b01a3b766a631182c970d14526218914d1c2"
+  },
+  {
+   "path": "data/trains-2026-10-20.csv.gz",
+   "size": 4675633,
+   "sha256": "35e7d52dbf3e55bd9a89e0e83566596c29338b607a93f5a6cb9587a064caff82"
+  },
+  {
+   "path": "data/trains-2026-10-21.csv.gz",
+   "size": 6239182,
+   "sha256": "7c56f7bbd9470a85e40ed20b88c8c0d19e41fe1b1813bdb3c09803443e907b31"
+  },
+  {
+   "path": "data/trains-2026-10-22.csv.gz",
+   "size": 6255293,
+   "sha256": "52599aefe09303a75d1587e33d769bf62fd73e98f15bbc356221cd7074aacf5b"
+  },
+  {
+   "path": "data/trains-2026-10-23.csv.gz",
+   "size": 6249456,
+   "sha256": "63dd2cc787f8ade8d330b2fc30c8fe29309d2db53bc7daaec74c35f1608c4601"
+  },
+  {
+   "path": "data/trains-2026-10-24.csv.gz",
+   "size": 5309725,
+   "sha256": "00059a086d20865b6d06bddff6c3946a365ece73655535f15bc088f6e0602cb8"
+  },
+  {
+   "path": "data/trains-2026-10-25.csv.gz",
+   "size": 4875353,
+   "sha256": "e64ac4be090f29343c8aa1ad6cc2af093a444aa1cbea722cdb90cd0ecb38f6b1"
+  },
+  {
+   "path": "data/trains-2026-10-26.csv.gz",
+   "size": 6222247,
+   "sha256": "c5d236c3b9625cddc2c8c839e323e8889c643e2081563c3352e6f56d0e0e94de"
+  },
+  {
+   "path": "examples/budget_probe.py",
+   "size": 282,
+   "sha256": "8e57e4ba51ca6c27ea757d9021d83532be14d80e7a59968df084f2b2105b98cc"
+  },
+  {
+   "path": "examples/example_system.py",
+   "size": 2605,
+   "sha256": "c27031a72de28a2e1da5fb348d8cf401ce2ff8d12a0d6fae510155c084ea5f50"
+  },
+  {
+   "path": "examples/probe_llm.py",
+   "size": 655,
+   "sha256": "4df173ce6fec947fcc2832dea45c157e7c66edab26874db543907330b622976d"
+  },
+  {
+   "path": "forms/db.json",
+   "size": 3898,
+   "sha256": "de6e127acd4477588b4c518861af2f048b342fbf9ae171042cf9d1c9dccd3bc7"
+  },
+  {
+   "path": "forms/ouigo.json",
+   "size": 3820,
+   "sha256": "b8d55e94ca94b501a687b1c3fd5ae6d94c5270e97e655269c2b298b43658849f"
+  },
+  {
+   "path": "forms/sbb.json",
+   "size": 4105,
+   "sha256": "0a81a851aebd7a0ee58ebc3405b4abe995263a1b46429a166e982ce4b5f20176"
+  },
+  {
+   "path": "forms/sncf.json",
+   "size": 4124,
+   "sha256": "7467ace6954f35474d1c70cc0ca3e84ce9a98b2dfb75b0fc3176800c95cef106"
+  },
+  {
+   "path": "forms/trenitalia.json",
+   "size": 3829,
+   "sha256": "d88bb9d34aff8273be8432584d009ade58d2a306a26d08616e20e23506dc25a4"
+  },
+  {
+   "path": "forms/trenord.json",
+   "size": 4159,
+   "sha256": "e09f7ebd618ff8744c2444070357b9bb7c19333a69e297b56159498965386a38"
+  },
+  {
+   "path": "make_store.py",
+   "size": 6388,
+   "sha256": "6d85b43cbe97d5e7a603b52bfc63025c287a415461b08d200ddc5ca8c024f425"
+  },
+  {
+   "path": "p2/child.py",
+   "size": 7469,
+   "sha256": "80813ce47ea0d3ea18ce8c858df8c72d44246aa8209cf7a6e0b9697087ce95fd"
+  },
+  {
+   "path": "p2/data.py",
+   "size": 12711,
+   "sha256": "c2c4cb54264c5c970be8da2f779122a80ed2364fdda33a588d3451d69339daa5"
+  },
+  {
+   "path": "p2/errors.py",
+   "size": 794,
+   "sha256": "c1fdf3f5fc742b160b4be80976d2d22e13c249e7a39d61d778d8d8e5f7cddaad"
+  },
+  {
+   "path": "p2/forms.py",
+   "size": 10069,
+   "sha256": "acf4b242a0dbc82a0d22f8f0f2accca9880265efbdffa4afff5be379eb253c42"
+  },
+  {
+   "path": "p2/isolation.py",
+   "size": 33348,
+   "sha256": "9fad66f801fd3ece0f7a5dffbeea13b95323d7a32439767819c2515cf587d82b"
+  },
+  {
+   "path": "p2/llm.py",
+   "size": 32906,
+   "sha256": "b5badcbb3bd3f0a01454f298cfc50d662119e862159a0ea44b00d4fbffbdf33c"
+  },
+  {
+   "path": "p2/rules.py",
+   "size": 2529,
+   "sha256": "8876fe2165851af36815f58f3e9846631de2ed451adb053b96620a305155ebe7"
+  },
+  {
+   "path": "p2/runner.py",
+   "size": 28510,
+   "sha256": "e040d6a2c1b6d790563bc8d65a26fcbdf759558afdda79c1bc5fcd53ed23a9aa"
+  },
+  {
+   "path": "p2/score.py",
+   "size": 14011,
+   "sha256": "56990997bab7006358a41becd02d731ed2ee2ac4697d9a8325cc8752540f138e"
+  },
+  {
+   "path": "p2/tools.py",
+   "size": 12668,
+   "sha256": "b7f4f4f52bf1e06d69bd68917d5cec405e783112b51efe65cbb810dfb7315c99"
+  },
+  {
+   "path": "p2/traveler.py",
+   "size": 1792,
+   "sha256": "2a7ab51ce00dfe772fab67e32849768b12feecfe03045da7bd1a261ce59a28d8"
+  },
+  {
+   "path": "p2/upload.py",
+   "size": 27772,
+   "sha256": "71d39f1720f3aee68562a721462d7e816a33af22485faa8473344dd2efe45314"
+  },
+  {
+   "path": "p2/version.py",
+   "size": 113,
+   "sha256": "857149f044e51b6af245e5d2404765609df9b2d864f4d18a63459edb3dcbb300"
+  },
+  {
+   "path": "packages.txt",
+   "size": 1829,
+   "sha256": "e9d6d2a11e0f2d6a0f4fb2321d80b407aabcfda6d7f315e16d10b00cdafe15ee"
+  },
+  {
+   "path": "practice/practice_requests.json",
+   "size": 76198,
+   "sha256": "091f75e623eb880b10b821c26c24180681a993da415cf93f72e7aac91a4fbd38"
+  },
+  {
+   "path": "requirements.txt",
+   "size": 293,
+   "sha256": "420ee74874622c7e76461e19cbe4b77c99bf86d9fb694738e269320cdf0fa1d9"
+  },
+  {
+   "path": "rules/ch-alliance-fahrgastrechte-de.md",
+   "size": 9509,
+   "sha256": "9b87424dd6580993ef4926b7423ecbedef69602387af964b0ff1b5e6249b220d"
+  },
+  {
+   "path": "rules/ch-bav-was-habe-ich-de.md",
+   "size": 4006,
+   "sha256": "13cdd8beb5119a783e257112bdbe9c299c012e7249c78d3e452e7194058b4759"
+  },
+  {
+   "path": "rules/ch-sbb-compensation-en.md",
+   "size": 18479,
+   "sha256": "bed97895d75d63daf818c6c75f7202fc5f6f8087f4c20884a7ab51c100f92b71"
+  },
+  {
+   "path": "rules/ch-sbb-entschaedigung-de.md",
+   "size": 19723,
+   "sha256": "31c20d6419f93fb6f84a47330e8fe1d753998888066912c698bb20f7414014e3"
+  },
+  {
+   "path": "rules/ch-t600-de.md",
+   "size": 154917,
+   "sha256": "912bc530bdfd2b2c1f6326460f9605a6acc4bf5d97d823e88de503812947a8ae"
+  },
+  {
+   "path": "rules/ch-tilo-info-clienti-it.md",
+   "size": 1284,
+   "sha256": "b655c22321902970ac122d5c5696f5a2a73cd079f51bdff03df468e0900a644e"
+  },
+  {
+   "path": "rules/ch-tilo-titoli-it.md",
+   "size": 2516,
+   "sha256": "62c0fa25b9bff056031600713ef45da58da81d4e9e957b6673e1d0039ae4afc2"
+  },
+  {
+   "path": "rules/ch-vpb-de.md",
+   "size": 76602,
+   "sha256": "084f361888841c9ea6bdf4661913e7d150967ddcea383a909af5908b90fa825b"
+  },
+  {
+   "path": "rules/de-db-bb-de.md",
+   "size": 340634,
+   "sha256": "bb79a49755063bf2a2b398b30026e158ba4e2bddbc250ef516b87d254c2c8f43"
+  },
+  {
+   "path": "rules/de-db-bib-de.md",
+   "size": 277155,
+   "sha256": "3cb0b543d3d11709dd1373f5a7fe6c8544cc8a374978f190220b8220e8102c2b"
+  },
+  {
+   "path": "rules/de-db-fahrgastrechte-de.md",
+   "size": 7881,
+   "sha256": "27d4f9f204b98c73a800c37794645a018245d6c9f0b7d3bf1af9daf543cbdec0"
+  },
+  {
+   "path": "rules/de-db-faq-deutschlandticket-de.md",
+   "size": 658,
+   "sha256": "d09bc0df2ead0c91b815750d94deebd3d840d5a06f3b59c06f5d90cc0168aab2"
+  },
+  {
+   "path": "rules/de-db-faq-keine-entschaedigung-de.md",
+   "size": 1066,
+   "sha256": "f5d35821f64b10797f7bf4bd48813d5f7bf0de33d0064bee6af44ff08dda2334"
+  },
+  {
+   "path": "rules/de-db-int-legal-en.md",
+   "size": 21238,
+   "sha256": "08201c841bead40ee9439d8ba94fd2a9b3c8414e076a6b3c15bb818ca1e1828e"
+  },
+  {
+   "path": "rules/de-db-rechtliche-regelungen-de.md",
+   "size": 25853,
+   "sha256": "c2ce7c6ab928def545d046dddec58c9c5f8f0b64595a18156bbba12c4690ee92"
+  },
+  {
+   "path": "rules/de-evo-de.md",
+   "size": 16819,
+   "sha256": "e9f1f8a282d786a3746a8606f6845154e0fdd1c5b6bc39f9c1d02a5da8898227"
+  },
+  {
+   "path": "rules/eu-ec-exemptions-table-en.md",
+   "size": 4542,
+   "sha256": "73812dfd96f515feac03878c9ea703af1693e702537be7d4b78d515b1898af91"
+  },
+  {
+   "path": "rules/eu-reg-2021-782-en.md",
+   "size": 152758,
+   "sha256": "344978b410104caddc8f5c45d8d161902e7b5c591ce7a1c24a9416c1e43e758d"
+  },
+  {
+   "path": "rules/fr-lyria-echange-remboursement-fr.md",
+   "size": 4347,
+   "sha256": "e046e7a9fe964c8e52ee1648bee4e267da762b89f107e9b17b1262a523c3700b"
+  },
+  {
+   "path": "rules/fr-lyria-indemnite-fr.md",
+   "size": 2286,
+   "sha256": "99eddb619b1297782f13060c07a6e97a161c80d1ea5159be1bbb86cb98d35bc6"
+  },
+  {
+   "path": "rules/fr-ouigo-cgtv-fr.md",
+   "size": 243689,
+   "sha256": "515bc1a47d48ce752fc4cdee800a24718d27e06936a2edb4a5cfd202274a7821"
+  },
+  {
+   "path": "rules/fr-ouigo-faq-retard-fr.md",
+   "size": 1010,
+   "sha256": "4eb8d36cf2a1e3a8934f1a662b8ec53a539ea0fe87cdfa8e73bd0805d714059c"
+  },
+  {
+   "path": "rules/fr-sncf-connect-aide-retard-fr.md",
+   "size": 10148,
+   "sha256": "46a2ae13dfbaec6731ae1cbbd1fcd03e9ac0bc07dac816c79e11955739142ee5"
+  },
+  {
+   "path": "rules/fr-sncf-g30-fr.md",
+   "size": 1151,
+   "sha256": "ad6025caba34ccf88899f7e7196db7d6743ef94313422c86ba4efa0830e8e891"
+  },
+  {
+   "path": "rules/fr-sncf-tarifs-voyageurs-fr.md",
+   "size": 402056,
+   "sha256": "559569bdc4313ce23291e1128375e84df9712e75e8ce3b5655352f20c0afb891"
+  },
+  {
+   "path": "rules/fr-sncfv-reclamation-lyria-fr.md",
+   "size": 2563,
+   "sha256": "0c2c1e827697768fb3f060718382c0f8f05f8d45b9d48aced4471fdde1567144"
+  },
+  {
+   "path": "rules/fr-sncfv-retard-ter-fr.md",
+   "size": 1327,
+   "sha256": "05bbb46a96edb2325958c885d28f5b2c40e000eb55d3be9c4b566cdb1827d47e"
+  },
+  {
+   "path": "rules/fr-sncfv-retard-tgv-ic-fr.md",
+   "size": 3993,
+   "sha256": "bbaef0c03e293a3c18099d95d3fb87a828a4cc5e1678557389a385057819ee5e"
+  },
+  {
+   "path": "rules/fr-ter-aura-cgv-fr.md",
+   "size": 164091,
+   "sha256": "90fa715cc489321c00ef2c4e9564182bb2ee6260abf7f5470e386f8569d1b4ca"
+  },
+  {
+   "path": "rules/index.json",
+   "size": 8912,
+   "sha256": "cf97f918eba2029ca98cd28e2d0ee12d2a91218b17f71758758dcedccdc0b883"
+  },
+  {
+   "path": "rules/it-trenitalia-allegato7-it.md",
+   "size": 14979,
+   "sha256": "8b4867fd264e1c74c1e29ae8f601c3e84a20218b76b54e9700bd408dfcf9fc44"
+  },
+  {
+   "path": "rules/it-trenitalia-cgt-i-10-it.md",
+   "size": 16105,
+   "sha256": "b55dbc7d9d2d3d21e1e2d08e1ce4cd0144b2789d2a4d82073fb72c04702bdc1f"
+  },
+  {
+   "path": "rules/it-trenitalia-cgt-ii-it.md",
+   "size": 267965,
+   "sha256": "13cf52b7b46cc45231eeb16c2857b63cfc416d9d1fec2f6aedc876d11012b7af"
+  },
+  {
+   "path": "rules/it-trenitalia-cgt-iii-8-it.md",
+   "size": 31542,
+   "sha256": "39d789aad90c0d308dc90bc467b3360416fdc06b8644f8684a8e73047007d690"
+  },
+  {
+   "path": "rules/it-trenitalia-cgt-iv-it.md",
+   "size": 43260,
+   "sha256": "f458643306213da0196a3c9138d641b3d742cddeace0692750cc30b590a677d1"
+  },
+  {
+   "path": "rules/it-trenitalia-compensation-en.md",
+   "size": 6061,
+   "sha256": "bfc5b9c53a53e18aaf623db425678f756ed8d7e1edfeea623cbed089540825b7"
+  },
+  {
+   "path": "rules/it-trenitalia-indennizzo-it.md",
+   "size": 6455,
+   "sha256": "960d4f2475ef4a1f36a0505b1b962aa774d4ee24a50f9202eb14eb330fe1ff91"
+  },
+  {
+   "path": "rules/it-trenitalia-listino-ii-it.md",
+   "size": 9809,
+   "sha256": "a5ba2047068796c4dbef6e2e707b2b85d20066734f7d5d5e6226568744d696e8"
+  },
+  {
+   "path": "rules/it-trenord-cgt-it.md",
+   "size": 234377,
+   "sha256": "b32f7e4328a41027945b51ed5dfc355b4715c26d6f6a511f58a5d45a9f466781"
+  },
+  {
+   "path": "rules/it-trenord-indennizzo-it.md",
+   "size": 14721,
+   "sha256": "dcd1b9cb9efea034b564902f864279035ff002ad36759ae179660c60414d8f03"
+  },
+  {
+   "path": "rules/it-trenord-rimborsi-it.md",
+   "size": 930,
+   "sha256": "02332545eb6f45f8ed24637e4068927264816c2552bbfcfc332df0da4f29fd06"
+  },
+  {
+   "path": "rules/xb-cer-ajc-en.md",
+   "size": 4667,
+   "sha256": "14045af5eef084f4ddfd163a43e1e68b36d70e9bf22998a81f143ff361c92fc0"
+  },
+  {
+   "path": "rules/xb-gcc-civ-prr-de.md",
+   "size": 44448,
+   "sha256": "085cac9a4792c3098a985e7d395cdd8741df738a30ab82d9b0ea02836b0cd079"
+  },
+  {
+   "path": "rules/xb-otif-civ-en.md",
+   "size": 55433,
+   "sha256": "73559860dfd3760d88236c4eee3f15ac91386ab7fcba0b79eaa6bc7824faf72a"
+  },
+  {
+   "path": "rules/xb-railteam-hotnat-en.md",
+   "size": 1526,
+   "sha256": "9d8229562e04c56e58e7ee578778d8e157f7fd99ac91f456edaecf802a5fc2ca"
+  },
+  {
+   "path": "rules/xb-sbb-ajc-merkblatt-de.md",
+   "size": 8968,
+   "sha256": "ab5091b7d0509e4c2de944eec30dac942d9b2dde847ea2c43cb8bb89a6a46a56"
+  },
+  {
+   "path": "run_practice.py",
+   "size": 5657,
+   "sha256": "c504683d7c50639d5dc5725a24ced4a821192adae499177ff42aa9fe28b3bf85"
+  },
+  {
+   "path": "team/system.py",
+   "size": 1409,
+   "sha256": "16f8d2c67b8763b0afedfca1b68fddc47d2e7c865c1d0727b6da1ba1e4dae77a"
+  },
+  {
+   "path": "topics.json",
+   "size": 1581,
+   "sha256": "eac6d6d1e57cfa27dc8f631a28c202a9160f68dd22a914fbe8774c1cfd8e731f"
+  }
+ ]
+}

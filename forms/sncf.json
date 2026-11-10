@@ -1,0 +1,112 @@
+{
+ "company": "SNCF",
+ "operators": [],
+ "language": "fr",
+ "title": "SNCF Voyageurs : demande de compensation (Garantie 30 minutes et billet direct)",
+ "instructions": "Une demande par billet ou par billet direct. Pour un billet direct, indiquez le montant total des compensations de tous les trajets. Montants en euros avec un point, par exemple 12.34.",
+ "messages": {
+  "missing": "Veuillez renseigner le champ « {label} ».",
+  "format": "Le champ « {label} » n'est pas au bon format. Format attendu : {hint}.",
+  "enum": "Valeur non valide pour « {label} ». Valeurs possibles : {values}.",
+  "unknown": "Champ inconnu : {name}.",
+  "not_object": "Les champs doivent être envoyés sous forme d'objet (nom du champ : valeur).",
+  "accepted": "Merci, votre demande a bien été enregistrée.",
+  "train_none": "Champ « {label} » : vous n'avez encore trouvé aucun train dans cette demande avec departures, find_trains ou train_stops. Cherchez le train, puis indiquez son nom, son numéro ou son train_id.",
+  "train_unknown": "Champ « {label} » : « {value} » n'est aucun des trains que vous avez trouvés dans cette demande avec departures, find_trains ou train_stops. Indiquez le nom tel qu'il figure dans les résultats (par exemple TGV INOUI 6117), le numéro, la ligne et le numéro, ou le train_id. Vos trains : {trains}.",
+  "train_several": "Champ « {label} » : « {value} » correspond à {n} trains de vos résultats : {trains}. Indiquez le train_id du train concerné.",
+  "train_item": "{train}, jour de circulation {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "date_voyage",
+   "label": "Date du voyage",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Jour du voyage.",
+   "format": "dd/mm/yyyy"
+  },
+  {
+   "name": "numero_train",
+   "label": "Numéro du train en retard",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Train dont le retard ou la suppression a causé le retard à l'arrivée. En cas de correspondance manquée, le train en retard qui vous a amené à la correspondance.",
+   "format": "par exemple TGV 1234"
+  },
+  {
+   "name": "gare_depart",
+   "label": "Gare de départ du billet",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Gare de départ indiquée sur le billet."
+  },
+  {
+   "name": "gare_arrivee",
+   "label": "Gare d'arrivée du billet",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Gare d'arrivée indiquée sur le billet, ou destination finale du billet direct."
+  },
+  {
+   "name": "heure_arrivee_prevue",
+   "label": "Heure d'arrivée prévue",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Heure d'arrivée prévue à la gare d'arrivée du billet.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "heure_arrivee_reelle",
+   "label": "Heure d'arrivée réelle",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Heure d'arrivée du train avec lequel vous êtes arrivé.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "retard_minutes",
+   "label": "Retard à l'arrivée en minutes",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Heure réelle moins heure prévue, en minutes entières.",
+   "format": "nombre entier"
+  },
+  {
+   "name": "prix_billet_eur",
+   "label": "Prix du billet en euros",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Prix payé pour le billet, hors prestations annexes. Pour un billet direct, le prix total des trajets.",
+   "format": "nombre, par exemple 50.00"
+  },
+  {
+   "name": "montant_demande_eur",
+   "label": "Montant demandé en euros",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Montant de la compensation demandée.",
+   "format": "nombre, par exemple 12.34"
+  },
+  {
+   "name": "mode_compensation",
+   "label": "Mode de compensation",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "Forme de la compensation.",
+   "values": [
+    "bon d'achat",
+    "virement"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "company": "SBB",
+ "operators": [],
+ "company_names": [
+  "CFF",
+  "FFS"
+ ],
+ "language": "de",
+ "title": "SBB: Antrag auf Entschädigung bei Verspätung",
+ "instructions": "Ein Antrag pro Billett. Die SBB bearbeitet die Anträge für alle Transportunternehmen des öffentlichen Verkehrs der Schweiz. Beträge mit Punkt als Dezimalzeichen, z. B. 12.50.",
+ "messages": {
+  "missing": "Bitte füllen Sie das Feld «{label}» aus.",
+  "format": "Das Feld «{label}» hat ein ungültiges Format. Erwartet: {hint}.",
+  "enum": "Ungültiger Wert im Feld «{label}». Erlaubt sind: {values}.",
+  "unknown": "Unbekanntes Feld: {name}.",
+  "not_object": "Die Felder müssen als Objekt (Feldname: Wert) übergeben werden.",
+  "accepted": "Vielen Dank, Ihr Antrag ist eingegangen.",
+  "train_none": "Feld «{label}»: Sie haben in dieser Anfrage noch keinen Zug mit departures, find_trains oder train_stops gefunden. Suchen Sie den Zug und geben Sie dann seinen Namen, seine Nummer oder seine train_id an.",
+  "train_unknown": "Feld «{label}»: «{value}» ist keiner der Züge, die Sie in dieser Anfrage mit departures, find_trains oder train_stops gefunden haben. Geben Sie den Namen wie in den Suchergebnissen (z. B. ICE 1101), die Nummer, Linie und Nummer oder die train_id an. Ihre Züge: {trains}.",
+  "train_several": "Feld «{label}»: «{value}» passt zu {n} Zügen aus Ihren Suchergebnissen: {trains}. Geben Sie die train_id des Zuges an, den Sie meinen.",
+  "train_item": "{train}, Betriebstag {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "reisedatum",
+   "label": "Reisedatum",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Tag der Reise.",
+   "format": "dd.mm.yyyy"
+  },
+  {
+   "name": "zugnummer",
+   "label": "Zugnummer des verspäteten Zuges",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Zug, dessen Verspätung oder Ausfall die verspätete Ankunft verursacht hat, z. B. IC 123",
+   "format": "Gattung und Nummer, z. B. IC 123"
+  },
+  {
+   "name": "von",
+   "label": "Abfahrtsort laut Billett",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Abfahrtsort, wie er auf dem Billett steht."
+  },
+  {
+   "name": "nach",
+   "label": "Zielort laut Billett",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Zielort, wie er auf dem Billett steht."
+  },
+  {
+   "name": "ankunft_geplant",
+   "label": "Geplante Ankunft am Zielort",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Ankunftszeit am Zielort laut Fahrplan mit der geplanten Verbindung.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "ankunft_effektiv",
+   "label": "Tatsächliche Ankunft am Zielort",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Ankunftszeit des Zuges, mit dem Sie am Zielort angekommen sind.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "verspaetung_minuten",
+   "label": "Verspätung am Zielort in Minuten",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Tatsächliche minus geplante Ankunft in ganzen Minuten.",
+   "format": "ganze Zahl"
+  },
+  {
+   "name": "billettpreis",
+   "label": "Bezahlter Billettpreis",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Bezahlter Preis des Billetts für die betroffene einfache Fahrt.",
+   "format": "Zahl, z. B. 50.00"
+  },
+  {
+   "name": "waehrung",
+   "label": "Währung",
+   "type": "enum",
+   "required": true,
+   "slot": "currency",
+   "description": "Währung, in der Sie das Billett bezahlt haben.",
+   "values": [
+    "CHF",
+    "EUR"
+   ]
+  },
+  {
+   "name": "entschaedigung",
+   "label": "Beantragte Entschädigung",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Betrag, den Sie beantragen.",
+   "format": "Zahl, z. B. 12.50"
+  },
+  {
+   "name": "auszahlung",
+   "label": "Auszahlung",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "Art der Auszahlung.",
+   "values": [
+    "Überweisung",
+    "Gutschein"
+   ]
+  }
+ ]
+}

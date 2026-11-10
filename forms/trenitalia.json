@@ -1,0 +1,112 @@
+{
+ "company": "Trenitalia",
+ "operators": [],
+ "language": "it",
+ "title": "Trenitalia: richiesta di indennità per ritardo",
+ "instructions": "Una richiesta per biglietto. Importi in euro con il punto, per esempio 12.34.",
+ "messages": {
+  "missing": "Compilare il campo «{label}».",
+  "format": "Il campo «{label}» non è nel formato corretto. Formato richiesto: {hint}.",
+  "enum": "Valore non valido per «{label}». Valori ammessi: {values}.",
+  "unknown": "Campo sconosciuto: {name}.",
+  "not_object": "I campi devono essere inviati come oggetto (nome del campo: valore).",
+  "accepted": "Grazie, la sua richiesta è stata registrata.",
+  "train_none": "Campo «{label}»: in questa richiesta non ha ancora trovato nessun treno con departures, find_trains o train_stops. Cerchi il treno e poi indichi il nome, il numero o il train_id.",
+  "train_unknown": "Campo «{label}»: «{value}» non è nessuno dei treni che ha trovato in questa richiesta con departures, find_trains o train_stops. Indichi il nome come nei risultati (per esempio FR 9431), il numero, la linea e il numero, oppure il train_id. I suoi treni: {trains}.",
+  "train_several": "Campo «{label}»: «{value}» corrisponde a {n} treni dei suoi risultati: {trains}. Indichi il train_id del treno.",
+  "train_item": "{train}, giorno di servizio {day}, {first} – {last}, train_id {id}"
+ },
+ "fields": [
+  {
+   "name": "data_viaggio",
+   "label": "Data del viaggio",
+   "type": "date",
+   "required": true,
+   "slot": "date",
+   "description": "Giorno del viaggio.",
+   "format": "dd/mm/yyyy"
+  },
+  {
+   "name": "numero_treno",
+   "label": "Numero del treno in ritardo",
+   "type": "train",
+   "required": true,
+   "slot": "train",
+   "description": "Treno il cui ritardo o la cui soppressione ha causato il ritardo all'arrivo. In caso di coincidenza persa, il treno in ritardo con cui è arrivato alla coincidenza.",
+   "format": "per esempio FR 1234"
+  },
+  {
+   "name": "stazione_partenza",
+   "label": "Stazione di partenza del biglietto",
+   "type": "text",
+   "required": true,
+   "slot": "from",
+   "description": "Stazione di partenza indicata sul biglietto."
+  },
+  {
+   "name": "stazione_arrivo",
+   "label": "Stazione di arrivo del biglietto",
+   "type": "text",
+   "required": true,
+   "slot": "to",
+   "description": "Stazione di arrivo indicata sul biglietto."
+  },
+  {
+   "name": "arrivo_previsto",
+   "label": "Orario di arrivo previsto",
+   "type": "time",
+   "required": true,
+   "slot": "arr_plan",
+   "description": "Orario di arrivo programmato alla stazione di arrivo del biglietto.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "arrivo_effettivo",
+   "label": "Orario di arrivo effettivo",
+   "type": "time",
+   "required": true,
+   "slot": "arr_act",
+   "description": "Orario di arrivo effettivo alla stazione di arrivo del biglietto.",
+   "format": "HH:MM"
+  },
+  {
+   "name": "ritardo_minuti",
+   "label": "Ritardo all'arrivo in minuti",
+   "type": "int",
+   "required": true,
+   "slot": "delay",
+   "description": "Orario effettivo meno orario previsto, in minuti interi.",
+   "format": "numero intero"
+  },
+  {
+   "name": "prezzo_biglietto_eur",
+   "label": "Prezzo del biglietto in euro",
+   "type": "amount",
+   "required": true,
+   "slot": "price",
+   "description": "Prezzo pagato per il biglietto.",
+   "format": "numero, per esempio 50.00"
+  },
+  {
+   "name": "importo_richiesto_eur",
+   "label": "Importo richiesto in euro",
+   "type": "amount",
+   "required": true,
+   "slot": "amount",
+   "description": "Importo dell'indennità richiesta.",
+   "format": "numero, per esempio 12.34"
+  },
+  {
+   "name": "modalita",
+   "label": "Modalità di indennizzo",
+   "type": "enum",
+   "required": true,
+   "slot": "payment",
+   "description": "Forma dell'indennità.",
+   "values": [
+    "bonus",
+    "rimborso"
+   ]
+  }
+ ]
+}
