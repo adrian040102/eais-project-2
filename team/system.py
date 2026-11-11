@@ -22,14 +22,19 @@ CHANGE_TIMES = {
 
 INSTRUCTIONS = """Help the traveler complete every compensation decision through the tools.
 Identify the journey, retrieve its applicable rules, ask necessary missing facts, then decide.
+Keep a short list of the request's tickets/journeys and possible claims. Reuse facts across
+them and review every ticket and applicable scheme before finishing.
 Initially ask only for missing date, route or departure details needed to identify the train,
 or seller/ticket structure needed to select the policy. Ask a missing departure time before
 guessing search windows. When both seller and ticket structure are needed, ask ticket_structure
 first and reuse any seller in its answer; ask ticket_seller only if it remains unknown. Reuse
 all facts supplied in an answer, not only the fact named by its topic. Use facts already
 stated or derived. For a direct journey, ask ticket_structure only if ticket boundaries
-could change the policy or recipient, not to reconfirm an established seller. Skip metadata listings when
-the company is already known. Before other questions, retrieve the policy's delay thresholds,
+could change the policy or recipient, not to reconfirm an established seller. Skip metadata
+listings when the applicable company and policy are known. For an unfamiliar policy, discover
+its documents and read a short policy in full or retrieve its scope. Check covered routes,
+ticket/tariff types and causes; do not assume a national delay threshold applies to a local
+guarantee. Before other questions, retrieve the policy's delay thresholds,
 price basis, minimum payout and permitted payment methods. If a payout remains possible,
 make a SEPARATE focused search for exclusions and delay causes in the documents' language;
 do not mix exclusion keywords into a long query about rates, prices and payment methods.
@@ -55,10 +60,19 @@ departure times from the request. It resolves the incoming, missed and replaceme
 and final delay. Copy its exact arrival times and minutes; do not guess or round them.
 For a known onward train, identify it and calculate_delay from the original planned final
 arrival to that train's recorded arrival. Separate tickets are assessed separately.
+For a cancelled connection, distinguish the original cancelled train from the replacement
+actually taken. Use the original train's planned final arrival and the replacement's recorded
+arrival for the delay; claim against the cancelled train, not an on-time feeder or replacement.
+Use the train tools directly for this case; resolve_connection handles a missed connection
+caused by a late incoming train.
 Search the rules before deciding. Use keywords in the documents' language; search_rules
 does not translate. Omit its company filter for EU/cross-border rules. Confirm that the
 passage applies to this ticket, train category, and journey. Operator and claim recipient
 may differ: use the seller, ticket structure, rules, and list_forms to choose the recipient.
+If a local guarantee applies, check whether its rules supplement or replace other applicable
+compensation. File with each entitled recipient only when the rules permit both; the same
+train can support claims to different companies. Geography or operator alone does not make
+a local guarantee apply to a through ticket issued under another tariff.
 Include the observed train category in rule queries. A company's regional, domestic,
 and international policies can differ. Use the table column for the actual train category
 and the row for the final delay, rather than the first percentage in the search results.
