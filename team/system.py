@@ -81,8 +81,10 @@ Forms may be unfamiliar. Use their exact field names and exact observed train_id
 Calculate compensation with calculate_compensation using the rate and minimum from the
 applicable rules. Always supply minimum explicitly; use 0 only after checking that no
 minimum applies. If all payouts are zero, record no_claim without a form or payment question.
-After resolve_connection or calculate_delay, supply ALL rate_bands from the applicable policy instead of
-selecting a percentage yourself; Python selects the band using the final journey delay.
+For rate-table calculations, supply ALL rate_bands and this ticket's delay_minutes in the
+SAME calculate_compensation call. Use the final journey delay returned by resolve_connection
+or calculate_delay, or the relevant train tool's delay. Python selects the band from that
+explicit value; calculations for another ticket must not supply this ticket's delay.
 Use calculate_delay for planned/actual timestamps from different trains; otherwise
 use the relevant train tool's delay. Return tickets may require the affected direction's
 price. When exclusions depend on the cause, obtain delay_reason before filing unless the
@@ -314,10 +316,12 @@ def tool_definitions():
         tool("list_rule_documents", "List rule metadata; omit company to discover all operators and laws.",
              {"company": company}, []),
         tool("read_rule_document", "Read a short document by ID; use search_rules for large documents.", {"doc_id": text}),
-        tool("calculate_compensation", "Apply the retrieved policy and minimum. After resolving or calculating a delay, supply "
-             "ALL rate_bands; Python selects the band from its final delay. Otherwise supply percentage: "
+        tool("calculate_compensation", "Apply the retrieved policy and minimum. For rate_bands, always supply this "
+             "ticket's delay_minutes in the SAME call; no previous calculation's delay is reused. "
+             "After resolving/calculating a delay, use ALL rate_bands and that final delay. Otherwise supply percentage: "
              "25 means 25%, not 0.25. Minimum 0 only if no minimum applies.",
-             {"price": text, "percentage": text, "minimum": text, "rate_bands": {"type": "array", "minItems": 1,
+             {"price": text, "percentage": text, "minimum": text,
+              "delay_minutes": {"type": "integer", "minimum": 0}, "rate_bands": {"type": "array", "minItems": 1,
               "items": {"type": "object", "properties": {"from_minutes": {"type": "integer", "minimum": 0},
                         "percentage": text}, "required": ["from_minutes", "percentage"], "additionalProperties": False}}},
              ["price", "minimum"]),
@@ -354,11 +358,13 @@ def execute_tool(call, tools, index, state):
             return result
         if name == "calculate_compensation":
             bands = args.pop("rate_bands", None)
-            delay = state.get("delay")
-            if delay is not None:
+            delay = args.pop("delay_minutes", None)
+            if bands is not None or delay is not None or state.get("delay") is not None:
                 if not bands:
-                    raise ValueError("Supply ALL rate_bands from the applicable policy; the final journey delay is "
-                                     + str(delay) + " minutes.")
+                    raise ValueError("Supply ALL rate_bands and this ticket's delay_minutes from the applicable policy and train data.")
+                if type(delay) is not int or delay < 0:
+                    raise ValueError("Supply this ticket's nonnegative integer delay_minutes in the same call; "
+                                     "another calculation's delay is not reused.")
                 rates = {band["from_minutes"]: band["percentage"] for band in bands}
                 if len(rates) != len(bands) or any(type(start) is not int or start < 0 for start in rates):
                     raise ValueError("Rate bands need unique nonnegative integer from_minutes values.")
