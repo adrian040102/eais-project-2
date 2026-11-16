@@ -30,11 +30,12 @@ guessing search windows. When both seller and ticket structure are needed, ask t
 first and reuse any seller in its answer; ask ticket_seller only if it remains unknown. Reuse
 all facts supplied in an answer, not only the fact named by its topic. Use facts already
 stated or derived. For a direct journey, ask ticket_structure only if ticket boundaries
-could change the policy or recipient, not to reconfirm an established seller. Skip metadata
-listings when the applicable company and policy are known. For an unfamiliar policy, discover
-its documents and read a short policy in full or retrieve its scope. Check covered routes,
-ticket/tariff types and causes; do not assume a national delay threshold applies to a local
-guarantee. Before other questions, retrieve the policy's delay thresholds,
+could change the policy or recipient, not to reconfirm an established seller. The first company-specific search includes a cached document-and-heading catalog.
+Use it to discover alternative guarantees and their route/ticket scope before choosing a
+delay threshold. Search relevant headings or read a short policy to establish conditions;
+the catalog is navigation, not rule evidence. Do not list those documents again needlessly.
+Check the operator's and ticket issuer's policies when they differ. Do not assume a national
+delay threshold applies to an unfamiliar guarantee. Before other questions, retrieve the policy's delay thresholds,
 price basis, minimum payout and permitted payment methods. If a payout remains possible,
 make a SEPARATE focused search for exclusions and delay causes in the documents' language;
 do not mix exclusion keywords into a long query about rates, prices and payment methods.
@@ -153,17 +154,30 @@ def build_rule_index(tools):
     if "error" in listing:
         raise ValueError(listing["error"])
     passages = []
+    documents = []
     for metadata in listing["documents"]:
         document = tools.read_rule_document(metadata["doc_id"])
         if "error" in document:
             raise ValueError(document["error"])
+        headings = []
         for passage in split_passages(document["text"]):
+            heading = passage["section"].split(" > ")[-1]
+            if heading and heading not in headings:
+                headings.append(heading)
             passages.append({"doc_id": document["doc_id"], "company": document["company"],
                              "title": document["title"], "language": document["language"], **passage})
+        documents.append({key: document[key] for key in ("doc_id", "company", "title", "language")})
+        promises = [h for h in headings if re.search(
+            r"garant|versprech|promis|pledge|punktlich|erweitert|extended|suppl|zusatz|aggiunt", " ".join(tokenize(h)))]
+        conditions = [h for h in headings if re.search(
+            r"fahrgast|entsch|erstatt|indemni|compens|refund|rimbors|retard|ritard|ausschl|exclu|esclu", " ".join(tokenize(h)))]
+        selected = list(dict.fromkeys(headings[:2] + promises + conditions))[:10]
+        documents[-1].update(headings=selected, total_heading_labels=len(headings),
+                             omitted_heading_labels=len(headings) - len(selected))
     if not passages:
         raise ValueError("No rule text was available to index.")
     corpus = [tokenize(" ".join((p["company"], p["title"], p["section"], p["text"]))) for p in passages]
-    index = {"passages": passages, "bm25": BM25Okapi(corpus)}
+    index = {"passages": passages, "bm25": BM25Okapi(corpus), "documents": documents}
     cache_file = Path(tools.cache_dir) / INDEX_FILE
     temporary = cache_file.with_suffix(".tmp")
     with temporary.open("wb") as handle:
@@ -354,6 +368,16 @@ def execute_tool(call, tools, index, state):
             return {"status": "finished"}
         if name == "search_rules":
             result = search_rules(index, **args)
+            company = " ".join(tokenize(args.get("company") or ""))
+            shown = state.setdefault("catalogs_shown", set())
+            if company and company not in shown and index:
+                documents = [doc for doc in index.get("documents", [])
+                             if " ".join(tokenize(doc["company"])) == company]
+                if documents:
+                    result = {"policy_documents": documents,
+                              "catalog_note": "Selected heading labels for discovery; counts show omissions. Search/read policy text before deciding.",
+                              **result}
+                    shown.add(company)
             state["rules"] = state["rules"] or bool(result.get("passages"))
             return result
         if name == "calculate_compensation":
